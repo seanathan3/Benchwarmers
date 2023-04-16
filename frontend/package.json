@@ -27,6 +27,7 @@
       "react-app/jest"
     ]
   },
+  "proxy": "http://localhost:3000",
   "browserslist": {
     "production": [
       ">0.2%",
@@ -41,6 +42,5 @@
   },
   "devDependencies": {
     "redux-logger": "^3.0.6"
-  },
-  "proxy": "http://localhost:5000"
+  }
 }
