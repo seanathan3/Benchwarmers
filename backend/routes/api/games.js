@@ -1,14 +1,22 @@
 const express = require('express');
 const router = express.Router();
+const mongoose = require('mongoose');
+const User = mongoose.model('User');
+const Game = mongoose.model('Game');
+const { requireUser } = require('../../config/passport');
+const validateTweetInput = require('../../validations/tweets');
 
-router.get('/', function(req, res, next) {
-  res.json({
-    message: "GET /api/games"
-  });
+router.get('/', async (req, res) => {
+  try {
+    const games = await Game.find()
+                              .populate("host", "_id username")
+                              .sort({ createdAt: -1 });
+    return res.json(games);
+  }
+  catch(err) {
+    return res.json([]);
+  }
 });
 
-router.post("/create", function(req,res,next) {
-  
-})
 
 module.exports = router;
