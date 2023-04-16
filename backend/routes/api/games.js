@@ -7,4 +7,8 @@ router.get('/', function(req, res, next) {
   });
 });
 
+router.post("/create", function(req,res,next) {
+  
+})
+
 module.exports = router;
