@@ -7,7 +7,6 @@ import SignupForm from "./components/SessionForms/SignupForm";
 function App() {
   return (
     <>
-    <p>Hello World!</p>
     <NavBar />
     <LoginForm />
     <SignupForm />

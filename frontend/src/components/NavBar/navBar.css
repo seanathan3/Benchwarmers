@@ -1,0 +1,16 @@
+#nb-master {
+    display: flex;justify-content: space-between;
+    height: 80px;
+}
+
+#nb-logoPic {
+    max-height: 45px;
+}
+
+#nb-rightLinks {
+    display: flex;
+}
+
+#nb-rightLinks div {
+    margin: 0 20px;
+}
