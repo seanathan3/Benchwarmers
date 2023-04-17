@@ -29,7 +29,7 @@ const UserProfile = ({ userData }) => {
 
   const handleOtherSportChange = (e) => {
     setOtherSport(e.target.value);
-    setFaveSport(e.target.value);
+    // setFaveSport(e.target.value);
   };
 
   // const handleSubmit = (e) => {
