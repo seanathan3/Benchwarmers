@@ -24,7 +24,7 @@ const LoginForm = () => {
 
     return(
         <>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} id="sf-loginForm" className='sf-authForm'>
                 <h2>Login</h2>
                 {/* <div>{errors?.email}</div> */}
                 <label>Email
