@@ -42,10 +42,15 @@ h2 {
     justify-content: center;
 }
 
-.sf-auth-button input{
+.sf-auth-button{
     background-color: white;
     height: 45px;
     width: 100%;
-    border: 1px solid gray;
+    /* border: 1px solid gray; */
     border-radius: 10px;
+}
+
+#sb-button{
+    width: 85%;
+    height: 100%;
 }

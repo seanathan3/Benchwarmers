@@ -22,7 +22,7 @@ const SubmitButton = ({ clickFunction, textContext }) => {
   return (
     <div
       onClick={{ clickFunction }}
-      id={isHovering ? "button_hover" : "button"}
+      id={isHovering ? "sb-button_hover" : "sb-button"}
       onMouseMove={(e) => submitHover(e)}
       onMouseLeave={() => setIsHovering(false)}
       style={style}

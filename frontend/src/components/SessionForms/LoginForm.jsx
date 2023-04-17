@@ -2,6 +2,7 @@ import './sessionForm.css';
 import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { login, removeSessionErrors } from '../../store/session';
+import SubmitButton from '../Button/SubmitButton';
 
 
 const LoginForm = () => {
@@ -46,10 +47,11 @@ const LoginForm = () => {
                         />
                </div>
                <div className='sf-auth-button'>
-                    <input 
+                    {/* <input 
                         type='submit'
                         value='Login'
-                    />
+                    /> */}
+                    <SubmitButton clickFunction={handleSubmit} textContext='Login' />
                </div>
             </form>
         </>

@@ -1,4 +1,4 @@
-#button {
+#sb-button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,7 +10,7 @@
   color: white;
 }
 
-#button_hover {
+#sb-button_hover {
   display: flex;
   justify-content: center;
   align-items: center;
