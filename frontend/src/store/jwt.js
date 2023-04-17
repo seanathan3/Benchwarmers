@@ -24,7 +24,7 @@ async function jwtFetch(url, options = {}) {
     options.headers["Content-Type"] =
       options.headers["Content-Type"] || "application/json";
     // options.headers["CSRF-Token"] = getCookie("CSRF-TOKEN");
-    options.headers["CSRF-Token"] = getCookie("_csrf");
+    options.headers["CSRF-Token"] = getCookie("CSRF-Token");
   }
 debugger
   // Call fetch with the url and the updated options hash.
