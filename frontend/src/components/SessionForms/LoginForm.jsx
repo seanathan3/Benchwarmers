@@ -1,9 +1,52 @@
 import './sessionForm.css';
+import { useEffect, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { login, removeSessionErrors } from '../../store/session';
+
 
 const LoginForm = () => {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    // const errors = useSelector(state => state.errors.session);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        return () => {
+            dispatch(removeSessionErrors());
+        };
+    }, [dispatch]);
+
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        dispatch(login({email, password}));
+    }
 
     return(
         <>
+            <form onSubmit={handleSubmit}>
+                <h2>Login</h2>
+                {/* <div>{errors?.email}</div> */}
+                <label>Email
+                    <input 
+                        type='text'
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                    />
+                </label>
+                {/* <div>{errors?.password}</div> */}
+                <label>Password
+                    <input 
+                        type='password'
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                    />
+                </label>
+                <input 
+                    type='submit'
+                    value='Login'
+                />
+            </form>
         </>
     )
 }
