@@ -5,10 +5,17 @@ import { logout } from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
 import SignupFormModal from '../SessionForms/SignupFormModal';
 import LoginFormModal from '../SessionForms/LoginFormModal';
+import { useEffect } from 'react';
+import { getCurrentUser } from '../../store/session';
 
 const NavBar = () => {
     const dispatch = useDispatch();
-    const userId = useSelector(state => state.session?.user?.id)
+    const userId = useSelector(state => state.session?.user?._id)
+    console.log(userId)
+
+    useEffect(() => {
+        dispatch(getCurrentUser());
+    }, [dispatch, userId])
 
     function handleLogout(e) {
         dispatch(logout());
@@ -24,11 +31,13 @@ const NavBar = () => {
         )
     }
 
-    let loggedOutbuttons
+    let loggedOutButtons;
     if(userId){
-        <>
-            <div onClick={handleLogout}>Log Out</div>
-        </>
+        loggedOutButtons = (
+            <>
+                <div onClick={handleLogout}>Log Out</div>
+            </>
+        )
     }
 
     return(
@@ -40,7 +49,7 @@ const NavBar = () => {
             </div>
 
             <div id="nb-rightLinks">
-                {loggedOutbuttons}
+                {loggedOutButtons}
                 {loggedInButtons}
             </div>
         </div>
