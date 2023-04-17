@@ -1,4 +1,5 @@
 import React from "react";
+import ReactDOM from "react-dom/client";
 import { useContext, useRef, useState, useEffect } from "react";
 import './Modal.css'
 
