@@ -5,7 +5,6 @@ import NavBar from "./components/NavBar/NavBar";
 function App() {
   return (
     <>
-    <p>Hello World!</p>
     <NavBar />
     <Route path="/">
       <Splash />
