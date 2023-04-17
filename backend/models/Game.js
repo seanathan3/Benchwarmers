@@ -3,10 +3,14 @@ const Schema = mongoose.Schema;
 
 const gameSchema = new Schema({
   coordinates: {
-    type: Number,
-    lat: Number,
-    lng: Number,
-    required: true
+    lat: {
+      type: Number,
+      required: true
+    },
+    lng: {
+      type: Number,
+      required:true
+    }
   },
   sport: {
     type: String,
@@ -38,17 +42,28 @@ const gameSchema = new Schema({
     type: String
   },
   time: {
-    type: Number,
-    hours: Number,
-    minutes: Number,
-    required: true
+    hours: {
+      type: Number,
+      required: true
+    },
+    minutes: {
+      type: Number,
+      required: true
+    }
   },
-  date: {
-    type: Number,
-    day: Number,
-    month: Number,
-    year: Number,
-    required: true
+  date: {  
+    month: {
+      type: Number,
+      required: true
+    },
+    day: {
+      type: Number,
+      required: true
+    },
+    year: {
+      type: Number,
+      required: true
+    },
   }
 
 }, {

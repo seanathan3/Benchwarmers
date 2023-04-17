@@ -20,6 +20,7 @@ router.get('/current', restoreUser, (req, res) => {
     _id: req.user._id,
     username: req.user.username,
     email: req.user.email,
+    name: req.user.name,
     bio: req.user.bio,
     borough: req.user.borough,
     hostedGames: req.user.hostedGames,

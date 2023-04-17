@@ -65,18 +65,17 @@ router.post('/', requireUser, validateGameInput, async(req, res, next) => {
       sport: req.body.sport,
       skillLevel: req.body.skillLevel,
       description: req.body.description,
-      host: req.body.user._id,
+      host: req.user._id,
       maxCapacity: req.body.maxCapacity,
       minCapacity: req.body.minCapacity,
       photoUrl: req.body.photoUrl,
       time: req.body.time,
       date: req.body.date
     });
-
     // Might need to get hostId here
 
-    let game = newGame.save();
-    game = await game.populate('host', '_id username');
+    let game = await newGame.save();
+    game = await game.populate("host", "_id username");
     return res.json(game)
   }
   catch(err) {

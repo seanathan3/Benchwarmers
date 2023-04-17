@@ -29,6 +29,7 @@ exports.loginUser = async function(user) {
     email: user.email,
     bio: user.bio,
     borough: user.borough,
+    name: user.name,
     hostedGames: user.hostedGames,
     attendingGames: user.attendingGames,
     favoriteSport: user.favoriteSport,
