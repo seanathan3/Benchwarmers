@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { login, removeSessionErrors } from '../../store/session';
 import SubmitButton from '../Button/SubmitButton';
+import '../Button/SubmitButton.css'
 
 
 const LoginForm = () => {
@@ -46,13 +47,13 @@ const LoginForm = () => {
                             onChange={(e) => setPassword(e.target.value)}
                         />
                </div>
-               <div className='sf-auth-button'>
+               {/* <div className='sf-auth-button'> */}
                     {/* <input 
                         type='submit'
                         value='Login'
                     /> */}
                     <SubmitButton clickFunction={handleSubmit} textContext='Login' />
-               </div>
+               {/* </div> */}
             </form>
         </>
     )
