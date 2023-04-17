@@ -31,36 +31,34 @@ const SignupForm = () => {
     return(
         <>
             <form onSubmit={handleSubmit} id="sf-signupForm" className="sf-authForm">
+                <h1>Welcome to Benchwarmers</h1>
                 <h2>Sign Up</h2>
                 {/* <div>{errors?.email}</div> */}
                 <div className='sf-email-container'>
-                    <label>Email
+                    <label>Email</label><br></br>
                         <input 
                             type='text'
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                         />
-                    </label>
                 </div>
                 {/* <div>{errors?.username}</div> */}
                 <div className='sf-username-container'>
-                    <label>Username
+                    <label>Username</label><br></br>
                         <input
                             type='text'
                             value={username}
                             onChange={(e) => setUsername(e.target.value)}
                         />
-                    </label>
                 </div>
                 {/* <div>{errors?.password}</div> */}
                 <div className='sf-password-container'>
-                    <label>Password
+                    <label>Password</label><br></br>
                         <input 
                             type='password'
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                         />
-                    </label>
                 </div>
                 <div className='sf-auth-button'>
                     <input 

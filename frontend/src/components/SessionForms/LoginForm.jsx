@@ -25,26 +25,25 @@ const LoginForm = () => {
     return(
         <>
             <form onSubmit={handleSubmit} id="sf-loginForm" className='sf-authForm'>
+                <h1>Welcome to Benchwarmers</h1>
                 <h2 className='modal-title'>Login</h2>
                 {/* <div>{errors?.email}</div> */}
                 <div id='sf-lg-email-container' className='sf-email-container'>
-                    <label>Email
+                    <label>Email</label><br></br>
                         <input 
                             type='text'
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                         />
-                    </label>
                 </div>
                 {/* <div>{errors?.password}</div> */}
                <div id='sf-lg-password-container' className='sf-password-container'>
-                    <label>Password
+                    <label>Password</label><br></br>
                         <input 
                             type='password'
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                         />
-                    </label>
                </div>
                <div className='sf-auth-button'>
                     <input 
