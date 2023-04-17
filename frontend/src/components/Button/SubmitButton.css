@@ -1,0 +1,25 @@
+#button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-position: top 0, left 300;
+  background-image: radial-gradient( circle at center, #ea3b13, #e99937, #e16845);
+  border: none;
+  border-radius: 6px;
+  text-align: center;
+  color: white;
+}
+
+#button_hover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-position: top 0, left 300;
+  background-image: radial-gradient( circle at center, #ea3b13, #e99937, #e16845);
+  background-size: 200% 200%;
+  border: none;
+  border-radius: 6px;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+}
