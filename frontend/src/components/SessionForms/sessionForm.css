@@ -1,0 +1,22 @@
+.sf-authForm{
+    border: 1px solid green;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    margin: auto;
+    width: 400px;
+    height: 650px;
+    /* flex-wrap: wrap; */
+    flex-direction: column;
+}
+
+.sf-email-container input, .sf-password-container input, .sf-username-container input{
+   height: 45px;
+   width: 100%
+}
+
+
+h2 {
+    font-size: 25px;
+    padding-bottom: 50px;
+}
