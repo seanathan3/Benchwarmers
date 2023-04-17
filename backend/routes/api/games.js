@@ -45,7 +45,7 @@ router.get('/user/:userId', async(req,res,next) => {
 router.get('/:id', async (req, res, next) => {
   try {
     const game = await Game.findById(req.params.id)
-                            .populate("author", "_id username");
+                            .populate("host", "_id username");
     return res.json(game);
   }
   catch(err) {
@@ -72,7 +72,6 @@ router.post('/', requireUser, validateGameInput, async(req, res, next) => {
       time: req.body.time,
       date: req.body.date
     });
-    // Might need to get hostId here
 
     let game = await newGame.save();
     game = await game.populate("host", "_id username");
@@ -82,5 +81,46 @@ router.post('/', requireUser, validateGameInput, async(req, res, next) => {
     next(err)
   }
 })
+
+router.delete('/:id', requireUser, async (req, res, next) => {
+  try {
+    await Game.findOneAndDelete({ _id: req.params.id })
+    return res.json()
+  }
+  catch(err) {
+    const error = new Error('Game not found');
+    error.statusCode = 404;
+    error.errors = { message: "No game found with that id" };
+    return next(error);
+  }
+});
+
+router.patch('/:id', requireUser, validateGameInput, async (req, res, next) => {
+  try {
+    let game = await Game.findById(req.params.id)
+      game.coordinates = req.body.coordinates
+      game.sport = req.body.sport
+      game.skillLevel = req.body.skillLevel
+      game.description = req.body.description
+      game.host = req.user._id
+      game.maxCapacity = req.body.maxCapacity
+      game.minCapacity = req.body.minCapacity
+      game.photoUrl = req.body.photoUrl
+      game.time = req.body.time
+      game.date = req.body.date
+      
+      game = await game.save()
+      game = await game.populate("host", "_id username");
+      return res.json(game)
+  }
+  catch(err) {
+    const error = new Error('Game not found');
+    error.statusCode = 404;
+    error.errors = { message: "No game found with that id" };
+    return next(error);
+  }
+});
+
+
 
 module.exports = router;
