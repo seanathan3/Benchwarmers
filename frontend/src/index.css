@@ -1,3 +1,17 @@
 body {
   font-family: 'Jost', sans-serif;
 }
+
+:root {
+  --orange: #ea3b13;
+  --peach: #e16845;
+  --yellow: #e99937;
+  --white: #ffffff;
+  --black: #000000;
+  --gradient: linear-gradient(to left,
+  #ea3b13 33%,
+  #e16845 33%,
+ #e99937 33%,
+ );
+
+}
