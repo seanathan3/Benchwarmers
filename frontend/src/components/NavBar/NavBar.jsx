@@ -40,9 +40,6 @@ const NavBar = () => {
             </div>
 
             <div id="nb-rightLinks">
-                {/* <div><LoginFormModal /></div> */}
-                {/* <div><SignupFormModal /></div> */}
-                {/* <div onClick={handleLogout}>Log Out</div> */}
                 {loggedOutbuttons}
                 {loggedInButtons}
             </div>
