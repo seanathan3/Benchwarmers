@@ -19,8 +19,6 @@ function App() {
   return (
     <>
     <NavBar />
-    <LoginForm />
-    <SignupForm />
     <Route path="/">
       <Splash />
     </Route>  
