@@ -7,6 +7,7 @@ import UserProfile from "./components/UserProfile/UserProfile";
 import { getCurrentUser } from "./store/session";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
+import GamesIndex from "./components/GamesIndex/GamesIndex";
 
 function App() {
   const dispatch = useDispatch();
@@ -19,12 +20,22 @@ function App() {
   return (
     <>
     <NavBar />
-    <Route path="/">
-      <Splash />
-    </Route>  
-    <Route path="/user-profile">
-      <UserProfile />
-    </Route>
+    <Switch>
+      
+      <Route path="/user-profile">
+        <UserProfile />
+      </Route>
+
+      <Route path="/games">
+        <GamesIndex />
+      </Route>
+
+      <Route path="/">
+        <Splash />
+      </Route>  
+    
+    
+    </Switch>
     </>
   );
 }
