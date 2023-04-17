@@ -1,6 +1,9 @@
 #nb-master {
     display: flex;justify-content: space-between;
     height: 80px;
+    border: 1px solid purple;
+    display: flex;
+    align-items: center;
 }
 
 #nb-logoPic {
@@ -9,8 +12,10 @@
 
 #nb-rightLinks {
     display: flex;
+    border: 1px solid blue;
 }
 
 #nb-rightLinks div {
     margin: 0 20px;
+    border: 1px solid green;
 }

@@ -30,36 +30,44 @@ const SignupForm = () => {
 
     return(
         <>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} id="sf-signupForm" className="sf-authForm">
                 <h2>Sign Up</h2>
                 {/* <div>{errors?.email}</div> */}
-                <label>Email
-                    <input 
-                        type='text'
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                    />
-                </label>
+                <div className='sf-email-container'>
+                    <label>Email
+                        <input 
+                            type='text'
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                        />
+                    </label>
+                </div>
                 {/* <div>{errors?.username}</div> */}
-                <label>Username
-                    <input
-                        type='text'
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
-                    />
-                </label>
+                <div className='sf-username-container'>
+                    <label>Username
+                        <input
+                            type='text'
+                            value={username}
+                            onChange={(e) => setUsername(e.target.value)}
+                        />
+                    </label>
+                </div>
                 {/* <div>{errors?.password}</div> */}
-                <label>Password
+                <div className='sf-password-container'>
+                    <label>Password
+                        <input 
+                            type='password'
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                        />
+                    </label>
+                </div>
+                <div className='sf-auth-button'>
                     <input 
-                        input='password'
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
+                        type="submit"
+                        value='Sign Up'
                     />
-                </label>
-                <input 
-                    type="submit"
-                    value='Sign Up'
-                />
+                </div>
             </form>
         </>
     )
