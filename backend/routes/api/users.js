@@ -15,16 +15,17 @@ router.get('/current', restoreUser, (req, res) => {
     res.cookie("CSRF-TOKEN", csrfToken);
   }
   if (!req.user) return res.json(null);
-  res.json({
+  console.log(req.user);
+  return res.json({
     _id: req.user._id,
-    username: req.body.username,
-    email: req.body.email,
-    bio: req.body.bio,
-    borough: req.body.borough,
-    hostedGames: req.body.hostedGames,
-    attendingGames: req.body.attendingGames,
-    favoriteSport: req.body.favoriteSport,
-    profilePicUrl: req.body.profilePicUrl
+    username: req.user.username,
+    email: req.user.email,
+    bio: req.user.bio,
+    borough: req.user.borough,
+    hostedGames: req.user.hostedGames,
+    attendingGames: req.user.attendingGames,
+    favoriteSport: req.user.favoriteSport,
+    profilePicUrl: req.user.profilePicUrl
   });
 });
 

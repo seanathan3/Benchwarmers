@@ -30,7 +30,7 @@ const SignupForm = () => {
 
     return(
         <>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} id="sf-signupForm" className="sf-authForm">
                 <h2>Sign Up</h2>
                 {/* <div>{errors?.email}</div> */}
                 <label>Email

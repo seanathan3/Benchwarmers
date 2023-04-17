@@ -7,6 +7,7 @@ import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import configureStore from "./store/store";
 import { ModalProvider } from "./context/Modal";
+import jwtFetch from "./store/jwt";
 
 let store = configureStore({});
 
@@ -21,6 +22,9 @@ function Root() {
     </ModalProvider>
   );
 }
+
+window.store = store;
+window.jwtFetch = jwtFetch;
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
