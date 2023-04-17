@@ -1,8 +1,9 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const gameSchema = new Schema ({
+const gameSchema = new Schema({
   coordinates: {
+    type: Number,
     lat: Number,
     lng: Number,
     required: true
@@ -37,11 +38,13 @@ const gameSchema = new Schema ({
     type: String
   },
   time: {
+    type: Number,
     hours: Number,
     minutes: Number,
     required: true
   },
   date: {
+    type: Number,
     day: Number,
     month: Number,
     year: Number,
