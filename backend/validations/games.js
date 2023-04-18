@@ -2,6 +2,9 @@ const { check } = require("express-validator");
 const handleValidationErrors = require('./handleValidationErrors');
 
 const validateGameInput = [
+  check('title')
+    .exists({ checkFalsy: true })
+    .withMessage('Please enter a title'),
   check('coordinates')
     .exists({ checkFalsy: true })
     .withMessage('Please enter a location'),

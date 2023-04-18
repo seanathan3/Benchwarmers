@@ -63,7 +63,11 @@ const gameSchema = new Schema({
     year: {
       type: Number,
       required: true
-    },
+    }
+  },
+  title: {
+    type: String,
+    required: true
   }
 
 }, {

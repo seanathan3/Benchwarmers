@@ -3,6 +3,7 @@ const router = express.Router();
 const bcrypt = require('bcryptjs');
 const mongoose = require('mongoose');
 const User = mongoose.model('User');
+const Game = mongoose.model('Game');
 const passport = require('passport');
 const { loginUser, restoreUser, requireUser } = require('../../config/passport');
 const { isProduction } = require('../../config/keys');
@@ -109,8 +110,8 @@ router.patch('/:userId', requireUser, validateRegisterInput, async (req, res, ne
     user.email = req.body.email,
     user.bio = req.body.bio,
     user.borough = req.body.borough,
-    user.hostedGames = req.body.hostedGames,
-    user.attendingGames = req.body.attendingGames,
+    // user.hostedGames = req.body.hostedGames,
+    // user.attendingGames = req.body.attendingGames,
     user.favoriteSport = req.body.favoriteSport,
     user.profilePicUrl = req.body.profilePicUrl,
     user.name = req.body.name
@@ -125,6 +126,18 @@ router.patch('/:userId', requireUser, validateRegisterInput, async (req, res, ne
     error.errors = { message: "No user found with that id" };
     return next(error);
   }
+})
+
+router.delete('/:userId', async(req,res,next) => {
+  let hostedGames = await Game.find({ host: req.params.userId });
+  const currentDate = new Date();
+  const currentDay = currentDate.getDate();
+  const currentMonth = currentDate.getMonth() + 1;
+  const currentYear = currentDate.getFullYear();
+  const futureGames = hostedGames.filter(game => game.date.year >= currentYear && game.date.month >= currentMonth && game.date.day >= currentDay )
+  console.log(futureGames)
+  
+  return res.json();
 })
 
 module.exports = router;
