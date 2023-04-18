@@ -1,11 +1,11 @@
 .sf-authForm{
-    border: 1px solid green;
+    /* border: 1px solid green; */
     display: flex;
     align-items: center;
     /* justify-content: center; */
     margin: auto;
     width: 400px;
-    height: 650px;
+
     /* flex-wrap: wrap; */
     flex-direction: column;
     border-radius: 10px;
@@ -18,20 +18,31 @@ h1 {
 h2 {
     font-size: 25px;
     padding-top: 15px;
-    padding-bottom: 50px;
+    padding-bottom: 15px;
 }
 
-.sf-email-container, .sf-password-container, .sf-username-container{
+/* .sf-email-container, .sf-favoriteSport-container, .sf-borough-containter, .sf-bio-container, .sf-name-container, .sf-password-container, .sf-username-container{
    height: 60px;
-   width: 85%;
-   margin-bottom: 25px;
+   width: 100%;
+   margin-bottom: 0px;
+} */
+
+.sf-email-container , .sf-bio-container , .sf-name-container , .sf-password-container , .sf-username-container {
+    height: 45px;
+    width: 340px;
+    border: 1px solid gray;
+    padding-left: 5px;
+    font-family: Jost, sans-serif;
 }
 
-.sf-email-container input, .sf-password-container input, .sf-username-container input{
-    height: 45px;
-    width: 100%;
+.sf-favoriteSport-container , .sf-borough-containter  {
+    display: flex;
+    justify-content: center;
+    height: 49px;
+    width: 349px;
     border: 1px solid gray;
-    border-radius: 10px;
+    padding-left: 5px;
+    font-family: Jost, sans-serif;
 }
 
  .sf-auth-button{
@@ -58,3 +69,47 @@ h2 {
     align-items: center;
 } 
 
+#closeButton {
+    display: flex;
+    justify-content: right;
+    padding-right: 5px;
+}
+
+.sf-name-container {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.sf-password-container {
+    /* border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px; */
+}
+
+.sf-favoriteSport-container {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    color: #7e7e7e
+}
+
+.sf-borough-containter {
+    /* border-top-left-radius: 10px;
+    border-top-right-radius: 10px; */
+    color: #7e7e7e
+}
+
+.sf-lg-email-container, .sf-lg-password-container {
+    height: 45px;
+    width: 340px;
+    border: 1px solid gray;
+    padding-left: 5px;
+    font-family: Jost, sans-serif;
+}
+
+.sf-lg-email-container {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+.sf-lg-password-container {
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}

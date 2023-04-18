@@ -103,9 +103,10 @@ router.post('/login', validateLoginInput, async (req, res, next) => {
   })(req, res, next);
 });
 
-router.patch('/:userId', requireUser, validateRegisterInput, async (req, res, next) => {
+router.patch('/:userId', requireUser, async (req, res, next) => {
   try {
     let user = await User.findById(req.params.userId)
+    console.log(user)
     user.username = req.body.username,
     user.email = req.body.email,
     user.bio = req.body.bio,
@@ -116,7 +117,6 @@ router.patch('/:userId', requireUser, validateRegisterInput, async (req, res, ne
     user.profilePicUrl = req.body.profilePicUrl,
     user.name = req.body.name
     user.password = req.body.password
-      
       user = await user.save()
       return res.json(user)
   }
