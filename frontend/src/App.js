@@ -21,7 +21,6 @@ function App() {
   return (
     <>
     <NavBar />
-    <Map />
     <Switch>
       
       <Route path="/user-profile">

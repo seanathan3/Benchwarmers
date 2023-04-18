@@ -14,9 +14,12 @@ const IndexList = () => {
 
     return(
         <>
-            {games.map(game => {
-                return <IndexItem game={game} />
-            })}
+            <div id="il-master">
+                <div>Games</div>
+                {games.map(game => {
+                    return <IndexItem game={game} />
+                })}
+            </div>
         </>
     )
 };

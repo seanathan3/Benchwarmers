@@ -25,6 +25,7 @@ const NavBar = () => {
     if(!userId){
         loggedInButtons = (
             <>
+                <div>Create Game</div>
                 <div><LoginFormModal /></div>
                 <div><SignupFormModal /></div>
             </>
