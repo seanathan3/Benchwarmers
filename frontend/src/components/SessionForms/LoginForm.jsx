@@ -47,8 +47,8 @@ const LoginForm = () => {
                             onChange={(e) => setPassword(e.target.value)}
                         />
                </div>
-               {/* <div className='sf-auth-button'> */}
-                    {/* <input 
+               {/* <div className='sf-auth-button'>
+                    <input 
                         type='submit'
                         value='Login'
                     /> */}
