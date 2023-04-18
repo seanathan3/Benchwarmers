@@ -21,21 +21,21 @@ const NavBar = () => {
         dispatch(logout());
     }
 
-    let loggedInButtons
+    let loggedOutButtons
     if(!userId){
-        loggedInButtons = (
+        loggedOutButtons = (
             <>
-                <div>Create Game</div>
-                <div><LoginFormModal /></div>
-                <div><SignupFormModal /></div>
+                <LoginFormModal />
+                <SignupFormModal />
             </>
         )
     }
 
-    let loggedOutButtons;
+    let loggedInButtons;
     if(userId){
-        loggedOutButtons = (
+        loggedInButtons = (
             <>
+                <div>Create Game</div>
                 <div onClick={handleLogout}>Log Out</div>
             </>
         )

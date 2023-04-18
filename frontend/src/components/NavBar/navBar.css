@@ -1,7 +1,6 @@
 #nb-master {
     display: flex;justify-content: space-between;
     height: 80px;
-    border: 1px solid purple;
     display: flex;
     align-items: center;
 }
@@ -12,16 +11,38 @@
 
 #nb-rightLinks {
     display: flex;
-    border: 1px solid blue;
+    height: 100%;
+    color: var(--black);
+    font-size: 18px;
+    font-weight: 500;
 }
 
 #nb-rightLinks div {
-    margin: 0 20px;
-    border: 1px solid green;
+    width: 125px;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #nb-rightLinks a {
     text-decoration: none;
     color: inherit;
+    width: 125px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#nb-rightLinks div:hover {
+    background-color: #ebebeb;
+    color: var(--white);
+    background-color: var(--peach);
+}
+
+#nb-rightLinks a:hover {
+    background-color: #ebebeb;
+    color: var(--white);
+    background-color: var(--peach);
 }

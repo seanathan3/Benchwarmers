@@ -23,6 +23,10 @@
     line-height: 24px;
 }
 
+#ii-sport {
+    color: var(--orange);
+}
+
 #gi-master {
     width: 100%;
     display: flex;
@@ -40,13 +44,14 @@
 #in-master {
     height: 50px;
     width: 100%;
-    border: 1px solid blue;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
     box-sizing: border-box;
 }
 
 #il-master {
     width: 500px;
-    border-right: 1px solid blue;
+    /* border-right: 2px solid black; */
     padding: 20px;
     overflow: scroll;
     height: calc(100vh - 134px);
