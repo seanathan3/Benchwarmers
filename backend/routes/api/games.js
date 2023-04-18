@@ -60,6 +60,7 @@ router.get('/:id', async (req, res, next) => {
 // Route to create a game
 router.post('/', requireUser, validateGameInput, async(req, res, next) => {
   try {
+    const user = await User.findOne({ _id: req.user._id })
     const newGame = new Game({
       coordinates: req.body.coordinates,
       sport: req.body.sport,
@@ -70,10 +71,15 @@ router.post('/', requireUser, validateGameInput, async(req, res, next) => {
       minCapacity: req.body.minCapacity,
       photoUrl: req.body.photoUrl,
       time: req.body.time,
-      date: req.body.date
+      date: req.body.date,
+      title: req.body.title
     });
 
     let game = await newGame.save();
+    user.hostedGames.push(game._id)
+    user.attendingGames.push(game._id)
+    await user.populate("attendingGames", "date time title")
+    user.save()
     game = await game.populate("host", "_id username");
     return res.json(game)
   }
@@ -84,6 +90,12 @@ router.post('/', requireUser, validateGameInput, async(req, res, next) => {
 
 router.delete('/:id', requireUser, async (req, res, next) => {
   try {
+    const user = await User.findById(req.user._id)
+    hostedGameIdx = user.hostedGames.indexOf(req.params.id)
+    user.hostedGames.splice(hostedGameIdx,1)
+    attendingGameIdx = user.attendingGames.indexOf(req.params.id)
+    user.attendingGames.splice(attendingGameIdx, 1)
+    user.save()
     await Game.findOneAndDelete({ _id: req.params.id })
     return res.json()
   }
@@ -108,6 +120,7 @@ router.patch('/:id', requireUser, validateGameInput, async (req, res, next) => {
       game.photoUrl = req.body.photoUrl
       game.time = req.body.time
       game.date = req.body.date
+      game.title = req.body.title
       
       game = await game.save()
       game = await game.populate("host", "_id username");
