@@ -80,7 +80,7 @@ const IndexItem = ({game}) => {
         <div id="ii-master">
             <img id="ii-image" src={image} alt="sports ball" />
             <div id="ii-desc">
-                <p>{game.sport[0].toUpperCase() + game.sport.slice(1)}</p>
+                <p id="ii-sport">{game.sport[0].toUpperCase() + game.sport.slice(1)}</p>
                 <p>Host: {game.host?.username}</p>
                 <p>{game.date.month}/{game.date.day}/{game.date.year} @ {game.time.hours}:{game.time.minutes}</p>
             </div>
