@@ -45,7 +45,7 @@ const Map = () => {
                     label: `${game.skillLevel}`
                 }
             )
-        debugger
+        // debugger
             markers.current[game._id].addListener('click', () => {
                 alert(`This is ${game.sport}`)
             })
