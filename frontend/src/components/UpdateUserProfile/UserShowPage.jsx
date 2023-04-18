@@ -1,30 +1,39 @@
-import { useSelector } from "react-redux";
-import { getUser } from "../../store/user";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchUser, getUser } from "../../store/user";
 import { Modal } from "../../context/Modal";
-
+import { useState, useEffect } from "react";
+import UpdateUserProfile from "./UpdateUserProfile";
+import { useParams } from "react-router";
+import './UserProfile.css'
 
 const UserShowPage = () => {
-  const user = useSelector(getUser);
+  const dispatch = useDispatch();
   const sessionUser = useSelector((state) => state.session.user);
-  const isCurrentUser = user.id === sessionUser?.id;
-  const [showUpdateUserProfileModal, setUpdateUserProfileModal] = useState(false)
+  const { userId } = useParams();
+  const user = useSelector(getUser(userId));
+  const isCurrentUser = userId === sessionUser?.id;
+  const [showUpdateUserProfileModal, setUpdateUserProfileModal] =
+    useState(false);
+
+  useEffect(() => {
+    dispatch(fetchUser(userId))
+  }, [])
 
   const openUpdateUserProfileModal = () => {
-    setUpdateUserProfileModal(true)
+    setUpdateUserProfileModal(true);
   };
 
   const handleClick = () => {
-    openUpdateUserProfileModal()
+    openUpdateUserProfileModal();
   };
 
   const handleClose = () => {
-    setUpdateUserProfileModal(false)
-  }
-
+    setUpdateUserProfileModal(false);
+  };
 
   return (
     <>
-    <div>Account Information:</div>
+      <div>Account Information:</div>
       <div id="up-info">
         {user?.name && <div>Name: {user.name}</div>}
         {user?.email && <div>Email: {user.email}</div>}

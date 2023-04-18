@@ -3,7 +3,7 @@ import Splash from "./components/Splash/Splash";
 import NavBar from "./components/NavBar/NavBar";
 import LoginForm from "./components/SessionForms/LoginForm";
 import SignupForm from "./components/SessionForms/SignupForm";
-import UserProfile from "./components/UserProfile/UserProfile";
+import UserShowPage from "./components/UpdateUserProfile/UserShowPage";
 import { getCurrentUser } from "./store/session";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
@@ -23,8 +23,8 @@ function App() {
     <NavBar />
     <Switch>
       
-      <Route path="/user-profile">
-        <UserProfile />
+      <Route path="/user-profile/:userId">
+        <UserShowPage />
       </Route>
 
       <Route path="/games">

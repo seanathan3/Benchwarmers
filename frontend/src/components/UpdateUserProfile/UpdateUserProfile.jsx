@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import * as userActions from "../../store/user";
 import closeButton from "./close-24.png";
 
-const UserProfile = ({ onClose, userData }) => {
+const UpdateUserProfile = ({ onClose, userData }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState(userData?.email);
   const [username, setUsername] = useState(userData?.username);
@@ -180,4 +180,4 @@ const UserProfile = ({ onClose, userData }) => {
   );
 };
 
-export default UserProfile;
+export default UpdateUserProfile;
