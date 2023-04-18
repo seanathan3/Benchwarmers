@@ -14,12 +14,6 @@ const Map = () => {
 
 
     useEffect(() => {
-        //         games.forEach((game) => {
-        // debugger
-        //             markers.current[game._id].addListener('click', () => {
-        //                 alert(`This is ${game._id}`)
-        //             })
-        //         })
         
                 setMap(
                     new window.google.maps.Map(
@@ -30,7 +24,6 @@ const Map = () => {
                         }
                     )
                 )
-                // updater += 1
             }, [])
 
 
@@ -45,7 +38,6 @@ const Map = () => {
                     label: `${game.skillLevel}`
                 }
             )
-        // debugger
             markers.current[game._id].addListener('click', () => {
                 alert(`This is ${game.sport}`)
             })
