@@ -1,12 +1,20 @@
 import IndexList from "./IndexList";
+import IndexNav from "./indexNav";
+import Map from "../Map/Map";
+import './gamesIndex.css';
 
 
 const GamesIndex = () => {
 
     return(
         <>
-            <h2>Welcome to Games Index!</h2>
-            <IndexList />
+            <div id="gi-master">
+                <IndexNav />
+                <div id="gi-content">
+                    <IndexList />
+                    <Map />
+                </div>
+            </div>
         </>
     )
 };

@@ -1,0 +1,39 @@
+#ii-master {
+    padding: 5px;
+    border: 1px solid gray;
+    border-radius: 3px;
+    margin: 10px 0;
+    box-shadow:0 2px 5px 0 rgba(213,217,217,.5);
+}
+
+#gi-master {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* Set the height of #gi-master to 100% minus the height of the navbar */
+    height: calc(100% - 50px);
+}
+
+#gi-content {
+    flex: 1;
+    display: flex;
+    flex-direction: row; /* Added */
+}
+
+#in-master {
+    height: 50px;
+    width: 100%;
+    border: 1px solid blue;
+    box-sizing: border-box;
+}
+
+#il-master {
+    width: 500px;
+    border-right: 1px solid blue;
+    padding: 20px;
+    overflow: scroll;
+    height: calc(100vh - 134px);
+    box-sizing: border-box;
+    /* Set the height of #il-master to 100% of its parent container */
+
+}

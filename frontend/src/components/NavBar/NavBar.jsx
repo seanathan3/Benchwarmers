@@ -25,6 +25,7 @@ const NavBar = () => {
     if(!userId){
         loggedInButtons = (
             <>
+                <div>Create Game</div>
                 <div><LoginFormModal /></div>
                 <div><SignupFormModal /></div>
             </>
@@ -49,6 +50,9 @@ const NavBar = () => {
             </div>
 
             <div id="nb-rightLinks">
+                <Link to="/games">
+                    <div>Join Game</div>
+                </Link>
                 {loggedOutButtons}
                 {loggedInButtons}
             </div>

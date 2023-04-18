@@ -8,6 +8,7 @@ import { BrowserRouter } from "react-router-dom";
 import configureStore from "./store/store";
 import { ModalProvider } from "./context/Modal";
 import jwtFetch from "./store/jwt";
+import { Wrapper } from '@googlemaps/react-wrapper'
 
 let store = configureStore({});
 
@@ -16,7 +17,9 @@ function Root() {
     <ModalProvider>
       <Provider store={store}>
         <BrowserRouter>
+        <Wrapper apiKey={process.env.REACT_APP_MAPS_API_KEY}>
           <App />
+        </Wrapper>
         </BrowserRouter>
       </Provider>
     </ModalProvider>
