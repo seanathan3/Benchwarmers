@@ -4,7 +4,7 @@ const bcrypt = require('bcryptjs');
 const mongoose = require('mongoose');
 const User = mongoose.model('User');
 const passport = require('passport');
-const { loginUser, restoreUser } = require('../../config/passport');
+const { loginUser, restoreUser, requireUser } = require('../../config/passport');
 const { isProduction } = require('../../config/keys');
 const validateRegisterInput = require('../../validations/register');
 const validateLoginInput = require('../../validations/login');
@@ -69,7 +69,8 @@ router.post('/register', validateRegisterInput, async (req, res, next) => {
     hostedGames: req.body.hostedGames,
     attendingGames: req.body.attendingGames,
     favoriteSport: req.body.favoriteSport,
-    profilePicUrl: req.body.profilePicUrl
+    profilePicUrl: req.body.profilePicUrl,
+    name: req.body.name
   });
 
   bcrypt.genSalt(10, (err, salt) => {
@@ -100,5 +101,30 @@ router.post('/login', validateLoginInput, async (req, res, next) => {
     return res.json(await loginUser(user));
   })(req, res, next);
 });
+
+router.patch('/:userId', requireUser, validateRegisterInput, async (req, res, next) => {
+  try {
+    let user = await User.findById(req.params.userId)
+    user.username = req.body.username,
+    user.email = req.body.email,
+    user.bio = req.body.bio,
+    user.borough = req.body.borough,
+    user.hostedGames = req.body.hostedGames,
+    user.attendingGames = req.body.attendingGames,
+    user.favoriteSport = req.body.favoriteSport,
+    user.profilePicUrl = req.body.profilePicUrl,
+    user.name = req.body.name
+    user.password = req.body.password
+      
+      user = await user.save()
+      return res.json(user)
+  }
+  catch(err) {
+    const error = new Error('User not found');
+    error.statusCode = 404;
+    error.errors = { message: "No user found with that id" };
+    return next(error);
+  }
+})
 
 module.exports = router;
