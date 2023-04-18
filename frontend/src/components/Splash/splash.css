@@ -1,0 +1,10 @@
+#s-heroSection {
+    background-color: var(--peach);
+    color: black;
+    height: 300px;
+    font-size: 72px;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
