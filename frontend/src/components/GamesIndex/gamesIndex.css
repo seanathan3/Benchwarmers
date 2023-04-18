@@ -1,9 +1,26 @@
 #ii-master {
-    padding: 5px;
+    padding: 10px;
     border: 1px solid gray;
-    border-radius: 3px;
+    border-radius: 25px;
     margin: 10px 0;
     box-shadow:0 2px 5px 0 rgba(213,217,217,.5);
+    display: flex;
+    align-items: center;
+}
+
+#ii-master:hover {
+    background-color: #ebebeb;
+    cursor: pointer;
+}
+
+#ii-image {
+    max-width: 48px;
+    max-height: 48px;
+}
+
+#ii-desc {
+    margin-left: 10px;
+    line-height: 24px;
 }
 
 #gi-master {
@@ -35,5 +52,5 @@
     height: calc(100vh - 134px);
     box-sizing: border-box;
     /* Set the height of #il-master to 100% of its parent container */
-
 }
+
