@@ -49,6 +49,9 @@ const NavBar = () => {
             </div>
 
             <div id="nb-rightLinks">
+                <Link to="/games">
+                    <div>Join Game</div>
+                </Link>
                 {loggedOutButtons}
                 {loggedInButtons}
             </div>
