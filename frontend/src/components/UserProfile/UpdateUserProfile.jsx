@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import * as userActions from "../../store/user";
-import closeButton from "../../assets/close.png"
+import SubmitButton from "../Button/SubmitButton";
 import './UpdateUserProfileForm.css'
 
 const UpdateUserProfile = ({ onClose, userData }) => {
@@ -10,10 +10,7 @@ const UpdateUserProfile = ({ onClose, userData }) => {
   const [username, setUsername] = useState(userData?.username);
   const [bio, setBio] = useState(userData?.bio);
   const [borough, setBorough] = useState(userData?.borough);
-  const [profilePicUrl, setProfilePic] = useState();
   const [favoriteSport, setFavoriteSport] = useState(userData?.favoriteSport);
-  const [otherSport, setOtherSport] = useState(userData?.otherSport);
-  const [showOtherInput, setShowOtherInput] = useState(false);
   const sessionUser = useSelector((state) => state.session.user);
   const dispatch = useDispatch();
   const [showUpdateUserProfileModal, setUpdateUserProfileModal] =
@@ -26,19 +23,14 @@ const UpdateUserProfile = ({ onClose, userData }) => {
   const handleFavoriteSportChange = (e) => {
     const selectedValue = e.target.value;
     setFavoriteSport(selectedValue);
-    if (selectedValue === "other") {
-      setShowOtherInput(true);
-    } else {
-      setShowOtherInput(false);
-    }
   };
 
-  const handleOtherSportChange = (e) => {
-    setOtherSport(e.target.value);
-  };
+  // const handleOtherSportChange = (e) => {
+  //   setOtherSport(e.target.value);
+  // };
 
   const handleUpdateUserProfileModalClose = () => {
-    setUpdateUserProfileModal(true);
+    setUpdateUserProfileModal(false);
   };
 
   const handleSubmit = (e) => {
@@ -52,7 +44,7 @@ const UpdateUserProfile = ({ onClose, userData }) => {
         bio,
         borough,
         favoriteSport,
-        profilePicUrl,
+        // profilePicUrl,
       };
       dispatch(userActions.updateUser(userInfo)).then(() => {
         handleUpdateUserProfileModalClose();
@@ -64,20 +56,12 @@ const UpdateUserProfile = ({ onClose, userData }) => {
   return (
     <>
       <div id="up-information">
-        <div className="closeButton">
-          <img
-            src={closeButton}
-            alt="Close-Button"
-            className="close-button"
-            onClick={onClose}
-          />
-        </div>
         <br />
         <br />
         <form className="updateUserProfile" onSubmit={handleSubmit}>
           <div id="up-name">
-            Name:
-            <br></br>
+            <label>Name: </label>
+            <br />
             <input
               type="text"
               name="name"
@@ -115,6 +99,7 @@ const UpdateUserProfile = ({ onClose, userData }) => {
             Bio:
             <br></br>
             <textarea
+            id='bio'
               name="bio"
               value={bio}
               onChange={(e) => setBio(e.target.value)}
@@ -123,12 +108,13 @@ const UpdateUserProfile = ({ onClose, userData }) => {
           <br />
           <div id="up-borough">
             <label htmlFor="dropdown">Select your borough: </label>
+            <br />
             <select
               id="dropdown"
               value={borough}
               onChange={handleBoroughChange}
             >
-              <option value="" disabled selected>
+              <option value="" disabled defaultValue>
                 Select
               </option>
               <option value="Bronx">Bronx</option>
@@ -142,12 +128,13 @@ const UpdateUserProfile = ({ onClose, userData }) => {
 
           <div id="up-fave-sport">
             <label htmlFor="sport-dropdown">Favorite Sport: </label>
+            <br />
             <select
               id="sport-dropdown"
               value={favoriteSport}
               onChange={handleFavoriteSportChange}
             >
-              <option value="" disabled selected>
+              <option value="" disabled defaultValue>
                 Select
               </option>
               <option value="Badminton">Badminton</option>
@@ -168,7 +155,7 @@ const UpdateUserProfile = ({ onClose, userData }) => {
               <option value="Volleyball">Volleyball</option>
               <option value="Other">Other</option>
             </select>
-            {favoriteSport === "other" && (
+            {/* {favoriteSport === "other" && (
               <div>
                 <label htmlFor="other-sport">Other: </label>
                 <input
@@ -178,13 +165,11 @@ const UpdateUserProfile = ({ onClose, userData }) => {
                   onChange={handleOtherSportChange}
                 />
               </div>
-            )}
+            )} */}
           </div>
           <br />
-          <div>Profile Picture Upload</div>
           <br />
-          <br />
-          <button className="updateButton" onClick={handleUpdateUserProfileModalClose}>Update Profile</button>
+          <SubmitButton className="updateButton" clickFunction={handleSubmit} textContext='Update Profile' />
         </form>
       </div>
     </>

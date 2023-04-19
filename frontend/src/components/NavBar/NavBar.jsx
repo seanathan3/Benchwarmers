@@ -11,7 +11,6 @@ import { getCurrentUser } from '../../store/session';
 const NavBar = () => {
     const dispatch = useDispatch();
     const userId = useSelector(state => state.session?.user?._id)
-    console.log(userId)
 
     useEffect(() => {
         dispatch(getCurrentUser());
