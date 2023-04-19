@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import './GamesForm.css';
-import { fetchGame } from '../../store/games';
+import { fetchGame, updateGame, removeGame, createGame } from '../../store/games';
 
 
-const GamesForm = (prop) => {
+const GamesForm = (props) => {
     const history = useHistory();
     const dispatch = useDispatch();
 
@@ -13,8 +13,8 @@ const GamesForm = (prop) => {
     let year = today.getFullYear();
 
     const [header, setHeader] = useState('Create a Game')
-    const [sport, setSport] = useState('');
-    const [skillLevel, setSkillLevel] = useState('');
+    const [sport, setSport] = useState('Badminton');
+    const [skillLevel, setSkillLevel] = useState('Beginner');
     const [description, setDescription] = useState('');
     const [attendees, setAttendees] = useState([]);
     const [maxCapacity, setMaxCapacity] = useState(0);
@@ -24,7 +24,7 @@ const GamesForm = (prop) => {
     const [minutes, setMinutes] = useState('');
     const [title, setTitle] = useState('');
 
-
+// debugger
     function getZeroDay(date){
         return (date.getDate() < 10 ? '0' : '') + date.getDate();
     }
@@ -43,33 +43,33 @@ const GamesForm = (prop) => {
 
 
     let user = useSelector((state) => (state.session?.user))
-    // let gameId = prop.game._id
+    let gameId = props.game?._id
     let userId
 
     if(user){
-        userId = user.id
+        userId = user._id
     } else {
         userId = null
     }
-    
-    // useEffect(() => {
-    //     if(gameId) {
-    //         dispatchEvent(fetchGame(gameId))
-    //         setHeader('Edit Your Game')
-    //         setSport(props.game.sport)
-    //         setDescription(props.game.description)
-    //         setMaxCapacity(props.game.maxCapacity)
-    //         setMinCapacity(props.game.minCapacity)
-    //         setSkillLevel(props.game.skillLevel)
-    //         setTitle(props.game.title)
-    //     }
-    // }, [disptch, gameId])
+// debugger
+    useEffect(() => {
+        if(gameId) {
+            dispatchEvent(fetchGame(gameId))
+            setHeader('Edit Your Game')
+            setSport(props.game.sport)
+            setDescription(props.game.description)
+            setMaxCapacity(props.game.maxCapacity)
+            setMinCapacity(props.game.minCapacity)
+            setSkillLevel(props.game.skillLevel)
+            setTitle(props.game.title)
+        }
+    }, [dispatch, gameId])
 
 
-    const routeChange = () => {
-        let path = `/user-profile/${userId}`
-        history.push(path)
-    }
+    // const routeChange = () => {
+    //     let path = `/user-profile/${userId}`
+    //     history.push(path)
+    // }
 
     function changeSport(e) {
         setSport(e.target.value)
@@ -101,6 +101,7 @@ const GamesForm = (prop) => {
 
     function handleSubmit(e){
         e.preventDefault();
+// debugger
         const newGame = {
             sport,
             description,
@@ -111,13 +112,14 @@ const GamesForm = (prop) => {
         }
 
         newGame.host = userId
-        
-        // if(gameId){
-        //     newGame._id = gameId
-        //     dispatch(updateGame(newGame))
-        // } else{
-        //     dispatch(createGame(newGame))
-        // }
+debugger
+        if(gameId){
+            newGame._id = gameId
+            dispatch(updateGame(newGame))
+        } else{
+// debugger
+            dispatch(createGame(newGame))
+        }
         // routeChange()
     }
 
@@ -128,30 +130,30 @@ const GamesForm = (prop) => {
             <h1>{header}</h1>
             <label> Sport
                 <select value={sport} onChange={changeSport} id='gf-sport'>
-                    <option value='badminton'>Badminton</option>
-                    <option value='baseball'>Baseball</option>
-                    <option value='basketball'>Basketbal</option>
-                    <option value='cycling'>Cycling</option>
-                    <option value='darts'>Darts</option>
-                    <option value='fencing'>Fencing</option>
-                    <option value='football'>Football</option>
-                    <option value='golf'>Golf</option>
-                    <option value='hand-ball'>Hand Ball</option>
-                    <option value='hockey'>Hockey</option>
-                    <option value='martial-arts'>Martial Arts</option>
-                    <option value='soccer'>Soccer</option>
-                    <option value='softball'>Softball</option>
-                    <option value='table-tennis'>Table Tennis</option>
-                    <option value='tennis'>Tennis</option>
-                    <option value='volleyball'>Volleyball</option>
-                    <option value='other'>Other</option>
+                    <option value='Badminton'>Badminton</option>
+                    <option value='Baseball'>Baseball</option>
+                    <option value='Basketball'>Basketbal</option>
+                    <option value='Cycling'>Cycling</option>
+                    <option value='Darts'>Darts</option>
+                    <option value='Fencing'>Fencing</option>
+                    <option value='Football'>Football</option>
+                    <option value='Golf'>Golf</option>
+                    <option value='Handball'>Hand Ball</option>
+                    <option value='Hockey'>Hockey</option>
+                    <option value='Martial arts'>Martial Arts</option>
+                    <option value='Soccer'>Soccer</option>
+                    <option value='Softball'>Softball</option>
+                    <option value='Table Tennis'>Table Tennis</option>
+                    <option value='Tennis'>Tennis</option>
+                    <option value='Volleyball'>Volleyball</option>
+                    <option value='Other'>Other</option>
                 </select>
             </label>
             <label> Skill Level
                 <select value={skillLevel} onChange={changeSkillLevel} id='gf-skill-level'>
-                    <option value='beginner'>Beginner</option>
-                    <option value='intermediate'>Intermediate</option>
-                    <option value='advanced'>Advanced</option>
+                    <option value='Beginner'>Beginner</option>
+                    <option value='Intermediate'>Intermediate</option>
+                    <option value='Advanced'>Advanced</option>
                 </select>
             </label>
             <label> Description
@@ -173,7 +175,7 @@ const GamesForm = (prop) => {
                 <input value={title} onChange={changeTitle} required type='input' id='gf-title' />
             </label>
             <label> Submit
-                <input type='submit' id='gf-submit' />
+                <input type='submit' onClick={handleSubmit} id='gf-submit' />
             </label>
         </form>
         </>

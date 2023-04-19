@@ -5,9 +5,9 @@ const validateGameInput = [
   check('title')
     .exists({ checkFalsy: true })
     .withMessage('Please enter a title'),
-  check('coordinates')
-    .exists({ checkFalsy: true })
-    .withMessage('Please enter a location'),
+  // check('coordinates')
+  //   .exists({ checkFalsy: true })
+  //   .withMessage('Please enter a location'),
   check('sport')
     .exists({checkFalsy: true})
     .withMessage('Please select a sport'),
@@ -20,12 +20,12 @@ const validateGameInput = [
   check('minCapacity')
     .exists({checkFalsy: true})
     .withMessage('Please enter the minimum number of participants'),
-  check('time')
-    .exists({checkFalsy: true})
-    .withMessage('Please enter the start time of your game'),
-  check('date')
-    .exists({checkFalsy: true})
-    .withMessage('Please enter the date of your game'),
+  // check('time')
+  //   .exists({checkFalsy: true})
+  //   .withMessage('Please enter the start time of your game'),
+  // check('date')
+  //   .exists({checkFalsy: true})
+  //   .withMessage('Please enter the date of your game'),
   handleValidationErrors
 ];
 
