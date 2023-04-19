@@ -47,6 +47,7 @@
     border-top: 2px solid black;
     border-bottom: 2px solid black;
     box-sizing: border-box;
+    background-color: var(--peach);
 }
 
 #il-master {
@@ -57,5 +58,6 @@
     height: calc(100vh - 134px);
     box-sizing: border-box;
     /* Set the height of #il-master to 100% of its parent container */
+    background-color: white;
 }
 

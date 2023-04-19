@@ -39,11 +39,11 @@
 #nb-rightLinks div:hover {
     background-color: #ebebeb;
     color: var(--white);
-    background-color: var(--peach);
+    background-color: var(--orange);
 }
 
 #nb-rightLinks a:hover {
     background-color: #ebebeb;
     color: var(--white);
-    background-color: var(--peach);
+    background-color: var(--orange);
 }
