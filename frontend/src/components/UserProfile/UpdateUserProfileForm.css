@@ -1,0 +1,9 @@
+#up-information {
+  margin: 40px;
+  margin-top: 20px;
+}
+
+.closeButton {
+  display: flex;
+  justify-content: right;
+}

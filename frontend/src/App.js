@@ -1,7 +1,7 @@
 import { Switch, Route } from "react-router-dom";
 import Splash from "./components/Splash/Splash";
 import NavBar from "./components/NavBar/NavBar";
-import UserShowPage from "./components/UpdateUserProfile/UserShowPage";
+import UserShowPage from "./components/UserProfile/UserShowPage";
 import { getCurrentUser } from "./store/session";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
