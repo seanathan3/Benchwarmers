@@ -4,11 +4,23 @@
   margin-top: 10px;
 }
 
+#user-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
 #up-info {
-  float: right;
-  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 47%;
+  height: 100%;
   font-size: 18px;
-  margin-left: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
   border: 1px solid var(--peach);
   border-radius: 10px;
   padding: 10px;
@@ -23,4 +35,5 @@
 .up-button {
   display: flex;
   justify-content: center;
+  width: 100%;
 }

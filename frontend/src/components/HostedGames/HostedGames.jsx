@@ -18,7 +18,7 @@ const HostedGames = () => {
 
   return (
     <div id='hosted'>
-      <h2>helloworld</h2>
+      <h2>Your Games:</h2>
     </div>
   )
 
