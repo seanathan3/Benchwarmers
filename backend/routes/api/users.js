@@ -130,11 +130,13 @@ router.patch('/:userId', requireUser, async (req, res, next) => {
 
 router.delete('/:userId', async(req,res,next) => {
   let hostedGames = await Game.find({ host: req.params.userId });
+  // console.log(hostedGames)
   const currentDate = new Date();
   const currentDay = currentDate.getDate();
   const currentMonth = currentDate.getMonth() + 1;
   const currentYear = currentDate.getFullYear();
-  const futureGames = hostedGames.filter(game => game.date.year >= currentYear && game.date.month >= currentMonth && game.date.day >= currentDay )
+  const futureGames = hostedGames.filter(game => (game.date.year >= currentYear)
+  || (game.date.year === currentYear && game.date.month >= currentMonth) || (game.date.year === currentYear && game.date.month === currentMonth && game.date.day > currentDay))
   console.log(futureGames)
   
   return res.json();
