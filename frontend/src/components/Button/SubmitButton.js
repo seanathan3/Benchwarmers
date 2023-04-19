@@ -19,12 +19,19 @@ const SubmitButton = ({ clickFunction, textContext }) => {
     });
   };
 
+  const resetStyle = () => {
+    setIsHovering(false);
+    setStyle({
+      backgroundPosition: "center",
+    });
+  };
+
   return (
     <div
       onClick={ clickFunction }
       id={isHovering ? "sb-button_hover" : "sb-button"}
       onMouseMove={(e) => submitHover(e)}
-      onMouseLeave={() => setIsHovering(false)}
+      onMouseLeave={() => resetStyle()}
       style={style}
     >
       {textContext}
