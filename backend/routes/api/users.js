@@ -128,7 +128,7 @@ router.patch('/:userId', requireUser, async (req, res, next) => {
   }
 })
 
-router.delete('/:userId', async(req,res,next) => {
+router.delete('/:userId', requireUser, async(req,res,next) => {
   let hostedGames = await Game.find({ host: req.params.userId });
   try {
     const currentDate = new Date();
