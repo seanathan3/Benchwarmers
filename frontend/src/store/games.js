@@ -19,6 +19,14 @@ export const removeGame = gameId => ({
     gameId
 });
 
+// export const getGame = (gameId) => state => {
+//     if(state.games){
+//         return state.games[gameId]
+//     }else{
+//         return null
+//     }
+// }
+
 export const fetchGames = () => async dispatch => {
     const res = await jwtFetch('/api/games');
     const data = await res.json();
