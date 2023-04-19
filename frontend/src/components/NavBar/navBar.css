@@ -3,6 +3,7 @@
     height: 80px;
     display: flex;
     align-items: center;
+    /* background-color: rgb(233, 153, 55, 0.5); */
 }
 
 #nb-logoPic {
@@ -38,11 +39,11 @@
 #nb-rightLinks div:hover {
     background-color: #ebebeb;
     color: var(--white);
-    background-color: var(--peach);
+    background-color: var(--orange);
 }
 
 #nb-rightLinks a:hover {
     background-color: #ebebeb;
     color: var(--white);
-    background-color: var(--peach);
+    background-color: var(--orange);
 }

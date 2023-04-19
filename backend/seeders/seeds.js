@@ -43,32 +43,32 @@ const users = [
     hashedPassword: bcrypt.hashSync('password', 10)
   }),
   new User({
-    username: "johndoe",
-    email: "johndoe@example.com",
-    bio: "Just a regular guy living life to the fullest.",
-    borough: "Manhattan",
-    favoriteSport: "Baseball",
-    name: "John Doe",
+    username: "seedbrina",
+    email: "seedbrina@seedbrina.com",
+    bio: "My name sabruhbruh",
+    borough: "Brooklyn",
+    favoriteSport: "Table Tennis",
+    name: "Seedbrina Acorns",
     hashedPassword: bcrypt.hashSync('password', 10)
   }),
   new User({
-    username: "janedoe",
-    email: "janedoe@example.com",
-    bio: "Coffee addict and book lover.",
-    borough: "Queens",
+    username: "kellycodez",
+    email: "kellycantcode@appacademy.io",
+    bio: "My name Kelly and I can't code",
+    borough: "Brooklyn",
     favoriteSport: "Volleyball",
-    name: "Jane Doe",
+    name: "Kelly Joe",
     hashedPassword: bcrypt.hashSync('password', 10)
   }),
-  {
-    username: "peterparker",
-    email: "peterparker@example.com",
-    bio: "Your friendly neighborhood Spider-Man!",
-    borough: "Queens",
-    favoriteSport: "Football",
-    name: "Peter Parker",
+  new User({
+    username: "mongobaraluvr",
+    email: "mongobara@aol.com",
+    bio: "EH!",
+    borough: "Bronx",
+    favoriteSport: "Fencing",
+    name: "Fahim Capybara Khan",
     hashedPassword: bcrypt.hashSync('password', 10)
-  }
+  })
 ]
 
 // Create Games
@@ -165,7 +165,7 @@ const games = [
   new Game({
     coordinates: {
       lat: 40.7403,
-      lng: 73.9870
+      lng: -73.9870
     },
     sport: "Table Tennis",
     skillLevel: "Intermediate",
@@ -187,7 +187,7 @@ const games = [
   new Game({
     coordinates: {
       lat: 40.7503,
-      lng: 73.9983
+      lng: -73.9983
     },
     sport: "Darts",
     skillLevel: "Advanced",
@@ -209,7 +209,7 @@ const games = [
   new Game({
     coordinates: {
       lat: 40.7455,
-      lng: 74.0087
+      lng: -74.0087
     },
     sport: "Golf",
     skillLevel: "Beginner",
@@ -253,7 +253,7 @@ const games = [
   new Game({
     coordinates: {
       lat: 40.7501,
-      lng: 74.0012
+      lng: -74.0012
     },
     sport: "Soccer",
     skillLevel: "Intermediate",
@@ -297,7 +297,7 @@ const games = [
   new Game({
     coordinates: {
       lat: 40.7140,
-      lng: 73.9814
+      lng: -73.9814
     },
     sport: "Handball",
     skillLevel: "Beginner",
@@ -330,7 +330,7 @@ mongoose
   });
 
   const insertSeeds = () => {
-    console.log("Resetting db and seeding users and tweets...");
+    console.log("Resetting db and seeding users and games...");
   
     User.collection.drop()
                    .then(() => Game.collection.drop())

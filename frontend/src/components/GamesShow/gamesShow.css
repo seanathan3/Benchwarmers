@@ -20,4 +20,18 @@
 
 #gs-content {
     line-height: 30px;
+    padding: 20px;
 }
+
+#gs-title {
+    font-size: 36px;
+}
+
+#gs-game-host {
+    color: var(--peach);
+}
+
+#gs-game-time {
+    margin-top: 10px;
+}
+

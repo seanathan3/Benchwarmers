@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Modal } from '../../context/Modal';
 import GamesShow from '../GamesShow/GamesShow';
+import { formatTime } from '../../utils/utils';
 import badmintonImg from '../../assets/sports-logos/badminton.png';
 import baseballImg from '../../assets/sports-logos/baseball.png';
 import basketballImg from '../../assets/sports-logos/basketball.png';
@@ -26,52 +27,52 @@ const IndexItem = ({game}) => {
     let image;
 
     switch (game.sport) {
-        case 'badminton':
+        case 'Badminton':
             image = badmintonImg;
             break;
-        case 'baseball':
+        case 'Baseball':
             image = baseballImg;
             break;
-        case 'basketball':
+        case 'Basketball':
             image = basketballImg;
             break;
-        case 'cycling':
+        case 'Cycling':
             image = cyclingImg;
             break;
-        case 'darts':
+        case 'Darts':
             image = dartsImg;
             break;
-        case 'fencing':
+        case 'Fencing':
             image = fencingImg;
             break;
-        case 'football':
+        case 'Football':
             image = footballImg;
             break;
-        case 'golf':
+        case 'Golf':
             image = golfImg;
             break;
-        case 'hand ball':
+        case 'Handball':
             image = handBallImg;
             break;
-        case 'hockey':
+        case 'Hockey':
             image = hockeyImg;
             break;
-        case 'martial arts':
+        case 'Martial arts':
             image = martialArtsImg;
             break;
-        case 'soccer':
+        case 'Soccer':
             image = soccerImg;
             break;
-        case 'softball':
+        case 'Softball':
             image = softballImg;
             break;
-        case 'table tennis':
+        case 'Table Tennis':
             image = tableTennisImg;
             break;
-        case 'tennis':
+        case 'Tennis':
             image = tennisImg;
             break;
-        case 'volleyball':
+        case 'Volleyball':
             image = volleyballImg;
             break;
         default:
@@ -87,7 +88,7 @@ const IndexItem = ({game}) => {
                 <div id="ii-desc">
                     <p id="ii-sport">{game.sport[0].toUpperCase() + game.sport.slice(1)}</p>
                     <p>Host: {game.host?.username}</p>
-                    <p>{game.date.month}/{game.date.day}/{game.date.year} @ {game.time.hours}:{game.time.minutes}</p>
+                    <p>{game.date.month}/{game.date.day}/{game.date.year} @ {formatTime(game.time.hours, game.time.minutes)}</p>
                 </div>
             </div>
             {showModal && (

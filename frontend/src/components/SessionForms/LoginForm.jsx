@@ -2,6 +2,7 @@ import './sessionForm.css';
 import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { login, removeSessionErrors } from '../../store/session';
+import * as sessionActions from '../../store/session'
 import SubmitButton from '../Button/SubmitButton';
 import '../Button/SubmitButton.css'
 
@@ -17,6 +18,13 @@ const LoginForm = () => {
             dispatch(removeSessionErrors());
         };
     }, [dispatch]);
+
+    const demoLogin = (e) => {
+        e.preventDefault();
+        return dispatch(
+            sessionActions.login({ email: "ababar@gmail.com", password: "password" })
+        );
+    };
 
 
     const handleSubmit = (e) => {
@@ -39,6 +47,7 @@ const LoginForm = () => {
                             onChange={(e) => setEmail(e.target.value)}
                         />
                 </div>
+                <br />
                 {/* <div>{errors?.password}</div> */}
                <div id='sf-lg-password-container' >
                         <input 
@@ -49,13 +58,12 @@ const LoginForm = () => {
                             onChange={(e) => setPassword(e.target.value)}
                         />
                </div>
-               {/* <div className='sf-auth-button'>
-                    <input 
-                        type='submit'
-                        value='Login'
-                    /> */}
+               <br />
+               <br />
+
                     <SubmitButton clickFunction={handleSubmit} textContext='Login' />
-               {/* </div> */}
+                    <br />
+                    <SubmitButton clickFunction={demoLogin} textContext='Demo User' />
             </form>
         </>
     )
