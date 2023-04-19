@@ -16,7 +16,6 @@ router.get('/current', restoreUser, (req, res) => {
     res.cookie("CSRF-TOKEN", csrfToken);
   }
   if (!req.user) return res.json(null);
-  console.log(req.user);
   return res.json({
     _id: req.user._id,
     username: req.user.username,
@@ -106,7 +105,6 @@ router.post('/login', validateLoginInput, async (req, res, next) => {
 router.patch('/:userId', requireUser, async (req, res, next) => {
   try {
     let user = await User.findById(req.params.userId)
-    console.log(user)
     user.username = req.body.username,
     user.email = req.body.email,
     user.bio = req.body.bio,

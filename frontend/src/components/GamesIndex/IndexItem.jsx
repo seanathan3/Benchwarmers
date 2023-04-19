@@ -81,6 +81,12 @@ const IndexItem = ({game}) => {
     }
 
 
+    console.log(game)
+    if (!game) {
+        return (null)
+    }
+
+
     return(
         <>
             <div id="ii-master" onClick={() => setShowModal(true)}>

@@ -9,14 +9,9 @@
 	font-size: 16px;
 	height: 48px;
 	border-radius: 10px; 
-	/* font-weight: 600; */
 	text-align: center;
-	/* margin-right: 16px; */
 	color: white;
-	/* font-family: inherit; */
 	line-height: 20px;
-	/* margin-top: 10px; */
-	/* margin-bottom: 18px;  */
 	border: none;
 }
 
@@ -33,13 +28,9 @@
 	font-size: 16px;
 	height: 48px;
 	border-radius: 10px; 
-	/* font-weight: 600; */
 	text-align: center;
 
 	color: white;
-	/* font-family: inherit; */
 	line-height: 20px;
-	/* margin-top: 18px;
-	margin-bottom: 18px;  */
 	border: none;
 }
