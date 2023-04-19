@@ -7,3 +7,64 @@
   display: flex;
   justify-content: right;
 }
+
+#up-email, #up-username, #up-name {
+  width: 100%;
+  font-family: Jost, sans-serif;
+}
+
+#up-email input, #up-username input, #up-name input {
+  font-family: Jost, sans-serif;
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid gray;
+  line-height: 40px;
+  font-size: 16px;
+}
+
+#bio {
+  width: 100%;
+  font-family: Jost, sans-serif;
+  font-size: 16px;
+  border-radius: 10px;
+  border: 1px solid gray;
+}
+
+#dropdown {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid gray;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+#sport-dropdown {
+  width: 100% ;
+  border-radius: 10px;
+  border: 1px solid gray;
+  font-size: 16px;
+}
+
+#up-information {
+  width: 300px;
+  font-size: 18px; 
+}
+
+#sb-button #updateButton {
+  width: 50% ;
+}
+
+option {
+  line-height: 20px;
+}
+ #updateProfile {
+  width: 50%;
+ }
+ h1 {
+  display: flex;
+  justify-content: center;
+ }
+
+ #sb-button .updateButton {
+  width: 100%;
+ }

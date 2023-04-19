@@ -1,0 +1,26 @@
+#welcome {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+#up-info {
+  float: right;
+  width: 30%;
+  font-size: 18px;
+  margin-left: 20px;
+  border: 1px solid var(--peach);
+  border-radius: 10px;
+  padding: 10px;
+  background-color: white;
+}
+
+.A-I {
+  margin-left: 20px;
+  width: 50%;
+}
+
+.up-button {
+  display: flex;
+  justify-content: center;
+}
