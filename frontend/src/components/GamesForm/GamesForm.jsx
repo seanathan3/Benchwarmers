@@ -1,37 +1,42 @@
 import React, { useState } from 'react';
 import { format } from 'date-fns';
-import { DayPicker } from 'react-day-picker';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import './GamesForm.css';
-import 'react-day-picker/dist/style.css';
 
 const GamesForm = () => {
     const history = useHistory();
 
     const today = new Date();
-    let day = today.getDate();
-    let month = today.getMonth();
     let year = today.getFullYear();
-    const [selectedDay, setSelectedDay] = useState(today);
 
     const [sport, setSport] = useState('');
     const [skillLevel, setSkillLevel] = useState('');
     const [description, setDescription] = useState('');
     const [attendees, setAttendees] = useState([]);
-    const [maxCapacity, setMaxCapacity] = useState('');
+    const [maxCapacity, setMaxCapacity] = useState(0);
     const [minCapacity, setMinCapacity] = useState(0);
     const [hours, setHours] = useState('');
     const [minutes, setMinutes] = useState('');
     const [title, setTitle] = useState('');
 
-    let inputYesterday = `${year}-${month}-${day}`;
-    let stringinputYesterday = inputYesterday.toString();
 
-    console.log(inputYesterday);
-    console.log(stringinputYesterday);
-    let formattedYesterday = new Date(year, month, day - 1);
-    const disabledDays = [{from: new Date(2020,1,1), to: formattedYesterday}]
+    function getZeroDay(date){
+        return (date.getDate() < 10 ? '0' : '') + date.getDate();
+    }
+
+    function getZeroMonth(date) {
+        if(date.toString().length === 1) {
+            return '0' + date.toString()
+        } else {
+            return date.toString()
+        }
+    }
+    
+    let zeroDay = getZeroDay(today);
+    let zeroMonth = getZeroMonth(today.getMonth() + 1)
+    let formattedToday = `${year}-${zeroMonth}-${zeroDay}`;
+
 
     let user = useSelector((state) => (state.session?.user))
     let userId
@@ -41,10 +46,8 @@ const GamesForm = () => {
     } else {
         userId = null
     }
-
+    
     const host = userId
-
-
 
 
     const routeChange = () => {
@@ -59,11 +62,6 @@ const GamesForm = () => {
         routeChange()
     }
 
-    const footer = selectedDay ? (
-        <p>You selected {format(selectedDay, 'PPP')}.</p>
-    ) : (
-        <p>Please pick a day.</p>
-    );
 
     return (
         <>
@@ -97,36 +95,26 @@ const GamesForm = () => {
                 </select>
             </label>
             <label> Description
-                <input type='textarea' id='gf-description' />
+                <input required type='textarea' id='gf-description' />
             </label>
             <label> Min Capacity
-                <input type='input' id='gf-min-capacity' />
+                <input required type='input' id='gf-min-capacity' />
             </label>
             <label> Max Capacity
-                <input type='input' id='gf-max-capacity' />
+                <input required type='input' id='gf-max-capacity' />
             </label>
             <label> Time
-                <input type='time' id='gf-time' />
+                <input required type='time' id='gf-time' />
             </label>
             <label> Date
-                <input type='date' id='gf-date' min={inputYesterday} />
+                <input required type='date' id='gf-date' min={formattedToday} />
+            </label>
+            <label>Title
+                <input required type='input' id='gf-title' />
             </label>
             <label> Submit
                 <input type='submit' id='gf-submit' />
             </label>
-
-            {/* <div>Date
-                <DayPicker
-                mode="single"
-                required
-                selected={selectedDay}
-                onSelect={setSelectedDay}
-                footer={footer}
-                disabled={disabledDays}
-                />
-                {userId === null ? <button disabled>Submit</button> : <button onClick={handleSubmit}>Submit</button>}
-            </div> */}
-
         </form>
         </>
     );
