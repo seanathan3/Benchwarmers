@@ -8,10 +8,11 @@ import './UserProfile.css'
 
 const UserShowPage = () => {
   const dispatch = useDispatch();
-  const sessionUser = useSelector((state) => state.session.user);
+  const getSessionUser = state => state.session.user
+  const sessionUser = useSelector(getSessionUser);
   const { userId } = useParams();
   const user = useSelector(getUser(userId));
-  const isCurrentUser = userId === sessionUser?.id;
+  const isCurrentUser = (userId === sessionUser?._id);
   const [showUpdateUserProfileModal, setUpdateUserProfileModal] =
     useState(false);
 
@@ -30,9 +31,10 @@ const UserShowPage = () => {
   const handleClose = () => {
     setUpdateUserProfileModal(false);
   };
-
+   
   return (
     <>
+      {user?.name && <div>Welcome back {user.name}!</div>}
       <div>Account Information:</div>
       <div id="up-info">
         {user?.name && <div>Name: {user.name}</div>}
@@ -48,7 +50,7 @@ const UserShowPage = () => {
           </button>
         )}
         {showUpdateUserProfileModal && (
-          <Modal>
+          <Modal onClose={handleClose} >
             <UpdateUserProfile onClose={handleClose} userData={user} />
           </Modal>
         )}

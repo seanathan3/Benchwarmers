@@ -30,18 +30,20 @@ const LoginForm = () => {
                 <h1>Welcome to Benchwarmers</h1>
                 <h2 className='modal-title'>Login</h2>
                 {/* <div>{errors?.email}</div> */}
-                <div id='sf-lg-email-container' className='sf-email-container'>
-                    <label>Email</label><br></br>
+                <div id='sf-lg-email-container'>
                         <input 
+                        className='sf-lg-email-container'
+                        placeholder='Email'
                             type='text'
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                         />
                 </div>
                 {/* <div>{errors?.password}</div> */}
-               <div id='sf-lg-password-container' className='sf-password-container'>
-                    <label>Password</label><br></br>
+               <div id='sf-lg-password-container' >
                         <input 
+                        className='sf-lg-password-container'
+                        placeholder='Password'
                             type='password'
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
