@@ -6,12 +6,12 @@ import * as sessionActions from '../../store/session'
 import SubmitButton from '../Button/SubmitButton';
 import '../Button/SubmitButton.css'
 
-
 const LoginForm = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     // const errors = useSelector(state => state.errors.session);
     const dispatch = useDispatch();
+    const errors = useSelector(state => state?.sessionErrors)
 
     useEffect(() => {
         return () => {
@@ -37,7 +37,7 @@ const LoginForm = () => {
             <form onSubmit={handleSubmit} id="sf-loginForm" className='sf-authForm'>
                 <h1>Welcome to Benchwarmers</h1>
                 <h2 className='modal-title'>Login</h2>
-                {/* <div>{errors?.email}</div> */}
+                <div>{errors?.email}</div>
                 <div id='sf-lg-email-container'>
                         <input 
                         className='sf-lg-email-container'
@@ -48,7 +48,7 @@ const LoginForm = () => {
                         />
                 </div>
                 <br />
-                {/* <div>{errors?.password}</div> */}
+                <div>{errors?.password}</div>
                <div id='sf-lg-password-container' >
                         <input 
                         className='sf-lg-password-container'
