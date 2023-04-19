@@ -6,6 +6,8 @@
     box-shadow:0 2px 5px 0 rgba(213,217,217,.5);
     display: flex;
     align-items: center;
+    background-color: white;
+    font-size: 16px;
 }
 
 #ii-master:hover {
@@ -61,3 +63,7 @@
     background-color: white;
 }
 
+
+.ii-fixed-width {
+    width: 400px;
+}

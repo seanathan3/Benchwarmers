@@ -1,12 +1,36 @@
+import { useDispatch, useSelector } from 'react-redux'
 import './splash.css';
+import { useEffect } from 'react';
+import { fetchGames } from '../../store/games';
+import IndexItem from '../GamesIndex/IndexItem';
+import MiniForm from '../MiniForm/MiniForm';
 
 const Splash = () => {
+    const dispatch = useDispatch();
+    const games = useSelector(state => Object.values(state.games))
+
+    useEffect(() => {
+        dispatch(fetchGames());
+    }, [])
+
 
     return(
         <>
             <div id="s-master">
                 <div id="s-heroSection">
                     The ball is in your court
+                </div>
+                <div id="s-content">
+                    <div id="s-upcoming-games">
+                        <div className="sc-header">Featured Games</div>
+                        {games.slice(0, 3).map(game => {
+                            return <IndexItem game={game} />
+                        })}
+                    </div>
+                    <div id="s-create-game">
+                        <div className="sc-header">Create a game</div>
+                        <MiniForm />
+                    </div>
                 </div>
             </div>   
         </>
