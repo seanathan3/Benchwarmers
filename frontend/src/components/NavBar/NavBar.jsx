@@ -7,10 +7,12 @@ import SignupFormModal from '../SessionForms/SignupFormModal';
 import LoginFormModal from '../SessionForms/LoginFormModal';
 import { useEffect } from 'react';
 import { getCurrentUser } from '../../store/session';
+import { useHistory } from 'react-router-dom';
 
 const NavBar = () => {
     const dispatch = useDispatch();
     const userId = useSelector(state => state.session?.user?._id)
+    const history = useHistory();
     console.log(userId)
 
     useEffect(() => {
@@ -19,6 +21,7 @@ const NavBar = () => {
 
     function handleLogout(e) {
         dispatch(logout());
+        history.push(`/`)
     }
 
     let loggedOutButtons
