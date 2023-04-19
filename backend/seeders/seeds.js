@@ -359,7 +359,6 @@ mongoose
                    .then(() => User.insertMany(users))
                    .then(() => Game.insertMany(games))
                    .then(() => {
-                     console.log("Done!");
                      mongoose.disconnect();
                    })
                    .catch(err => {
