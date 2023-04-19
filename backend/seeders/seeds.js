@@ -362,6 +362,7 @@ mongoose
                      mongoose.disconnect();
                    })
                    .catch(err => {
+                     console.error(err.stack);
                      process.exit(1);
                    });
   }
