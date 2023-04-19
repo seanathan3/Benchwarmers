@@ -19,7 +19,7 @@ const UpcomingGames = () => {
 
   return (
     <div id='upcoming'>
-      <h2>helloworld</h2>
+      <h2>Upcoming Games:</h2>
     </div>
   )
 

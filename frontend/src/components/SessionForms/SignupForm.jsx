@@ -134,7 +134,7 @@ const SignupForm = ({ onClose }) => {
           <label>
             <select
              className="sf-favoriteSport-container"
-              id="sport-dropdown"
+              id="sf-sport-dropdown"
               value={favoriteSport}
               onChange={handleFavoriteSportChange}
             >
