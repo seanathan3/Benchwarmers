@@ -7,9 +7,12 @@ export const formatTime = (hours, minutes) => {
     if (hours === 0) {
         newHrs = '12';
         amPm = 'AM';
-    } else if (hours <= 12) {
+    } else if (hours < 12) {
         newHrs = hours.toString();
-        amPm = 'AM'
+        amPm = 'AM';
+    } else if (hours === 12) {
+        newHrs = hours.toString();
+        amPm = 'PM';
     } else {
         newHrs = (hours - 12).toString();
         amPm = 'PM';
@@ -22,4 +25,22 @@ export const formatTime = (hours, minutes) => {
 
     output = newHrs + ":" + newMins + amPm;
     return output
+}
+
+export const formatMonth = month => {
+    let key = {
+        1: "January",
+        2: "February",
+        3: "March",
+        4: "April",
+        5: "May",
+        6: "June",
+        7: "July",
+        8: "August",
+        9: "September",
+        10: "October",
+        11: "November",
+        12: "December"
+    }
+    return key[month];
 }

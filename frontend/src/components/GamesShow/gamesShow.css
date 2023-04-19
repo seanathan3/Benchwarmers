@@ -21,17 +21,47 @@
 #gs-content {
     line-height: 30px;
     padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-between;
+}
+
+#gs-left {
+    max-width: 600px;
+    min-width: 400px;
 }
 
 #gs-title {
     font-size: 36px;
+    padding: 20px 0 0 20px;
 }
 
-#gs-game-host {
+#gs-host {
+    padding-left: 20px;
+}
+
+#gs-peach {
     color: var(--peach);
 }
 
-#gs-game-time {
+#gs-date {
     margin-top: 10px;
 }
 
+#gs-skill-level {
+    margin-top: 20px;
+}
+
+#gs-description {
+    margin-top: 60px;
+}
+
+#gs-spots-left {
+    margin-top: 60px;
+    color: var(--peach);
+}
+
+#gs-right {
+    min-width: 400px;
+    max-width: 600px;
+}

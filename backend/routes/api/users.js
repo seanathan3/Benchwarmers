@@ -16,7 +16,6 @@ router.get('/current', restoreUser, (req, res) => {
     res.cookie("CSRF-TOKEN", csrfToken);
   }
   if (!req.user) return res.json(null);
-  console.log(req.user);
   return res.json({
     _id: req.user._id,
     username: req.user.username,
@@ -106,7 +105,6 @@ router.post('/login', validateLoginInput, async (req, res, next) => {
 router.patch('/:userId', requireUser, async (req, res, next) => {
   try {
     let user = await User.findById(req.params.userId)
-    console.log(user)
     user.username = req.body.username,
     user.email = req.body.email,
     user.bio = req.body.bio,
@@ -130,14 +128,12 @@ router.patch('/:userId', requireUser, async (req, res, next) => {
 
 router.delete('/:userId', async(req,res,next) => {
   let hostedGames = await Game.find({ host: req.params.userId });
-  // console.log(hostedGames)
   const currentDate = new Date();
   const currentDay = currentDate.getDate();
   const currentMonth = currentDate.getMonth() + 1;
   const currentYear = currentDate.getFullYear();
   const futureGames = hostedGames.filter(game => (game.date.year >= currentYear)
   || (game.date.year === currentYear && game.date.month >= currentMonth) || (game.date.year === currentYear && game.date.month === currentMonth && game.date.day > currentDay))
-  console.log(futureGames)
   
   return res.json();
 })
