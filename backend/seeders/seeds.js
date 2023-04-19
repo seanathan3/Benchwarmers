@@ -25,7 +25,7 @@ const users = [
     hashedPassword: bcrypt.hashSync('password', 10)
   }),
   new User({
-    username: "stephend",
+    username: "bigskysteve",
     email: "stephend@gmail.com",
     bio: "Don't let the soft voice fool you, I'll eat you like a cupcake.",
     borough: "Brooklyn",
@@ -312,6 +312,28 @@ const games = [
     date: {
       month: 7,
       day: 13,
+      year: 2023
+    },
+    title: "Handball at Henry M. Jackson Playground"
+  }),
+  new Game({
+    coordinates: {
+      lat: 40.7140,
+      lng: -73.9814
+    },
+    sport: "Handball",
+    skillLevel: "Beginner",
+    description: "Recently got into handball. Want some people to play and practice with.",
+    host: users[Math.floor(Math.random() * users.length)]._id,
+    maxCapacity: 4,
+    minCapacity: 2,
+    time: {
+      hours: 16,
+      minutes: 00
+    },
+    date: {
+      month: 3,
+      day: 23,
       year: 2023
     },
     title: "Handball at Henry M. Jackson Playground"
