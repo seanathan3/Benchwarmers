@@ -6,6 +6,7 @@ import { getCurrentUser } from "./store/session";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import GamesIndex from "./components/GamesIndex/GamesIndex";
+import GamesForm from "./components/GamesForm/GamesForm";
 
 function App() {
   const dispatch = useDispatch();
@@ -34,6 +35,7 @@ function App() {
     
     
     </Switch>
+    <GamesForm />
     </>
   );
 }
