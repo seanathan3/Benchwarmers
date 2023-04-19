@@ -40,7 +40,6 @@ export const fetchGame = gameId => async dispatch => {
 };
 
 export const createGame = game => async dispatch => {
-debugger
     const response = await jwtFetch(`/api/games/`, {
         method: "POST",
         body: JSON.stringify(game),
