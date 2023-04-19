@@ -19,16 +19,59 @@ export const removeGame = gameId => ({
     gameId
 });
 
+// export const getGame = (gameId) => state => {
+//     if(state.games){
+//         return state.games[gameId]
+//     }else{
+//         return null
+//     }
+// }
+
 export const fetchGames = () => async dispatch => {
     const res = await jwtFetch('/api/games');
     const data = await res.json();
     dispatch(receiveGames(data));
-}
+};
 
 export const fetchGame = gameId => async dispatch => {
     const res = await jwtFetch(`/api/games/${gameId}`)
     const data = await res.json();
     dispatch(receiveGame(data));
+};
+
+export const createGame = game => async dispatch => {
+debugger
+    const response = await jwtFetch(`/api/games/`, {
+        method: "POST",
+        body: JSON.stringify(game),
+        headers: {'Content-Type': 'application/json'}
+    })
+
+    const data = await response.json();
+    dispatch(receiveGame(data));
+};
+
+
+export const updateGame = (game) => async dispatch => {
+    const response = await jwtFetch(`/api/games/${game._id}`, {
+        method: "PATCH",
+        body: JSON.stringify(game),
+        headers: {'Content-Type': 'application/json'}
+    })
+
+    const data = await response.json()
+    dispatch(receiveGame(data))
+}
+
+
+export const deleteGame = gameId => async dispatch => {
+    const response = await jwtFetch(`/api/games/${gameId}`, {
+        method: "DELETE"
+    })
+
+    if (response.ok){
+        dispatch(removeGame(gameId))
+    }
 }
 
 
