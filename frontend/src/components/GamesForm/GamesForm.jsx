@@ -16,15 +16,13 @@ const GamesForm = (props) => {
     const [sport, setSport] = useState('Badminton');
     const [skillLevel, setSkillLevel] = useState('Beginner');
     const [description, setDescription] = useState('');
-    const [attendees, setAttendees] = useState([]);
+    // const [attendees, setAttendees] = useState([]);
     const [maxCapacity, setMaxCapacity] = useState(0);
     const [minCapacity, setMinCapacity] = useState(0);
-    const [time, setTime] = useState('')
-    const [hours, setHours] = useState('');
-    const [minutes, setMinutes] = useState('');
+    const [time, setTime] = useState({hours: 10, minutes: 10})
+    const [gameDate, setGameDate] = useState({year: 2020, month: 1, day: 1})
     const [title, setTitle] = useState('');
 
-// debugger
     function getZeroDay(date){
         return (date.getDate() < 10 ? '0' : '') + date.getDate();
     }
@@ -51,7 +49,7 @@ const GamesForm = (props) => {
     } else {
         userId = null
     }
-// debugger
+
     useEffect(() => {
         if(gameId) {
             dispatchEvent(fetchGame(gameId))
@@ -95,20 +93,26 @@ const GamesForm = (props) => {
         setTime(e.target.value)
     }
 
+    function changeGameDate(e){
+        setGameDate(e.target.value)
+    }
+
     function changeTitle(e){
         setTitle(e.target.value)
     }
 
     function handleSubmit(e){
         e.preventDefault();
-// debugger
+
         const newGame = {
             sport,
             description,
             maxCapacity,
             minCapacity,
             skillLevel,
-            title
+            title,
+            date: {year: parseInt(gameDate.slice(0,4)), month: parseInt(gameDate.slice(5,7)), day: parseInt(gameDate.slice(8,10))},
+            time: {hours: parseInt(time.slice(0,2)), minutes: parseInt(time.slice(-2))}
         }
 
         newGame.host = userId
@@ -117,7 +121,6 @@ debugger
             newGame._id = gameId
             dispatch(updateGame(newGame))
         } else{
-// debugger
             dispatch(createGame(newGame))
         }
         // routeChange()
@@ -166,10 +169,10 @@ debugger
                 <input value={maxCapacity} onChange={changeMaxCapacity} required type='input' id='gf-max-capacity' />
             </label>
             <label> Time
-                <input required type='time' id='gf-time' />
+                <input required value={time} onChange={changeTime} type='time' id='gf-time' />
             </label>
             <label> Date
-                <input required type='date' id='gf-date' min={formattedToday} />
+                <input value={gameDate} onChange={changeGameDate} required type='date' id='gf-date' min={formattedToday} />
             </label>
             <label>Title
                 <input value={title} onChange={changeTitle} required type='input' id='gf-title' />

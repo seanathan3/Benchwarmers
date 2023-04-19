@@ -44,11 +44,11 @@ const gameSchema = new Schema({
   time: {
     hours: {
       type: Number,
-      // required: true
+      required: true
     },
     minutes: {
       type: Number,
-      // required: true
+      required: true
     }
   },
   date: {  

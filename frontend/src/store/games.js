@@ -44,7 +44,7 @@ debugger
     const response = await jwtFetch(`/api/games/`, {
         method: "POST",
         body: JSON.stringify(game),
-        headers: {'Content-Type': 'applicatin/json'}
+        headers: {'Content-Type': 'application/json'}
     })
 
     const data = await response.json();
