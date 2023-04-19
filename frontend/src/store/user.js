@@ -1,11 +1,17 @@
 import jwtFetch from "./jwt";
 
 const RECEIVE_USER = 'users/RECEIVE_USER'
+const REMOVE_USER = 'users/REMOVE_USER'
 
 export const receiveUser = user => ({
   type: RECEIVE_USER,
   user
 });
+
+export const removeUser = userId => ({
+  type: REMOVE_USER,
+  userId
+})
 
 export const getUser = (userId) => state => {
   return state?.users ? state.users[userId] : null 
@@ -27,12 +33,24 @@ export const updateUser = (user) => async dispatch => {
   dispatch(receiveUser(data))
 }
 
+export const deleteUser = userId => async dispatch => {
+  const res = await jwtFetch(`/api/users/${userId}`, {
+    method: 'DELETE'
+  })
+  if (res.ok) {
+    dispatch(removeUser(userId))
+  }
+}
+
 const userReducer = (state={}, action) => {
   let nextState = {...state}
   switch (action.type) {
     case RECEIVE_USER:
       nextState[action.user._id] = action.user
       return nextState;
+    case REMOVE_USER:
+      delete nextState[action.userId]
+      return nextState
     default:
         return state
   }

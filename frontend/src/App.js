@@ -35,7 +35,6 @@ function App() {
     
     
     </Switch>
-    <GamesForm />
     </>
   );
 }
