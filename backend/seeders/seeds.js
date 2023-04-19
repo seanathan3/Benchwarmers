@@ -322,13 +322,13 @@ const games = [
       lng: -73.9814
     },
     sport: "Handball",
-    skillLevel: "Beginner",
-    description: "Recently got into handball. Want some people to play and practice with.",
+    skillLevel: "Advanced",
+    description: "I am the handball master. Want some butts to kick.",
     host: users[Math.floor(Math.random() * users.length)]._id,
     maxCapacity: 4,
     minCapacity: 2,
     time: {
-      hours: 16,
+      hours: 12,
       minutes: 00
     },
     date: {
