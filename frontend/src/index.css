@@ -3,6 +3,7 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
+  background-color: rgb(233, 153, 55, 0.3);
 }
 
 #root {

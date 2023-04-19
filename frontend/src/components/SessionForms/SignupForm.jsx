@@ -65,23 +65,17 @@ const SignupForm = ({ onClose }) => {
     <>
       <div className="sf">
         <br />
-        <div id="closeButton">
-          <img
-            src={closeButton}
-            alt="Close-Button"
-            className="close-button"
-            onClick={onClose}
-          />
-        </div>
         <form
           onSubmit={handleSubmit}
           id="sf-signupForm"
           className="sf-authForm"
         >
           <h1>Welcome to Benchwarmers</h1>
+          <br />
+          
           <h2>Sign Up</h2>
           {/* <div>{errors?.email}</div> */}
-          <br />
+      
           <label >
             <input
             className="sf-name-container"
@@ -120,10 +114,6 @@ const SignupForm = ({ onClose }) => {
               onChange={(e) => setPassword(e.target.value)}
             />
           </label>
-          {/* <label >
-            <textarea className="sf-bio-container" placeholder="Tell us a little about yourself..." value={bio} onChange={(e) => setBio(e.target.value)} />
-          </label> */}
-          
           <label>
             <select
             className="sf-borough-containter"
@@ -181,6 +171,8 @@ const SignupForm = ({ onClose }) => {
               </label>
             )}
           </label>
+          <br />
+          <br />
           <br />
           <SubmitButton className="signUpButton" clickFunction={handleSubmit} textContext='Signup' />
         </form>
