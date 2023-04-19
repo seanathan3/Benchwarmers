@@ -37,7 +37,9 @@ export const deleteUser = userId => async dispatch => {
   const res = await jwtFetch(`/api/users/${userId}`, {
     method: 'DELETE'
   })
-  dispatch(removeUser(userId))
+  if (res.ok) {
+    dispatch(removeUser(userId))
+  }
 }
 
 const userReducer = (state={}, action) => {
