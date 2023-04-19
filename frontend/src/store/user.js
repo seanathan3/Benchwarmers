@@ -18,7 +18,7 @@ export const fetchUser = userId => async dispatch => {
 };
 
 export const updateUser = (user) => async dispatch => {
-  const res = await jwtFetch(`/api/users/${user.id}`, {
+  const res = await jwtFetch(`/api/users/${user._id}`, {
     method: "PATCH",
     body: JSON.stringify(user),
     headers: {"Content-Type": "application/json"}

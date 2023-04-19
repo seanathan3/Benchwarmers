@@ -17,7 +17,7 @@ const IndexList = () => {
             <div id="il-master">
                 <div>Games</div>
                 {games.map(game => {
-                    return <IndexItem key={game._id}game={game} />
+                    return <IndexItem key={game._id} game={game} />
                 })}
             </div>
         </>
