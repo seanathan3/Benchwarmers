@@ -74,7 +74,8 @@ router.post('/', requireUser, validateGameInput, async(req, res, next) => {
       date: req.body.date,
       title: req.body.title
     });
-
+    // newGame.attendees.push(user) pushes user object
+    newGame.attendees.push(user.username) // pushes user's username TEMPORARY
     let game = await newGame.save();
     user.hostedGames.push(game._id)
     user.attendingGames.push(game._id)

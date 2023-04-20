@@ -28,7 +28,8 @@ const gameSchema = new Schema({
     ref: "User"
   },
   attendees: [
-    {type: Schema.Types.ObjectId, ref: "User"}
+    // {type: Schema.Types.ObjectId, ref: "User"}
+    {type: String}
   ],
   maxCapacity: {
     type: Number,
