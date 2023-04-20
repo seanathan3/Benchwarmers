@@ -2,7 +2,6 @@ import "./sessionForm.css";
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { signup, removeSessionErrors } from "../../store/session";
-import closeButton from "../../assets/close.png";
 import SubmitButton from "../Button/SubmitButton";
 
 const SignupForm = ({ onClose }) => {
@@ -13,8 +12,6 @@ const SignupForm = ({ onClose }) => {
   const [bio, setBio] = useState("");
   const [borough, setBorough] = useState("");
   const [favoriteSport, setFavoriteSport] = useState();
-  const [otherSport, setOtherSport] = useState("");
-  const [showOtherInput, setShowOtherInput] = useState(false);
   const [showSignupFormModal, setSignupFormModal] = useState(false);
   // const errors = useSelecotr(state => state.errors.session)
   const dispatch = useDispatch();
@@ -25,18 +22,9 @@ const SignupForm = ({ onClose }) => {
     };
   }, [dispatch]);
 
-  const handleOtherSportChange = (e) => {
-    setOtherSport(e.target.value);
-  };
-
   const handleFavoriteSportChange = (e) => {
     const selectedValue = e.target.value;
     setFavoriteSport(selectedValue);
-    if (selectedValue === "other") {
-      setShowOtherInput(true);
-    } else {
-      setShowOtherInput(false);
-    }
   };
 
   const handleSignupFormModalClose = () => {
@@ -53,7 +41,6 @@ const SignupForm = ({ onClose }) => {
       bio,
       borough,
       favoriteSport,
-      otherSport,
     };
     dispatch(signup(user)).then(() => {
       handleSignupFormModalClose();
@@ -157,19 +144,7 @@ const SignupForm = ({ onClose }) => {
               <option value="Table-Tennis">Table Tennis</option>
               <option value="Tennis">Tennis</option>
               <option value="Volleyball">Volleyball</option>
-              <option value="Other">Other</option>
             </select>
-            {favoriteSport === "other" && (
-              <label>
-                <label htmlFor="other-sport">Other: </label>
-                <input
-                  id="other-sport"
-                  type="text"
-                  value={otherSport}
-                  onChange={handleOtherSportChange}
-                />
-              </label>
-            )}
           </label>
           <br />
           <br />

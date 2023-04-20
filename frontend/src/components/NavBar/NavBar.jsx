@@ -39,6 +39,9 @@ const NavBar = () => {
         loggedInButtons = (
             <>
                 <div>Create Game</div>
+                <Link to={`/user-profile/${userId}`}>
+                    <div>Profile</div>
+                </Link>
                 <div onClick={handleLogout}>Log Out</div>
             </>
         )
@@ -53,6 +56,9 @@ const NavBar = () => {
             </div>
 
             <div id="nb-rightLinks">
+            <Link to="/about">
+                    <div>About</div>
+                </Link>
                 <Link to="/games">
                     <div>Join Game</div>
                 </Link>

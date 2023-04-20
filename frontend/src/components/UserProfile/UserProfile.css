@@ -2,11 +2,13 @@
   display: flex;
   justify-content: center;
   margin-top: 10px;
+  font-family: Jost, sans-serif;
 }
 
 #user-info {
   display: flex;
   flex-wrap: wrap;
+  font-family: Jost, sans-serif;
   justify-content: space-between;
 }
 
@@ -24,16 +26,19 @@
   border: 1px solid var(--peach);
   border-radius: 10px;
   padding: 10px;
+  font-family: Jost, sans-serif;
   background-color: white;
 }
 
 .A-I {
   margin-left: 20px;
+  font-family: Jost, sans-serif;
   width: 50%;
 }
 
 .up-button {
   display: flex;
+  font-family: Jost, sans-serif;
   justify-content: center;
   width: 100%;
 }
