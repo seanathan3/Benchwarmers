@@ -140,7 +140,7 @@ debugger
         <>
         <form>
             <h1>{header}</h1>
-            <div>{errors?.sport}</div>
+            { errors?.sport && <div className='errors'>{errors?.sport}</div>}
             <label> Sport
                 <select value={sport} onChange={changeSport} id='gf-sport'>
                     <option value='Badminton'>Badminton</option>
@@ -162,7 +162,7 @@ debugger
                     <option value='Other'>Other</option>
                 </select>
             </label>
-            <div>{errors?.skillLevel}</div>
+            { errors?.skillLevel && <div className='errors'>{errors?.skillLevel}</div>}
             <label> Skill Level
                 <select value={skillLevel} onChange={changeSkillLevel} id='gf-skill-level'>
                     <option value='Beginner'>Beginner</option>
@@ -170,27 +170,27 @@ debugger
                     <option value='Advanced'>Advanced</option>
                 </select>
             </label>
-            <div>{errors?.description}</div>
+            { errors?.description && <div className='errors'>{errors?.description}</div>}
             <label> Description
                 <input value={description} onChange={changeDescription} required type='textarea' id='gf-description' />
             </label>
-            <div>{errors?.minCapacity}</div>
+            { errors?.minCapacity && <div className='errors'>{errors?.minCapacity}</div>}
             <label> Min Capacity
                 <input value={minCapacity} onChange={changeMinCapacity} required type='input' id='gf-min-capacity' />
             </label>
-            <div>{errors?.maxCapacity}</div>
+            { errors?.maxCapacity && <div className='errors'>{errors?.maxCapacity}</div>}
             <label> Max Capacity
                 <input value={maxCapacity} onChange={changeMaxCapacity} required type='input' id='gf-max-capacity' />
             </label>
-            <div>{errors?.time}</div>
+            { errors?.time && <div className='errors'>{errors?.time}</div>}
             <label> Time
                 <input required value={time} onChange={changeTime} type='time' id='gf-time' />
             </label>
-            <div>{errors?.date}</div>
+            { errors?.date && <div className='errors'>{errors?.date}</div>}
             <label> Date
                 <input value={gameDate} onChange={changeGameDate} required type='date' id='gf-date' min={formattedToday} />
             </label>
-            <div>{errors?.title}</div>
+            { errors?.title && <div className='errors'>{errors?.title}</div>}
             <label>Title
                 <input value={title} onChange={changeTitle} required type='input' id='gf-title' />
             </label>

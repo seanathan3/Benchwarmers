@@ -26,3 +26,7 @@ body {
  --modal-background: rgb(225, 104, 69, 0.5);
  --background: rgb(236, 59, 19, 0.3);
 }
+
+.errors {
+  color: red
+}
