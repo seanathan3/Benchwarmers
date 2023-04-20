@@ -6,6 +6,7 @@
   display: flex;
   justify-content: center;
   font-size: 30px;
+  font-weight: 500;
 }
 
 #description-container {
@@ -13,6 +14,7 @@
   border: 1px solid grey;
   width: 75%;
   padding: 20px;
+  background-color: rgb(225, 104, 69, 0.5);
 }
 
 #description {
@@ -26,6 +28,7 @@
   width: 75%;
   padding: 20px;
   font-family: Jost, sans-serif;
+  background-color: rgb(225, 104, 69, 0.5);
 }
 
 #about {
@@ -38,6 +41,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-top: 25px;
+  padding-bottom: 25px;
 }
 
 #team-photo {
@@ -54,9 +59,14 @@
   display: flex;
   justify-content: center;
   font-size: 18px;
+  font-weight: 500;
 }
 
 #icons {
   display: flex;
   justify-content: center;
+}
+
+#about-container {
+  background-color:  rgb(236, 59, 19, 0.3);
 }

@@ -68,7 +68,7 @@ const About = () => {
               <a href="https://www.linkedin.com/in/sean-abbas/" target="_blank">
                 <img src={linkedin} alt="linkedin" />
               </a>
-              <a href="mailto:sean.abbas33@gmail.com" target="_blank">
+              <a href="https://github.com/sean-a99" target="_blank">
                 <img src={github} alt="github" />
               </a>
               <a href="mailto:sean.abbas33@gmail.com" target="_blank">
@@ -83,10 +83,10 @@ const About = () => {
               <img id="team-photo" src={Ariel} alt="ariel" />
               <br />
               <div id="icons">
-              <a href="mailto:sean.abbas33@gmail.com" target="_blank">
+              <a href="https://www.linkedin.com/in/ariel-baez-36853b26a/" target="_blank">
                 <img src={linkedin} alt="linkedin" />
               </a>
-              <a href="mailto:sean.abbas33@gmail.com" target="_blank">
+              <a href="https://github.com/abaez8031" target="_blank">
                 <img src={github} alt="github" />
               </a>
               <a href="mailto:abez8031.com" target="_blank">
@@ -101,10 +101,10 @@ const About = () => {
               <img id="team-photo" src={Sabrina} alt="sabrina" />
               <br />
               <div id="icons">
-              <a href="mailto:sean.abbas33@gmail.com" target="_blank">
+              <a href="https://www.linkedin.com/in/sabrinawdesmond/" target="_blank">
                 <img src={linkedin} alt="linkedin" />
               </a>
-              <a href="mailto:sean.abbas33@gmail.com" target="_blank">
+              <a href="https://github.com/sabrinawdesmond" target="_blank">
                 <img src={github} alt="github" />
               </a>
               <a href="mailto:sabrinawdesmond.com" target="_blank">
@@ -122,7 +122,7 @@ const About = () => {
               <a href="https://www.linkedin.com/in/charles-cruse-2ba72ab6/" target="_blank">
                 <img src={linkedin} alt="linkedin" />
               </a>
-              <a href="mailto:sean.abbas33@gmail.com" target="_blank">
+              <a href="https://github.com/cruse-charles" target="_blank">
                 <img src={github} alt="github" />
               </a>
               <a href="mailto:charle9@vt.edu" target="_blank">
