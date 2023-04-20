@@ -3,6 +3,7 @@ import jwtFetch from "./jwt";
 const RECEIVE_GAMES = 'games/RECEIVE_GAMES';
 const RECEIVE_GAME = 'games/RECEIVE_GAME';
 const REMOVE_GAME = 'games/REMOVE_GAME';
+const RESET_GAMES = 'games/RESET_GAMES';
 const RECEIVE_ERRORS = 'games/RECEIVE_ERRORS'
 const REMOVE_ERRORS = 'games/REMOVE_ERRORS'
 
@@ -20,6 +21,10 @@ export const removeGame = gameId => ({
     type: REMOVE_GAME,
     gameId
 });
+
+export const resetGames = () => ({
+    type: RESET_GAMES
+})
 
 export const receiveErrors = (errors) => ({
 	type: RECEIVE_ERRORS,
@@ -123,6 +128,8 @@ const gamesReducer = (state={}, action) => {
         case REMOVE_GAME:
             delete  nextState[action.gameId];
             return nextState;
+        case RESET_GAMES:
+            return {};
         default:
             return state;
     }
