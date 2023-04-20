@@ -9,6 +9,7 @@ import configureStore from "./store/store";
 import { ModalProvider } from "./context/Modal";
 import jwtFetch from "./store/jwt";
 import { Wrapper } from '@googlemaps/react-wrapper'
+import { formatTime } from "./utils/utils";
 
 let store = configureStore({});
 
@@ -28,6 +29,7 @@ function Root() {
 
 window.store = store;
 window.jwtFetch = jwtFetch;
+window.formatTime = formatTime;
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 

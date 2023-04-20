@@ -36,7 +36,7 @@ function App() {
     
       <Route exact path="/about">
         <About />
-        <GamesForm />
+        {/* <GamesForm /> */}
       </Route> 
     
     </Switch>

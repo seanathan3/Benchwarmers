@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Modal } from '../../context/Modal';
 import GamesShow from '../GamesShow/GamesShow';
 import { formatTime } from '../../utils/utils';
+import GamesForm from '../GamesForm/GamesForm';
 import badmintonImg from '../../assets/sports-logos/badminton.png';
 import baseballImg from '../../assets/sports-logos/baseball.png';
 import basketballImg from '../../assets/sports-logos/basketball.png';
@@ -23,6 +24,7 @@ import volleyballImg from '../../assets/sports-logos/volleyball.png';
 
 const IndexItem = ({game}) => {
     const [showModal, setShowModal] = useState(false);
+    const [editModal, setEditModal] = useState(false);
 
     let image;
 
@@ -94,11 +96,17 @@ const IndexItem = ({game}) => {
                     <p id="ii-sport">{game.sport[0].toUpperCase() + game.sport.slice(1)}</p>
                     <p>Host: {game.host?.username}</p>
                     <p>{game.date.month}/{game.date.day}/{game.date.year} @ {formatTime(game.time.hours, game.time.minutes)}</p>
+                    <p onClick={() => setEditModal(true)}>Edit</p>
                 </div>
             </div>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>
                     <GamesShow game={game} />
+                </Modal>
+            )}
+            {editModal && (
+                <Modal onClose={() => setEditModal(false)}>
+                    <GamesForm game={game}/>
                 </Modal>
             )}
         </>

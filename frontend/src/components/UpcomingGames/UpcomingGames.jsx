@@ -14,7 +14,7 @@ const UpcomingGames = () => {
   const user = useSelector(getUser(userId));
   const isCurrentUser = (userId === sessionUser?._id);
   const filteredGames = useSelector(getFilteredGames(userId))
-
+// debugger
   useEffect(() => {
     dispatch(fetchUser(userId))
   }, [userId, dispatch])
@@ -25,7 +25,8 @@ const UpcomingGames = () => {
       <div id='ug-card-container'>
         {
           filteredGames.map((game) => {
-            return <IndexItem key={game._id} game={game} />
+            // return <IndexItem key={game._id} game={game} />
+            return <IndexItem game={game} />
           })
         }
       </div>
