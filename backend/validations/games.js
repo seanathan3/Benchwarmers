@@ -5,6 +5,9 @@ const validateGameInput = [
   check('title')
     .exists({ checkFalsy: true })
     .withMessage('Please enter a title'),
+  check('description')
+    .exists({ checkFalsy: true })
+    .withMessage('Please enter a description'),
   // check('coordinates')
   //   .exists({ checkFalsy: true })
   //   .withMessage('Please enter a location'),
