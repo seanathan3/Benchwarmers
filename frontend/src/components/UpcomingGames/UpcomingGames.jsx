@@ -3,31 +3,39 @@ import { fetchUser, getUser } from "../../store/user";
 import { useParams } from "react-router";
 import { useEffect } from "react";
 import './UpcomingGames.css'
+import { getFilteredGames, fetchGames } from "../../store/games";
+import IndexItem from "../GamesIndex/IndexItem";
 
 
 const UpcomingGames = () => {
   const dispatch = useDispatch();
-  const { userId } = useParams();
-  const user = useSelector(getUser(userId));
+  // const { userId } = useParams();
   // const isCurrentUser = (userId === sessionUser?._id);
-  // const filteredGames = useSelector(getFilteredGames(userId))
+  const getUpcomingGames = state => {
+    const games = state.games ? Object.values(state.games) : []
+    const user = state.session.user
+    const upcomingGames = games.filter((game) => (game.attendees.includes(user.username)))
+    return upcomingGames
+}
+
+const upcomingGames = useSelector(getUpcomingGames);
 // debugger
   
   useEffect(() => {
-    dispatch(fetchUser(userId))
-  }, [userId, dispatch])
+    dispatch(fetchGames())
+  }, [dispatch])
 
   return (
     <div id='scroll-wrapper'>
     <div id='upcoming'>
       <h2 id='ug-title'>Upcoming Games:</h2>
       <div id='ug-card-container'>
-        {/* {
-          filteredGames.map((game) => {
+        {
+          upcomingGames.map((game) => {
             // return <IndexItem key={game._id} game={game} />
             return <IndexItem game={game} />
           })
-        } */}
+        }
       </div>
       </div>
     </div>
