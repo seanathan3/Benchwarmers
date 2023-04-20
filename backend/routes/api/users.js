@@ -9,6 +9,7 @@ const { loginUser, restoreUser, requireUser } = require('../../config/passport')
 const { isProduction } = require('../../config/keys');
 const validateRegisterInput = require('../../validations/register');
 const validateLoginInput = require('../../validations/login');
+const validateUpdateUserInput = require('../../validations/updateUser');
 
 router.get('/current', restoreUser, (req, res) => {
   if (!isProduction) {
@@ -102,21 +103,19 @@ router.post('/login', validateLoginInput, async (req, res, next) => {
   })(req, res, next);
 });
 
-router.patch('/:userId', requireUser, async (req, res, next) => {
+router.patch('/:userId', requireUser, validateUpdateUserInput, async (req, res, next) => {
   try {
     let user = await User.findById(req.params.userId)
     user.username = req.body.username,
     user.email = req.body.email,
     user.bio = req.body.bio,
     user.borough = req.body.borough,
-    // user.hostedGames = req.body.hostedGames,
-    // user.attendingGames = req.body.attendingGames,
     user.favoriteSport = req.body.favoriteSport,
     user.profilePicUrl = req.body.profilePicUrl,
     user.name = req.body.name
     user.password = req.body.password
-      user = await user.save()
-      return res.json(user)
+    user = await user.save()
+    return res.json(user)
   }
   catch(err) {
     const error = new Error('User not found');
