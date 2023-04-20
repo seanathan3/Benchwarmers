@@ -21,7 +21,7 @@ const UpcomingGames = () => {
 
   return (
     <div id='upcoming'>
-      <h2>Upcoming Games:</h2>
+      <h2 id='ug-title'>Upcoming Games:</h2>
       <div id='ug-card-container'>
         {
           filteredGames.map((game) => {
