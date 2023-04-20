@@ -113,7 +113,7 @@ const IndexItem = ({game}) => {
                     <p>Host: {game.host?.username}</p>
                     <p>{game.date.month}/{game.date.day}/{game.date.year} @ {formatTime(game.time.hours, game.time.minutes)}</p>
                     {checkUser() && (
-                        <p onClick={() => setEditModal(true)}>Edit</p>
+                        <span id='ii-edit-button' onClick={() => setEditModal(true)}>Edit</span>
                     )}
                 </div>
             </div>

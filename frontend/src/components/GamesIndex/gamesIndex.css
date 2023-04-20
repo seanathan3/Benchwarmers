@@ -67,3 +67,8 @@
 .ii-fixed-width {
     width: 400px;
 }
+
+#ii-edit-button:hover{
+    text-decoration: underline;
+    color: var(--orange)
+}
