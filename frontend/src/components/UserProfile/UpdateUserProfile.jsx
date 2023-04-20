@@ -13,6 +13,8 @@ const UpdateUserProfile = ({ onClose, userData }) => {
   const [favoriteSport, setFavoriteSport] = useState(userData?.favoriteSport);
   const sessionUser = useSelector((state) => state.session.user);
   const dispatch = useDispatch();
+  const errors = useSelector(state => state?.sessionErrors)
+  console.log(errors)
   const [showUpdateUserProfileModal, setUpdateUserProfileModal] =
     useState(false);
 
@@ -56,7 +58,8 @@ const UpdateUserProfile = ({ onClose, userData }) => {
         <br />
         <form className="updateUserProfile" onSubmit={handleSubmit}>
           <div id="up-name">
-            <label>Name: </label>
+            {errors?.name && <div>{errors?.name}</div>}
+            <label>Name: 
             <br />
             <input
               type="text"
@@ -64,10 +67,13 @@ const UpdateUserProfile = ({ onClose, userData }) => {
               value={name}
               onChange={(e) => setName(e.target.value)}
             ></input>
+            </label>
           </div>
         <br />
 
           <div id="up-email">
+          {errors?.email && <div>{errors?.email}</div>}
+            <label>
             Email:
             <br></br>
             <input
@@ -76,10 +82,13 @@ const UpdateUserProfile = ({ onClose, userData }) => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             ></input>
+            </label>
           </div>
         <br />
 
           <div id="up-username">
+          {errors?.username && <div>{errors?.username}</div>}
+            <label>
             Username:
             <br></br>
             <input
@@ -88,10 +97,12 @@ const UpdateUserProfile = ({ onClose, userData }) => {
               value={username}
               onChange={(e) => setUsername(e.target.value)}
             ></input>
+            </label>
           </div>
         <br />
 
           <div id="up-bio">
+            <label>
             Bio:
             <br></br>
             <textarea
@@ -100,9 +111,11 @@ const UpdateUserProfile = ({ onClose, userData }) => {
               value={bio}
               onChange={(e) => setBio(e.target.value)}
             ></textarea>
+            </label>
           </div>
           <br />
           <div id="up-borough">
+          {errors?.borough && <div>{errors?.borough}</div>}
             <label htmlFor="dropdown">Select your borough: </label>
             <br />
             <select
@@ -123,6 +136,7 @@ const UpdateUserProfile = ({ onClose, userData }) => {
           <br />
 
           <div id="up-fave-sport">
+          {errors?.favoriteSport && <div>{errors?.favoriteSport}</div>}
             <label htmlFor="sport-dropdown">Favorite Sport: </label>
             <br />
             <select
