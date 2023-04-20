@@ -1,13 +1,14 @@
 import './gamesShow.css';
 import { formatTime, formatMonth } from '../../utils/utils';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { updateGame } from '../../store/games';
 
 
 const GamesShow = ({game}) => {
     let user = useSelector((state) => (state.session?.user))
+    const dispatch = useDispatch()
     
     if (!game) {
-debugger
         return(null)
     }
 
@@ -15,7 +16,7 @@ debugger
 
     const joinGame = () => {
         game.attendees.push(user.username)
-        debugger
+        dispatch(updateGame(game))
     }
 
     return(

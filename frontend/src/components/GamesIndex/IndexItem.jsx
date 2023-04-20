@@ -28,6 +28,17 @@ const IndexItem = ({game}) => {
     const [editModal, setEditModal] = useState(false);
     let user = useSelector((state) => (state.session?.user))
 
+    const checkUser = () => {
+        if(!user) return false
+        if (user._id == game?.host._id){
+            return true
+        } else {
+            return false
+        }
+    }
+
+    
+
     let image;
 
     switch (game.sport) {
@@ -101,7 +112,9 @@ const IndexItem = ({game}) => {
                     <p id="ii-sport">{game.sport[0].toUpperCase() + game.sport.slice(1)}</p>
                     <p>Host: {game.host?.username}</p>
                     <p>{game.date.month}/{game.date.day}/{game.date.year} @ {formatTime(game.time.hours, game.time.minutes)}</p>
-                    <p onClick={() => setEditModal(true)}>Edit</p>
+                    {checkUser() && (
+                        <span id='ii-edit-button' onClick={() => setEditModal(true)}>Edit</span>
+                    )}
                 </div>
             </div>
             {showModal && (

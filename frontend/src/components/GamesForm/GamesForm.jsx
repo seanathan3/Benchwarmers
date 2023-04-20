@@ -15,8 +15,6 @@ const GamesForm = ({game, formCallback}) => {
     const [showModal, setShowModal] = useState(false);
     const [editModal, setEditModal] = useState(false);
 
-    // console.log(errors)
-
     const today = new Date();
     let year = today.getFullYear();
 
