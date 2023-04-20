@@ -24,7 +24,7 @@ const GamesForm = ({game, formCallback}) => {
     const [sport, setSport] = useState('Badminton');
     const [skillLevel, setSkillLevel] = useState('Beginner');
     const [description, setDescription] = useState('');
-    // const [attendees, setAttendees] = useState([]);
+    const [attendees, setAttendees] = useState([]);
     const [maxCapacity, setMaxCapacity] = useState(0);
     const [minCapacity, setMinCapacity] = useState(0);
     const [time, setTime] = useState("10:10")
