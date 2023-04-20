@@ -24,19 +24,148 @@
   flex-direction: column;
   height: 100vh;
   width: 600px;
-  padding: 20px;
+  padding: 10px;
   box-sizing: border-box;
+  background-color: whitesmoke;
+  /* padding-bottom: 50px; */
+  overflow-y: auto;
 }
 
 .gf-item {
   margin: 5px 0;
+  background-color: whitesmoke;
   padding-left: 100px;
+}
+
+#gf-skill-level{
+  display: flex;
+  justify-content: center;
+  height: 35px;
+  width: 349px;
+  border: 1px solid gray;
+  border-radius: 10px;
+  padding-left: 5px;
+  font-family: Jost, sans-serif;
+  background-color: whitesmoke;
+  color: #808080;
+}
+
+#gf-description {
+  display: flex;
+  justify-content: center;
+  height: 35px;
+  width: 349px;
+  border: 1px solid gray;
+  border-radius: 10px;
+  padding-left: 5px;
+  font-family: Jost, sans-serif;
+  background-color: whitesmoke;
+}
+
+#gf-min-capacity {
+  display: flex;
+  justify-content: center;
+  height: 35px;
+  width: 349px;
+  border: 1px solid gray;
+  border-radius: 10px;
+  padding-left: 5px;
+  font-family: Jost, sans-serif;
+  background-color: whitesmoke;
+}
+
+#gf-max-capacity {
+  display: flex;
+  justify-content: center;
+  height: 35px;
+  width: 349px;
+  border: 1px solid gray;
+  border-radius: 10px;
+  padding-left: 5px;
+  font-family: Jost, sans-serif;
+  background-color: whitesmoke;
 }
 
 #gf-master .errors {
   padding-left: 100px;
 }
 
+#gf-time {
+  display: flex;
+  justify-content: center;
+  height: 35px;
+  width: 349px;
+  border: 1px solid gray;
+  border-radius: 10px;
+  padding-left: 5px;
+  font-family: Jost, sans-serif;
+  background-color: whitesmoke;
+  color: #808080;
+}
+#gf-date {
+  display: flex;
+  justify-content: center;
+  height: 35px;
+  width: 349px;
+  border: 1px solid gray;
+  border-radius: 10px;
+  padding-left: 5px;
+  font-family: Jost, sans-serif;
+  background-color: whitesmoke;
+  color: #808080;
+}
+#gf-title {
+  display: flex;
+  justify-content: center;
+  height: 35px;
+  width: 349px;
+  border: 1px solid gray;
+  border-radius: 10px;
+  padding-left: 5px;
+  font-family: Jost, sans-serif;
+  background-color: whitesmoke;
+}
+
 #gf-master h1 {
   border: none;
 }
+
+#gf-sport {
+  display: flex;
+  justify-content: center;
+  height: 35px;
+  width: 349px;
+  border: 1px solid gray;
+  border-radius: 10px;
+  padding-left: 5px;
+  font-family: Jost, sans-serif;
+  background-color: whitesmoke;
+  color: #808080;
+}
+
+#gf-sport option {
+  width: 100% 
+}
+
+#dt {
+  position: relative;
+  left: 150px
+}
+
+#cg-submit {
+  display: flex;
+  justify-content: center;
+}
+
+#scroller {
+  overflow: hidden;
+}
+
+#gf-map {
+  height: 300px !important;
+}
+
+/* .games-form-map{
+  height: 50%;
+  width: 100%;
+} */
