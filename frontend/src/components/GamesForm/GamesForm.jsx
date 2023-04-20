@@ -55,7 +55,7 @@ const GamesForm = ({game, formCallback}) => {
   let formattedToday = `${year}-${zeroMonth}-${zeroDay}`;
 
   let user = useSelector((state) => state.session?.user);
-  let gameId = game?.game?._id;
+  let gameId = game?._id;
   let userId;
 
   if (user) {
@@ -64,25 +64,20 @@ const GamesForm = ({game, formCallback}) => {
     userId = null;
   }
 
+// debugger
   useEffect(() => {
     if (gameId) {
+// debugger
       dispatch(fetchGame(gameId));
       setHeader("Edit Your Game");
-      // setSport(props.game.sport)
-      // setDescription(props.game.description)
-      // setMaxCapacity(props.game.maxCapacity)
-      // setMinCapacity(props.game.minCapacity)
-      // setSkillLevel(props.game.skillLevel)
-      // setTitle(props.game.title)
-
-      setSport(game?.game.sport);
-      setDescription(game?.game.description);
-      setMaxCapacity(game?.game.maxCapacity);
-      setMinCapacity(game?.game.minCapacity);
-      setSkillLevel(game?.game.skillLevel);
-      setTitle(game?.game.title);
-      setGameDate(formFormatDate(game?.game.date));
-      setTime(formFormatTime(game?.game.time));
+      setSport(game?.sport);
+      setDescription(game?.description);
+      setMaxCapacity(game?.maxCapacity);
+      setMinCapacity(game?.minCapacity);
+      setSkillLevel(game?.skillLevel);
+      setTitle(game?.title);
+      setGameDate(formFormatDate(game?.date));
+      setTime(formFormatTime(game?.time));
     }
   }, [dispatch, gameId]);
 
