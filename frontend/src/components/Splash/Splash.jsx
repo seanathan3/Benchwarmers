@@ -24,6 +24,9 @@ const Splash = () => {
     typewriter
       .pauseFor(1000)
       .typeString('The ball is in your court.')
+      .pauseFor(500)
+      .deleteChars(11)
+      .typeString('MY court :)')
       .pauseFor(2000)
       .start();
   }}
