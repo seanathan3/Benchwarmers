@@ -1,4 +1,24 @@
 #mf-master {
     display: flex;
     flex-direction: column;
+    width: 400px;
+    margin-top: 40px;
+}
+
+#mf-master > div {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#mf-master select {
+    height: 40px;
+    border-radius: 10px;
+    width: 350px;
+    margin: 10px 0;
+}
+
+#mf-master select:focus {
+    outline: none;
 }
