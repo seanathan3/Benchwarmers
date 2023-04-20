@@ -113,11 +113,12 @@ const GamesForm = (props) => {
             skillLevel,
             title,
             date: {year: parseInt(gameDate.slice(0,4)), month: parseInt(gameDate.slice(5,7)), day: parseInt(gameDate.slice(8,10))},
-            time: {hours: parseInt(time.slice(0,2)), minutes: parseInt(time.slice(-2))}
+            time: {hours: parseInt(time.slice(0,2)), minutes: parseInt(time.slice(-2))},
+            coordinates: { lat: coords?.lat, lng: coords?.lng }
         }
 
         newGame.host = userId
-
+debugger
         if(gameId){
             newGame._id = gameId
             dispatch(updateGame(newGame))
@@ -131,7 +132,7 @@ const GamesForm = (props) => {
         setCoords(coordinates);
     }
 
-    console.log(coords);
+    // console.log(coords);
 
     return (
         <>
@@ -166,7 +167,7 @@ const GamesForm = (props) => {
                 </select>
             </label>
             <label> Description
-                <input value={coords?.lat} onChange={changeDescription} required type='textarea' id='gf-description' />
+                <input value={description} onChange={changeDescription} required type='textarea' id='gf-description' />
             </label>
             <label> Min Capacity
                 <input value={minCapacity} onChange={changeMinCapacity} required type='input' id='gf-min-capacity' />

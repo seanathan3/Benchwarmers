@@ -110,7 +110,7 @@ const GamesFormMap = ({parentCallback}) => {
             marker.setMap(map);
         //   responseDiv.style.display = "block";
         //   response.innerText = JSON.stringify(result, null, 2);
-        debugger
+        // debugger
             parentCallback({"lat": results[0].geometry.viewport.Ha.lo, "lng": results[0].geometry.viewport.Va.lo})
             return results;
         })
