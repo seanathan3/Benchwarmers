@@ -6,3 +6,11 @@
 #gf-map{
     height: 500%;
 }
+
+#pin-title{
+    font-size: 20px;
+}
+
+#pin-date, #pin-time{
+    text-align: center;
+}

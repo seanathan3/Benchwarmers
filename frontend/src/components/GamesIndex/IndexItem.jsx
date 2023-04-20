@@ -20,11 +20,13 @@ import softballImg from '../../assets/sports-logos/softball.png';
 import tableTennisImg from '../../assets/sports-logos/table_tennis.png';
 import tennisImg from '../../assets/sports-logos/tennis.png';
 import volleyballImg from '../../assets/sports-logos/volleyball.png';
+import { useSelector } from 'react-redux';
 
 
 const IndexItem = ({game}) => {
     const [showModal, setShowModal] = useState(false);
     const [editModal, setEditModal] = useState(false);
+    let user = useSelector((state) => (state.session?.user))
 
     let image;
 
@@ -86,6 +88,9 @@ const IndexItem = ({game}) => {
     if (!game) {
         return (null)
     }
+
+    
+
 
 
     return(

@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react'
 import './map.css';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
+import { formatTime } from '../../utils/utils';
 
 const Map = () => {
 
@@ -34,27 +35,32 @@ const Map = () => {
                 {
                     position: {lat: game.coordinates.lat, lng: game.coordinates.lng},
                     map: map,
-                    title: `${game.sport}`,
-                    label: `${game.skillLevel}`
+                    // title: `${game.sport}`,
+                    // label: `${game.skillLevel}`
                 }
             )
 
             markers.current[game._id].addListener('click', () => {
                 const content = document.createElement("div");
+                
                 const nameElement = document.createElement("h2");
-        
                 nameElement.textContent = game.sport;
+                nameElement.setAttribute('id','pin-title')
                 content.appendChild(nameElement);
         
+
                 const placeIdElement = document.createElement("p");
-        
-                placeIdElement.textContent = game.sport;
+                placeIdElement.textContent = `${game.date.month}/${game.date.day}/${game.date.year}`;
+                placeIdElement.setAttribute('id','pin-date')
                 content.appendChild(placeIdElement);
-    
+
+
                 const placeAddressElement = document.createElement("p");
-    
-                placeAddressElement.textContent = game.sport;
+                placeAddressElement.textContent = formatTime(game.time.hours, game.time.minutes);
+                placeAddressElement.setAttribute('id','pin-time')
                 content.appendChild(placeAddressElement);
+
+
                 infoWindow.setContent(content);
                 infoWindow.open(map,  markers.current[game._id]);
             });
