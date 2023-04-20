@@ -22,4 +22,7 @@ body {
   #e16845 33%,
   #e99937 33%,
  );
+ --shawdow: 5px 5px 15px rgb(143, 199, 227, 0.5);
+ --modal-background: rgb(225, 104, 69, 0.5);
+ --background: rgb(236, 59, 19, 0.3);
 }
