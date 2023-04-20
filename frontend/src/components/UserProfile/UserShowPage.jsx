@@ -85,7 +85,6 @@ const UserShowPage = () => {
       </div>
       </div>
         <HostedGames/>
-        <About />
     </>
   );
 };
