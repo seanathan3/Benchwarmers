@@ -50,7 +50,9 @@ const MiniForm = () => {
                     <option value='Advanced'>Advanced</option>
                 </select>
             </div>
-            <SubmitButton clickfunctiion={openModal} textContext="Create Game" />
+            <div id="mf-button-container">
+                <SubmitButton clickfunctiion={openModal} textContext="Create Game" />
+            </div>
         </form>
     )
 };
