@@ -16,7 +16,6 @@ const GamesShow = ({game}) => {
     
 
     const joinGame = () => {
-        debugger
         game.attendees.push(user.username)
         dispatch(updateGame(game))
     }
@@ -58,7 +57,8 @@ const GamesShow = ({game}) => {
                         </div>
                     </div>
                     <div id='jg-button'>
-                    <SubmitButton clickFunction={joinGame} textContext='Join Game' />
+                    {user?._id === undefined || game.attendees.includes(user?.username) ? null : <SubmitButton clickFunction={joinGame} textContext='Join Game' />}
+                    {/* <SubmitButton clickFunction={joinGame} textContext='Join Game' />    */}
                     </div>
                     {/* <div id="gs-right">
                         <div onClick={joinGame}>Join Game</div>
