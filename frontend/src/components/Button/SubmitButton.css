@@ -7,12 +7,14 @@
   width: 87.5%;
 	height: 100%;
 	font-size: 16px;
+	font-weight: 500;
 	height: 48px;
 	border-radius: 10px; 
 	text-align: center;
 	color: white;
 	line-height: 20px;
 	border: none;
+	box-shadow: 5px 5px 15px rgb(143, 199, 227, 0.5);
 }
 
 #sb-button_hover {

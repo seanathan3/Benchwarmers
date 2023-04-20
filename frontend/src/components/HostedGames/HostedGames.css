@@ -2,12 +2,12 @@
   display: flex;
   width: 47%;
   height: 400px;
-  border: solid 1px var(--peach);
   margin-right: 10px;
   border-radius: 10px;
   margin-bottom: 10px;
   padding: 10px;
   margin-left: 10px;
   justify-content: center;
-  background-color: rgb(234, 59, 19, 0.15);
+  background-color: rgb(225, 104, 69, 0.5);
+  box-shadow: 5px 5px 15px rgb(143, 199, 227, 0.5);
 }
