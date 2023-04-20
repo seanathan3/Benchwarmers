@@ -5,11 +5,11 @@ const gameSchema = new Schema({
   coordinates: {
     lat: {
       type: Number,
-      // required: true
+      required: true
     },
     lng: {
       type: Number,
-      // required:true
+      required:true
     }
   },
   sport: {
@@ -54,15 +54,15 @@ const gameSchema = new Schema({
   date: {  
     month: {
       type: Number,
-      // required: true
+      required: true
     },
     day: {
       type: Number,
-      // required: true
+      required: true
     },
     year: {
       type: Number,
-      // required: true
+      required: true
     }
   },
   title: {

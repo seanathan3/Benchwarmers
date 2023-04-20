@@ -1,4 +1,5 @@
 import jwtFetch from "./jwt";
+import { receiveSessionErrors } from "./session";
 
 const RECEIVE_USER = 'users/RECEIVE_USER'
 const REMOVE_USER = 'users/REMOVE_USER'
@@ -24,13 +25,21 @@ export const fetchUser = userId => async dispatch => {
 };
 
 export const updateUser = (user) => async dispatch => {
-  const res = await jwtFetch(`/api/users/${user._id}`, {
-    method: "PATCH",
-    body: JSON.stringify(user),
-    headers: {"Content-Type": "application/json"}
-  })
-  const data = await res.json();
-  dispatch(receiveUser(data))
+  try {
+    const res = await jwtFetch(`/api/users/${user._id}`, {
+      method: "PATCH",
+      body: JSON.stringify(user),
+      headers: {"Content-Type": "application/json"}
+    })
+    const data = await res.json();
+    dispatch(receiveUser(data))
+  }
+  catch(err) {
+    const res = await err.json();
+    if (res.statusCode === 400) {
+      return dispatch(receiveSessionErrors(res.errors));
+    }  
+  }
 }
 
 export const deleteUser = userId => async dispatch => {
