@@ -34,6 +34,12 @@ const receiveErrors = (errors) => ({
 //     }
 // }
 
+export const getFilteredGames = (userId) => state => {
+    const games = state.games ? Object.values(state.games) : []
+    const filteredGames = games.filter((game) => (game.host._id == userId))
+    return filteredGames
+}
+
 export const fetchGames = () => async dispatch => {
     const res = await jwtFetch('/api/games');
     const data = await res.json();

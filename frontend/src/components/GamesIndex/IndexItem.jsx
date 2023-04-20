@@ -81,10 +81,6 @@ const IndexItem = ({game}) => {
     }
 
 
-<<<<<<< HEAD
-    // console.log(game)
-=======
->>>>>>> b555175cd1fb07c02bf1bddb819af4dfc6f7378b
     if (!game) {
         return (null)
     }
