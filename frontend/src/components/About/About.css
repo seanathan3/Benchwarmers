@@ -1,0 +1,62 @@
+#team {
+  display: flex;
+  flex-wrap: wrap;
+}
+#ab {
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+}
+
+#description-container {
+  border-radius: 10px;
+  border: 1px solid grey;
+  width: 75%;
+  padding: 20px;
+}
+
+#description {
+  font-family: Jost, sans-serif;
+  font-size: 18px;
+}
+
+#team-container {
+  border-radius: 10px;
+  border: 1px solid grey;
+  width: 75%;
+  padding: 20px;
+  font-family: Jost, sans-serif;
+}
+
+#about {
+  display: flex;
+  margin: 0 auto;
+}
+
+#about-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#team-photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50px;
+}
+#team {
+  display: flex;
+  justify-content: space-between;
+}
+
+#name-title {
+  display: flex;
+  justify-content: center;
+  font-size: 18px;
+}
+
+#icons {
+  display: flex;
+  justify-content: center;
+}

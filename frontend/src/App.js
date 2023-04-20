@@ -7,6 +7,7 @@ import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import GamesIndex from "./components/GamesIndex/GamesIndex";
 import GamesForm from "./components/GamesForm/GamesForm";
+import About from "./components/About/About";
 
 function App() {
   const dispatch = useDispatch();
@@ -29,10 +30,13 @@ function App() {
         <GamesIndex />
       </Route>
 
-      <Route path="/">
+      <Route exact path="/">
         <Splash />
       </Route>  
     
+      <Route exact path="/about">
+        <About />
+      </Route> 
     
     </Switch>
     </>
