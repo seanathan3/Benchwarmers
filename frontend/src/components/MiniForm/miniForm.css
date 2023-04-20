@@ -25,4 +25,15 @@
 
 #drop {
     background-color: whitesmoke;
+    font-family: Jost, sans-serif;
+    font-size: 16px;
+}
+
+.mf-title {
+    font-size: 20px;
+}
+
+#mf-master select {
+    height: 50px;
+    width: 322.5px;
 }

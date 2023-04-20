@@ -34,13 +34,13 @@ const Splash = () => {
                 </div>
                 <div id="s-content">
                     <div id="s-upcoming-games">
-                        <div className="sc-header">Featured Games</div>
+                        <div className="sc-header">Featured Games:</div>
                         {games.slice(0, 3).map(game => {
                             return <IndexItem game={game} />
                         })}
                     </div>
                     <div id="s-create-game">
-                        <div className="sc-header">Create a game</div>
+                        <div className="sc-header">Create a Game:</div>
                         <MiniForm />
                     </div>
                 </div>

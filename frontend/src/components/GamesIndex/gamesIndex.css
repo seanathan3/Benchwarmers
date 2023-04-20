@@ -54,13 +54,11 @@
 
 #il-master {
     width: 500px;
-    /* border-right: 2px solid black; */
     padding: 20px;
     overflow: scroll;
     height: calc(100vh - 134px);
     box-sizing: border-box;
-    /* Set the height of #il-master to 100% of its parent container */
-    background-color: whitesmoke;
+    background-color: rgb(225, 104, 69, 0.5);
 }
 
 
@@ -71,4 +69,10 @@
 #ii-edit-button:hover{
     text-decoration: underline;
     color: var(--orange)
+}
+
+#il-title {
+    display: flex;
+    justify-content: center;
+    font-size: 26px;
 }
