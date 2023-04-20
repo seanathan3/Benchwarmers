@@ -31,7 +31,7 @@ export const signup = user => startSession(user, '/api/users/register')
 export const login = user => startSession(user, '/api/users/login')
 
 const startSession = (userInfo, route) => async dispatch => {
-    debugger
+    // debugger
     try{
         const res = await jwtFetch(route, {
             method: 'POST',

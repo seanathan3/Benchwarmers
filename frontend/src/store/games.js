@@ -106,7 +106,7 @@ const gamesReducer = (state={}, action) => {
         case RECEIVE_GAMES:
             return { ...state, ...action.games }
         case RECEIVE_GAME:
-            nextState[action.game.id] = action.game;
+            nextState[action.game._id] = action.game;
             return nextState;
         case REMOVE_GAME:
             delete  nextState[action.gameId];

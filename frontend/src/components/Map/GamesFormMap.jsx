@@ -39,7 +39,7 @@ const GamesFormMap = ({parentCallback}) => {
     useEffect(() => {
 
         setGeocoder(new window.google.maps.Geocoder());
-        console.log(geocoder)
+        // console.log(geocoder)
 
 
         const inputText = document.createElement("input");
@@ -99,7 +99,7 @@ const GamesFormMap = ({parentCallback}) => {
     
     const geocode = (request) => {
         clear();
-        console.log(geocoder)
+        // console.log(geocoder)
         geocoder
         .geocode(request)
         .then((result) => {
