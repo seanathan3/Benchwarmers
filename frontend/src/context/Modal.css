@@ -12,8 +12,9 @@
 
 .modal-content {
   position: absolute;
-  background-color: white;
+  background-color:whitesmoke;
   border-radius: 16px;
+  box-shadow: 5px 5px 15px rgb(143, 199, 227, 0.5);
 }
 
 .modal-background {

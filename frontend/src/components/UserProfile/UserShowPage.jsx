@@ -9,9 +9,9 @@ import UpcomingGames from "../UpcomingGames/UpcomingGames";
 import HostedGames from "../HostedGames/HostedGames";
 import { deleteUser } from "../../store/user";
 import { useHistory } from "react-router-dom";
-import './UserProfile.css'
+import './UserShowPage.css'
 import { logout } from "../../store/session";
-import About from "../About/About";
+
 
 const UserShowPage = () => {
   const dispatch = useDispatch();
@@ -49,25 +49,23 @@ const UserShowPage = () => {
    
   return (
     <>
-      {user?.name && <h1 id='welcome'>Welcome back {user.username}!</h1>}
+    <div id='user-page'>
+      {user?.name && <label id='welcome'>Welcome back {user.username}!</label>}
       <h2 className="A-I">Account Information:</h2>
       <br />
     <div id="user-info">
-          <UpcomingGames/>
       <div id="up-info">
-        {user?.name && <div>Name: {user.name}</div>}
+        {user?.name && <div> <label id='title'>Name: </label>{user.name}</div>}
         <br />
-        {user?.email && <div>Email: {user.email}</div>}
+        {user?.email && <div><label id='title'>Email: </label>{user.email}</div>}
         <br />
-        {user?.username && <div>Username: {user.username}</div>}
+        {user?.username && <div><label id='title'>Username: </label>{user.username}</div>}
         <br />
-        {user?.bio && <div>Bio: {user.bio}</div>}
+        {user?.bio && <div><label id='title'>Bio: </label>{user.bio}</div>}
         <br />
-        {user?.borough && <div>Borough: {user.borough}</div>}
+        {user?.borough && <div><label id='title'>Borough: </label>{user.borough}</div>}
         <br />
-        {user?.favoriteSport && <div>Favorite Sport: {user.favoriteSport}</div>}
-        <br />
-        <br />
+        {user?.favoriteSport && <div><label id='title'>Favorite Sport: </label>{user.favoriteSport}</div>}
         <br />
         <br />
         <div className="up-button">
@@ -84,7 +82,11 @@ const UserShowPage = () => {
         <SubmitButton id='delete-user' clickFunction={deleteAccount} textContext='Delete Account' />
       </div>
       </div>
+      <div id='games'>
+      <UpcomingGames/>
         <HostedGames/>
+        </div>
+        </div>
     </>
   );
 };
