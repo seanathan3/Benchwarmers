@@ -13,13 +13,11 @@ const GamesFormMap = ({parentCallback}) => {
     const mapRef = useRef();
     const markers = useRef({});
     // const averageLatLng = {lat: 0, lng: 0};
-    // const games = useSelector(state => Object.values(state.games));
     const [geocoder, setGeocoder] = useState();
     const [marker, setMarker] = useState();
 
 
     useEffect(() => {
-// debugger
         setMap(
             new window.google.maps.Map(    
                 mapRef.current, {
@@ -30,7 +28,6 @@ const GamesFormMap = ({parentCallback}) => {
                 }
             )
         )
-// debugger
     }, []);
 
 
@@ -39,32 +36,28 @@ const GamesFormMap = ({parentCallback}) => {
     useEffect(() => {
 
         setGeocoder(new window.google.maps.Geocoder());
-        // console.log(geocoder)
-
 
         const inputText = document.createElement("input");
-    
         inputText.type = "text";
         inputText.placeholder = "Enter a location";
     
+        
         const submitButton = document.createElement("input");
-    
         submitButton.type = "button";
         submitButton.value = "Geocode";
         submitButton.classList.add("button", "button-primary");
     
+
         const clearButton = document.createElement("input");
-    
         clearButton.type = "button";
         clearButton.value = "Clear";
         clearButton.classList.add("button", "button-secondary");
 
-        const instructionsElement = document.createElement("p");
 
+        const instructionsElement = document.createElement("p");
         instructionsElement.id = "instructions";
         instructionsElement.innerHTML =
             "<strong>Instructions</strong>: Enter an address in the textbox to geocode or click on the map to reverse geocode.";
-            //   map.controls[window.google.maps.ControlPosition.LEFT_TOP].push(responseDiv);
             setMarker(new window.google.maps.Marker({
                 map,
             }));
@@ -76,7 +69,6 @@ const GamesFormMap = ({parentCallback}) => {
                 map.controls[window.google.maps.ControlPosition.LEFT_TOP].push(instructionsElement);
             map.addListener("click", (e) => {
                 geocode({ location: e.latLng });
-// debugger
             });
             submitButton.addEventListener("click", () =>
                 geocode({ address: inputText.value })
@@ -99,7 +91,6 @@ const GamesFormMap = ({parentCallback}) => {
     
     const geocode = (request) => {
         clear();
-        // console.log(geocoder)
         geocoder
         .geocode(request)
         .then((result) => {
@@ -108,9 +99,6 @@ const GamesFormMap = ({parentCallback}) => {
             map.setCenter(results[0].geometry.location);
             marker.setPosition(results[0].geometry.location);
             marker.setMap(map);
-        //   responseDiv.style.display = "block";
-        //   response.innerText = JSON.stringify(result, null, 2);
-        // debugger
             parentCallback({"lat": results[0].geometry.viewport.Ha.lo, "lng": results[0].geometry.viewport.Va.lo})
             return results;
         })
@@ -118,12 +106,6 @@ const GamesFormMap = ({parentCallback}) => {
             alert("Geocode was not successful for the following reason: " + e);
         });
     }
-
-
-
-
-//results[0].geometry.viewport.Ha.lo
-//results[0].geometry.viewport.Va.lo
 
 
     return(

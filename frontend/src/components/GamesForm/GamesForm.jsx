@@ -24,7 +24,7 @@ const GamesForm = ({game, formCallback}) => {
     const [sport, setSport] = useState('Badminton');
     const [skillLevel, setSkillLevel] = useState('Beginner');
     const [description, setDescription] = useState('');
-    // const [attendees, setAttendees] = useState([]);
+    const [attendees, setAttendees] = useState([]);
     const [maxCapacity, setMaxCapacity] = useState(0);
     const [minCapacity, setMinCapacity] = useState(0);
     const [time, setTime] = useState("10:10")
@@ -63,13 +63,6 @@ const GamesForm = ({game, formCallback}) => {
         if(gameId) {
             dispatch(fetchGame(gameId))
             setHeader('Edit Your Game')
-            // setSport(props.game.sport)
-            // setDescription(props.game.description)
-            // setMaxCapacity(props.game.maxCapacity)
-            // setMinCapacity(props.game.minCapacity)
-            // setSkillLevel(props.game.skillLevel)
-            // setTitle(props.game.title)
-
             setSport(game?.game.sport)
             setDescription(game?.game.description)
             setMaxCapacity(game?.game.maxCapacity)
@@ -155,8 +148,6 @@ const GamesForm = ({game, formCallback}) => {
         setShowModal(false);
         setEditModal(false);
     }
-
-    // console.log(coords);
 
     return (
         <>

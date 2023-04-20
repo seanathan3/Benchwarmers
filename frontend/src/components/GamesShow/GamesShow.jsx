@@ -1,10 +1,21 @@
 import './gamesShow.css';
 import { formatTime, formatMonth } from '../../utils/utils';
+import { useSelector } from 'react-redux';
 
 
 const GamesShow = ({game}) => {
+    let user = useSelector((state) => (state.session?.user))
+    
     if (!game) {
+debugger
         return(null)
+    }
+
+    
+
+    const joinGame = () => {
+        game.attendees.push(user.username)
+        debugger
     }
 
     return(
@@ -32,11 +43,12 @@ const GamesShow = ({game}) => {
                         </div>
                     </div>
                     <div id="gs-right">
+                        <div onClick={joinGame}>Join Game</div>
                         <div>
                             Attendees:
                         </div>
                         {game.attendees.map(attendee => {
-                            return <div key={attendee._id}>attendee.name</div>
+                            return <div key={attendee._id}>{attendee}</div>
                         })}
 
                     </div>
