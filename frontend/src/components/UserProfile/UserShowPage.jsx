@@ -11,7 +11,6 @@ import { deleteUser } from "../../store/user";
 import { useHistory } from "react-router-dom";
 import './UserShowPage.css'
 import { logout } from "../../store/session";
-import { fetchGames } from "../../store/games";
 
 
 const UserShowPage = () => {
@@ -27,7 +26,6 @@ const UserShowPage = () => {
 
   useEffect(() => {
     dispatch(fetchUser(userId))
-    dispatch(fetchGames())
   }, [userId, dispatch])
 
   const openUpdateUserProfileModal = () => {
@@ -78,12 +76,14 @@ const UserShowPage = () => {
         )}
         {showUpdateUserProfileModal && (
           <Modal onClose={handleClose} >
-            <UpdateUserProfile onClose={handleClose} userData={user} />
+            <UpdateUserProfile id='update-user'onClose={handleClose} userData={user} />
           </Modal>
         )}
         </div>
         <br />
+        {isCurrentUser && (
         <SubmitButton id='delete-user' clickFunction={deleteAccount} textContext='Delete Account' />
+        )}
       </div>
       </div>
       <div id='games'>

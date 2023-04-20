@@ -53,6 +53,8 @@ const About = () => {
           </div>
         </div>
         <br />
+        <br />
+        <br />
         <div id="team-container">
           <label id="ab">Meet the Team behind Benchwarmers</label>
           <br />
