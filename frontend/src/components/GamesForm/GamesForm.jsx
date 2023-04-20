@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import './GamesForm.css';
 import { fetchGame, updateGame, removeGame, createGame } from '../../store/games';
-
+import GamesFormMap from '../Map/GamesFormMap';
 
 const GamesForm = (props) => {
     const history = useHistory();
@@ -22,6 +22,7 @@ const GamesForm = (props) => {
     const [time, setTime] = useState({hours: 10, minutes: 10})
     const [gameDate, setGameDate] = useState({year: 2020, month: 1, day: 1})
     const [title, setTitle] = useState('');
+    const [coords, setCoords] = useState({});
 
     function getZeroDay(date){
         return (date.getDate() < 10 ? '0' : '') + date.getDate();
@@ -116,7 +117,7 @@ const GamesForm = (props) => {
         }
 
         newGame.host = userId
-debugger
+
         if(gameId){
             newGame._id = gameId
             dispatch(updateGame(newGame))
@@ -126,6 +127,11 @@ debugger
         // routeChange()
     }
 
+    function handleCallback(coordinates) {
+        setCoords(coordinates);
+    }
+
+    console.log(coords);
 
     return (
         <>
@@ -160,7 +166,7 @@ debugger
                 </select>
             </label>
             <label> Description
-                <input value={description} onChange={changeDescription} required type='textarea' id='gf-description' />
+                <input value={coords?.lat} onChange={changeDescription} required type='textarea' id='gf-description' />
             </label>
             <label> Min Capacity
                 <input value={minCapacity} onChange={changeMinCapacity} required type='input' id='gf-min-capacity' />
@@ -180,6 +186,8 @@ debugger
             <label> Submit
                 <input type='submit' onClick={handleSubmit} id='gf-submit' />
             </label>
+
+            <GamesFormMap parentCallback={handleCallback} />
         </form>
         </>
     );

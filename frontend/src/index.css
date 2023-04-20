@@ -1,9 +1,8 @@
 body {
-  font-family: 'Jost', sans-serif;
+  font-family: 'Jost', sans-serif !important;
   height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: rgb(233, 153, 55, 0.3);
 }
 
 #root {
@@ -23,5 +22,4 @@ body {
   #e16845 33%,
   #e99937 33%,
  );
-
 }

@@ -1,3 +1,9 @@
+#s-master {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 #s-heroSection {
     background-color: var(--peach);
     color: black;
@@ -9,4 +15,42 @@
     align-items: center;
     border-top: 2px solid black;
     border-bottom: 2px solid black;
+    width: 100%;
+}
+
+#s-content {
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 384px);
+    background-color: rgb(233, 153, 55, 0.6);
+}
+
+#s-upcoming-games {
+    box-sizing: border-box;
+    margin: 20px;
+    padding: 10px;
+    font-size: 24px;
+    flex: 1;
+    border-right: 1px dotted black;
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+}
+
+#s-upcoming-games div {
+    width: 400px;
+}
+
+#s-create-game {
+    box-sizing: border-box;
+    margin: 20px;
+    padding: 10px;
+    font-size: 24px;
+    border-left: 1px dotted black;
+    flex: 1;
+}
+
+.sc-header {
+    text-align: center;
 }
