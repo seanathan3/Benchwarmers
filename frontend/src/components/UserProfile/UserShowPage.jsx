@@ -11,6 +11,7 @@ import { deleteUser } from "../../store/user";
 import { useHistory } from "react-router-dom";
 import './UserProfile.css'
 import { logout } from "../../store/session";
+import About from "../About/About";
 
 const UserShowPage = () => {
   const dispatch = useDispatch();
@@ -84,6 +85,7 @@ const UserShowPage = () => {
       </div>
       </div>
         <HostedGames/>
+        <About />
     </>
   );
 };
