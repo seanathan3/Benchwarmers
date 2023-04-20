@@ -11,6 +11,7 @@ import { deleteUser } from "../../store/user";
 import { useHistory } from "react-router-dom";
 import './UserShowPage.css'
 import { logout } from "../../store/session";
+import { resetGames } from "../../store/games";
 
 
 const UserShowPage = () => {
@@ -25,7 +26,8 @@ const UserShowPage = () => {
   const history = useHistory();
 
   useEffect(() => {
-    dispatch(fetchUser(userId))
+    dispatch(fetchUser(userId));
+    dispatch(resetGames());
   }, [userId, dispatch])
 
   const openUpdateUserProfileModal = () => {
