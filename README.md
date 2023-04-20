@@ -23,6 +23,10 @@ Used to build user interface and allows for dynamic rendering of the DOM.
 ### Express
 Used to define routes and uses middleware to process requests and formulate responses.
 
+### Games
+Users have the ability to join open games created by other users if there is space available. They are able to see all upcoming games when they click on "Join Game" where they will see a list of upcoming games as well as where they are located on the map. They also have they option to create their own game to host. In their user profile, they will see a component holding all of their upcoming hosted games where they can also edit, or cancel the games.
+![Screenshot 2023-04-20 at 4 29 29 PM](https://user-images.githubusercontent.com/116519976/233480723-b422abe5-97b5-4434-944d-f8abc8a0fb1e.png)
+
 ### Google Maps API
 Displays an interactive map and can be customized to hold project data.
 One implementation of the Google Maps API was to retrieve a location from users when they create a game. Below is a screenshot of code that allowed us to grab the geolocation of the place they select. Then this information had to be passed up to the parent component, GamesForm, so the submission could be completed with the location of the game.
