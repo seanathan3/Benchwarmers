@@ -3,6 +3,8 @@ import jwtFetch from "./jwt";
 const RECEIVE_GAMES = 'games/RECEIVE_GAMES';
 const RECEIVE_GAME = 'games/RECEIVE_GAME';
 const REMOVE_GAME = 'games/REMOVE_GAME';
+const RECEIVE_ERRORS = 'games/RECEIVE_ERRORS'
+const REMOVE_ERRORS = 'games/REMOVE_ERRORS'
 
 export const receiveGames = games => ({
     type: RECEIVE_GAMES,
@@ -17,6 +19,11 @@ export const receiveGame = game => ({
 export const removeGame = gameId => ({
     type: REMOVE_GAME,
     gameId
+});
+
+const receiveErrors = (errors) => ({
+	type: RECEIVE_ERRORS,
+	errors,
 });
 
 // export const getGame = (gameId) => state => {
@@ -40,14 +47,31 @@ export const fetchGame = gameId => async dispatch => {
 };
 
 export const createGame = game => async dispatch => {
+<<<<<<< HEAD
     const response = await jwtFetch(`/api/games/`, {
         method: "POST",
         body: JSON.stringify(game),
         headers: {'Content-Type': 'application/json'}
     })
+=======
+    try {
+        const response = await jwtFetch(`/api/games/`, {
+            method: "POST",
+            body: JSON.stringify(game),
+            headers: {'Content-Type': 'application/json'}
+        })
+    
+        const data = await response.json();
+        dispatch(receiveGame(data));
+    }
+    catch(err) {
+        const res = await err.json();
+>>>>>>> fbf9e6e5676efb8ab6934a9e5d5462d8946d2b57
 
-    const data = await response.json();
-    dispatch(receiveGame(data));
+		if (res.statusCode === 400) {
+			return dispatch(receiveErrors(res.errors));
+		}
+    }
 };
 
 
@@ -73,6 +97,16 @@ export const deleteGame = gameId => async dispatch => {
     }
 }
 
+export const gameErrorsReducer = (state = null, action) => {
+	switch (action.type) {
+		case RECEIVE_ERRORS:
+			return action.errors;
+        case REMOVE_ERRORS:
+            return null;
+		default:
+			return state;
+	}
+};
 
 const gamesReducer = (state={}, action) => {
     let nextState = { ...state }
