@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import * as userActions from "../../store/user";
 import SubmitButton from "../Button/SubmitButton";
 import './UpdateUserProfileForm.css'
+import { removeSessionErrors } from "../../store/session";
 
 const UpdateUserProfile = ({ onClose, userData }) => {
   const [name, setName] = useState(userData?.name);
@@ -14,7 +15,6 @@ const UpdateUserProfile = ({ onClose, userData }) => {
   const sessionUser = useSelector((state) => state.session.user);
   const dispatch = useDispatch();
   const errors = useSelector(state => state?.sessionErrors)
-  console.log(errors)
   const [showUpdateUserProfileModal, setUpdateUserProfileModal] =
     useState(false);
 
@@ -27,9 +27,15 @@ const UpdateUserProfile = ({ onClose, userData }) => {
     setFavoriteSport(selectedValue);
   };
 
-  const handleUpdateUserProfileModalClose = () => {
-    setUpdateUserProfileModal(false);
-  };
+  // const handleUpdateUserProfileModalClose = () => {
+  //   setUpdateUserProfileModal(false);
+  // };
+
+  useEffect(() => {
+    return () => {
+        dispatch(removeSessionErrors());
+    };
+}, [dispatch]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -45,7 +51,10 @@ const UpdateUserProfile = ({ onClose, userData }) => {
         // profilePicUrl,
       };
       dispatch(userActions.updateUser(userInfo)).then(() => {
-        handleUpdateUserProfileModalClose();
+        // handleUpdateUserProfileModalClose();
+        if(name.length === 0 || email.length === 0 || username.length === 0 || bio.length === 0 || borough.length === 0 || favoriteSport.length === 0) {
+          return 
+        }
         onClose();
       });
     }
@@ -58,7 +67,7 @@ const UpdateUserProfile = ({ onClose, userData }) => {
         <br />
         <form className="updateUserProfile" onSubmit={handleSubmit}>
           <div id="up-name">
-            {errors?.name && <div>{errors?.name}</div>}
+            {errors?.name && <div className="errors">{errors?.name}</div>}
             <label>Name: 
             <br />
             <input
@@ -72,7 +81,7 @@ const UpdateUserProfile = ({ onClose, userData }) => {
         <br />
 
           <div id="up-email">
-          {errors?.email && <div>{errors?.email}</div>}
+          {errors?.email && <div className="errors">{errors?.email}</div>}
             <label>
             Email:
             <br></br>
@@ -87,7 +96,7 @@ const UpdateUserProfile = ({ onClose, userData }) => {
         <br />
 
           <div id="up-username">
-          {errors?.username && <div>{errors?.username}</div>}
+          {errors?.username && <div className="errors">{errors?.username}</div>}
             <label>
             Username:
             <br></br>
@@ -115,7 +124,7 @@ const UpdateUserProfile = ({ onClose, userData }) => {
           </div>
           <br />
           <div id="up-borough">
-          {errors?.borough && <div>{errors?.borough}</div>}
+          {errors?.borough && <div className="errors">{errors?.borough}</div>}
             <label htmlFor="dropdown">Select your borough: </label>
             <br />
             <select
@@ -136,7 +145,7 @@ const UpdateUserProfile = ({ onClose, userData }) => {
           <br />
 
           <div id="up-fave-sport">
-          {errors?.favoriteSport && <div>{errors?.favoriteSport}</div>}
+          {errors?.favoriteSport && <div className="errors">{errors?.favoriteSport}</div>}
             <label htmlFor="sport-dropdown">Favorite Sport: </label>
             <br />
             <select
