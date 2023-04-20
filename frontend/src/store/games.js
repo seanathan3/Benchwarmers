@@ -34,6 +34,12 @@ const receiveErrors = (errors) => ({
 //     }
 // }
 
+export const getFilteredGames = (userId) => state => {
+    const games = state.games ? Object.values(state.games) : []
+    const filteredGames = games.filter((game) => (game.host._id == userId))
+    return filteredGames
+}
+
 export const fetchGames = () => async dispatch => {
     const res = await jwtFetch('/api/games');
     const data = await res.json();
@@ -106,7 +112,7 @@ const gamesReducer = (state={}, action) => {
         case RECEIVE_GAMES:
             return { ...state, ...action.games }
         case RECEIVE_GAME:
-            nextState[action.game.id] = action.game;
+            nextState[action.game._id] = action.game;
             return nextState;
         case REMOVE_GAME:
             delete  nextState[action.gameId];

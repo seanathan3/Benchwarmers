@@ -14,7 +14,7 @@ const NavBar = () => {
     const dispatch = useDispatch();
     const userId = useSelector(state => state.session?.user?._id)
     const history = useHistory();
-    console.log(userId)
+    // console.log(userId)
 
     useEffect(() => {
         dispatch(getCurrentUser());
