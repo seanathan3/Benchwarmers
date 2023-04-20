@@ -61,7 +61,7 @@ const SignupForm = ({ onClose }) => {
           <br />
           
           <h2>Sign Up</h2>
-          <div>{errors?.email}</div>
+          <div>{errors?.name}</div>
       
           <label >
             <input
@@ -72,6 +72,7 @@ const SignupForm = ({ onClose }) => {
               onChange={(e) => setName(e.target.value)}
             />
           </label>
+          <div>{errors?.email}</div>
           <label>
             <input
              className="sf-email-container"
@@ -91,7 +92,7 @@ const SignupForm = ({ onClose }) => {
               onChange={(e) => setUsername(e.target.value)}
             />
           </label>
-          <label>{errors?.password}</label>
+          <div>{errors?.password}</div>
           <label>
             <input
              className="sf-password-container"
@@ -101,6 +102,7 @@ const SignupForm = ({ onClose }) => {
               onChange={(e) => setPassword(e.target.value)}
             />
           </label>
+          <div>{errors?.borough}</div>
           <label>
             <select
             className="sf-borough-containter"
@@ -118,6 +120,7 @@ const SignupForm = ({ onClose }) => {
               <option value="Staten-Island">Staten Island</option>
             </select>
           </label>
+          <div>{errors?.favoriteSport}</div>
           <label>
             <select
              className="sf-favoriteSport-container"
