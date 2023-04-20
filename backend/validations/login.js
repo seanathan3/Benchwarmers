@@ -4,7 +4,6 @@ const handleValidationErrors = require('./handleValidationErrors');
 const validateLoginInput = [
   check('email')
     .exists({ checkFalsy: true })
-    .withMessage('Please enter an email address')
     .isEmail()
     .withMessage('Email is invalid'),
   check('password')

@@ -82,7 +82,8 @@ const games = [
     sport: "Badminton",
     skillLevel: "Advanced",
     description: "Let's have a friendly but competitive game of badminton. No sore losers allowed.",
-    host: users[Math.floor(Math.random() * users.length)]._id,
+    host: users[1]._id,
+    attendees: [users[1].username],
     maxCapacity: 4,
     minCapacity: 4,
     time: {
@@ -103,8 +104,9 @@ const games = [
     },
     sport: "Basketball",
     skillLevel: "Intermediate",
+    attendees: [users[0].username],
     description: "Need 10 people for a full-court game.",
-    host: users[Math.floor(Math.random() * users.length)]._id,
+    host: users[0]._id,
     maxCapacity: 10,
     minCapacity: 10,
     time: {
@@ -126,7 +128,8 @@ const games = [
     sport: "Cycling",
     skillLevel: "Beginner",
     description: "Meetup at Meltzer Park for a nice bike ride around the LES.",
-    host: users[Math.floor(Math.random() * users.length)]._id,
+    host: users[2]._id,
+    attendees: [users[2].username],
     maxCapacity: 10,
     minCapacity: 2,
     time: {
@@ -148,7 +151,8 @@ const games = [
     sport: "Football",
     skillLevel: "Beginner",
     description: "Need a couple of people to toss around the pigskin with.",
-    host: users[Math.floor(Math.random() * users.length)]._id,
+    host: users[3]._id,
+    attendees: [users[3].username],
     maxCapacity: 4,
     minCapacity: 2,
     time: {
@@ -170,7 +174,8 @@ const games = [
     sport: "Table Tennis",
     skillLevel: "Intermediate",
     description: "Let's have some drinks and play table tennis at SPIN.",
-    host: users[Math.floor(Math.random() * users.length)]._id,
+    host: users[4]._id,
+    attendees: [users[4].username],
     maxCapacity: 4,
     minCapacity: 2,
     time: {
@@ -192,7 +197,8 @@ const games = [
     sport: "Darts",
     skillLevel: "Advanced",
     description: "Come for the darts, stay for the drinks. Let's have some fun.",
-    host: users[Math.floor(Math.random() * users.length)]._id,
+    host: users[5]._id,
+    attendees: [users[5].username],
     maxCapacity: 8,
     minCapacity: 2,
     time: {
@@ -214,7 +220,8 @@ const games = [
     sport: "Golf",
     skillLevel: "Beginner",
     description: "Looking to play some golf for the first time. Everyone is welcome.",
-    host: users[Math.floor(Math.random() * users.length)]._id,
+    host: users[6]._id,
+    attendees: [users[6].username],
     maxCapacity: 10,
     minCapacity: 2,
     time: {
@@ -236,7 +243,8 @@ const games = [
     sport: "Baseball",
     skillLevel: "Beginner",
     description: "Want to get a friendly group together to play a game of baseball. Please have your own glove.",
-    host: users[Math.floor(Math.random() * users.length)]._id,
+    host: users[0]._id,
+    attendees: [users[0].username],
     maxCapacity: 26,
     minCapacity: 10,
     time: {
@@ -258,7 +266,8 @@ const games = [
     sport: "Soccer",
     skillLevel: "Intermediate",
     description: "Looking to meet a group of people who are willing to regularly meetup to play soccer.",
-    host: users[Math.floor(Math.random() * users.length)]._id,
+    host: users[1]._id,
+    attendees: [users[1].username],
     maxCapacity: 26,
     minCapacity: 6,
     time: {
@@ -280,7 +289,8 @@ const games = [
     sport: "Tennis",
     skillLevel: "Advanced",
     description: "Trying to brush up on my tennis skills. Need a partner or three more for a game of doubles. Fair warning, I'm a beast.",
-    host: users[Math.floor(Math.random() * users.length)]._id,
+    host: users[2]._id,
+    attendees: [users[2].username],
     maxCapacity: 4,
     minCapacity: 2,
     time: {
@@ -302,7 +312,8 @@ const games = [
     sport: "Handball",
     skillLevel: "Beginner",
     description: "Recently got into handball. Want some people to play and practice with.",
-    host: users[Math.floor(Math.random() * users.length)]._id,
+    host: users[3]._id,
+    attendees: [users[3].username],
     maxCapacity: 4,
     minCapacity: 2,
     time: {
@@ -324,7 +335,8 @@ const games = [
     sport: "Handball",
     skillLevel: "Advanced",
     description: "I am the handball master. Want some butts to kick.",
-    host: users[Math.floor(Math.random() * users.length)]._id,
+    host: users[4]._id,
+    attendees: [users[4].username],
     maxCapacity: 4,
     minCapacity: 2,
     time: {
