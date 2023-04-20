@@ -27,9 +27,9 @@ const UpdateUserProfile = ({ onClose, userData }) => {
     setFavoriteSport(selectedValue);
   };
 
-  const handleUpdateUserProfileModalClose = () => {
-    setUpdateUserProfileModal(false);
-  };
+  // const handleUpdateUserProfileModalClose = () => {
+  //   setUpdateUserProfileModal(false);
+  // };
 
   useEffect(() => {
     return () => {
@@ -51,7 +51,10 @@ const UpdateUserProfile = ({ onClose, userData }) => {
         // profilePicUrl,
       };
       dispatch(userActions.updateUser(userInfo)).then(() => {
-        handleUpdateUserProfileModalClose();
+        // handleUpdateUserProfileModalClose();
+        if(name.length === 0 || email.length === 0 || username.length === 0 || bio.length === 0 || borough.length === 0 || favoriteSport.length === 0) {
+          return 
+        }
         onClose();
       });
     }
