@@ -50,12 +50,11 @@ const UpdateUserProfile = ({ onClose, userData }) => {
         favoriteSport,
         // profilePicUrl,
       };
-      dispatch(userActions.updateUser(userInfo)).then(() => {
+      dispatch(userActions.updateUser(userInfo)).then((res) => {
         // handleUpdateUserProfileModalClose();
-        if(name.length === 0 || email.length === 0 || username.length === 0 || bio.length === 0 || borough.length === 0 || favoriteSport.length === 0) {
-          return 
+        if(res.type === 'users/RECEIVE_USER') {
+          onClose();
         }
-        onClose();
       });
     }
   };
