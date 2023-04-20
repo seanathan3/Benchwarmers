@@ -1,18 +1,20 @@
 import { useState, useRef, useEffect } from 'react'
 import './map.css';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { formatTime } from '../../utils/utils';
 import GamesShow from '../GamesShow/GamesShow';
 import { Modal } from '../../context/Modal'
+import { fetchGame } from '../../store/games';
 
 const Map = () => {
-
+    const dispatch = useDispatch();
     const [map, setMap] = useState();
     const mapRef = useRef();
     const markers = useRef({});
     // const averageLatLng = {lat: 0, lng: 0};
     const games = useSelector(state => Object.values(state.games));
-    const [showModal, setShowModal] = useState(false)
+    const [showModal, setShowModal] = useState(false);
+    const [currentGameId, setCurrentGameId] = useState();
 
 
     useEffect(() => {        
@@ -25,7 +27,10 @@ const Map = () => {
                 }
             )
         )
-    }, []);
+        if (currentGameId) {
+            dispatch(fetchGame)
+        }
+    }, [dispatch, currentGameId]);
 
 
     useEffect(() => {
@@ -46,13 +51,13 @@ const Map = () => {
             markers.current[game._id].addListener('click', () => {
                 const content = document.createElement("div");
                 content.setAttribute('id', 'pin-textbox');
-                content.addEventListener('click', () => {
-                    setShowModal(true)
-                })
-
-                debugger
+                
                 
                 const nameElement = document.createElement("h2");
+                nameElement.addEventListener('click', () => {
+                    setShowModal(game)
+                    setCurrentGameId(markers.current[game._id])
+                })
                 nameElement.textContent = game.sport;
                 nameElement.setAttribute('id','pin-title')
                 content.appendChild(nameElement);
@@ -82,7 +87,7 @@ const Map = () => {
             <div ref={mapRef} id='map'></div>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>
-                    <GamesShow />
+                    <GamesShow game={showModal}/>
                 </Modal>
             )}
         </>
