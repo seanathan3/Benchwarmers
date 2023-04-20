@@ -25,5 +25,8 @@
   "homepage": "https://github.com/sean-a99/Benchwarmers#readme",
   "engines": {
     "node": "16.19"
+  },
+  "dependencies": {
+    "typewriter-effect": "^2.19.0"
   }
 }

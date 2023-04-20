@@ -38,6 +38,7 @@ h2 {
   border: 1px solid gray;
   padding-left: 5px;
   font-family: Jost, sans-serif;
+  background-color: whitesmoke;
 }
 
 .sf-favoriteSport-container,
@@ -49,6 +50,7 @@ h2 {
   border: 1px solid gray;
   padding-left: 5px;
   font-family: Jost, sans-serif;
+  background-color: whitesmoke;
 }
 
 .sf-auth-button {
@@ -78,12 +80,14 @@ h2 {
 .sf-name-container {
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
+  background-color: whitesmoke;
 }
 
 .sf-favoriteSport-container {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   color: #808080;
+  background-color: whitesmoke;
 }
 
 .sf-borough-containter {
@@ -101,7 +105,9 @@ h2 {
 
 .sf-lg-email-container {
   border-radius: 10px;
+  background-color: whitesmoke;
 }
 .sf-lg-password-container {
   border-radius: 10px;
+  background-color: whitesmoke;
 }

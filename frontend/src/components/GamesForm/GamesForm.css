@@ -8,11 +8,11 @@
     text-rendering: optimizeLegibility;
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
-    background-color: white;
+    background-color: whitesmoke;
   }
   
   .dialog-sheet {
-    background: white;
+    background: whitesmoke;
     border-radius: 4px;
     box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.04), 0px 4px 5px rgba(0, 0, 0, 0.06),
       0px 2px 4px -1px rgba(0, 0, 0, 0.09);

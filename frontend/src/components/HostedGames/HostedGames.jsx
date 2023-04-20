@@ -2,23 +2,31 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchUser, getUser } from "../../store/user";
 import { useParams } from "react-router";
 import { useEffect } from "react";
+import { getFilteredGames } from "../../store/games";
+import IndexItem from "../GamesIndex/IndexItem";
 import './HostedGames.css'
 
 const HostedGames = () => {
   const dispatch = useDispatch();
-  const getSessionUser = state => state.session.user
-  const sessionUser = useSelector(getSessionUser)
   const { userId } = useParams();
-  const user = useSelector(getUser(userId));
-  const isCurrentUser = (userId === sessionUser?._id);
+  const filteredGames = useSelector(getFilteredGames(userId))
 
   useEffect(() => {
     dispatch(fetchUser(userId))
   }, [userId, dispatch])
 
   return (
+     <div id='hg-scroll-wrapper'>
     <div id='hosted'>
-      <h2>Your Games:</h2>
+      <h2 id='hg-title'>Your Games:</h2>
+      <div id='hg-card-container'>
+        {
+          filteredGames.map((game) => {
+            return <IndexItem key={game._id} game={game} />
+          })
+        }
+      </div>
+      </div>
     </div>
   )
 

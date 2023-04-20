@@ -51,10 +51,12 @@ const UserShowPage = () => {
     <>
     <div id='user-page'>
       {user?.name && <label id='welcome'>Welcome back {user.username}!</label>}
-      <h2 className="A-I">Account Information:</h2>
       <br />
     <div id="user-info">
       <div id="up-info">
+      <h2 id="welcome-AI">Account Information:</h2>
+      <br />
+      <br />
         {user?.name && <div> <label id='title'>Name: </label>{user.name}</div>}
         <br />
         {user?.email && <div><label id='title'>Email: </label>{user.email}</div>}

@@ -3,15 +3,15 @@
     border: 1px solid gray;
     border-radius: 25px;
     margin: 10px 0;
-    box-shadow:0 2px 5px 0 rgba(213,217,217,.5);
+    box-shadow: 5px 5px 15px rgb(143, 199, 227, 0.5);
     display: flex;
     align-items: center;
-    background-color: white;
+    background-color: whitesmoke;
     font-size: 16px;
 }
 
 #ii-master:hover {
-    background-color: #ebebeb;
+    background-color: rgb(202, 235, 252);
     cursor: pointer;
 }
 
@@ -60,7 +60,7 @@
     height: calc(100vh - 134px);
     box-sizing: border-box;
     /* Set the height of #il-master to 100% of its parent container */
-    background-color: white;
+    background-color: whitesmoke;
 }
 
 
