@@ -8,7 +8,7 @@ function handleSubmit(e) {
 const MiniForm = () => {
 
     return(
-        <form onSubmit={handleSubmit}>
+        <form  id="mf-maste" onSubmit={handleSubmit}>
             <input type="text" placeholder="sport" />
             <input type="text" placeholder="max capacity" />
             <input type="text" placeholder="skill level" />
