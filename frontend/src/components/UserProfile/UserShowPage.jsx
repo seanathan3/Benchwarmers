@@ -48,7 +48,7 @@ const UserShowPage = () => {
     dispatch(logout());
     history.push(`/`)
   }
-   
+
   return (
     <>
     <div id='user-page'>
