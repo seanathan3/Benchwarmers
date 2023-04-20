@@ -25,10 +25,6 @@ const UpdateUserProfile = ({ onClose, userData }) => {
     setFavoriteSport(selectedValue);
   };
 
-  // const handleOtherSportChange = (e) => {
-  //   setOtherSport(e.target.value);
-  // };
-
   const handleUpdateUserProfileModalClose = () => {
     setUpdateUserProfileModal(false);
   };
@@ -153,19 +149,7 @@ const UpdateUserProfile = ({ onClose, userData }) => {
               <option value="Table-Tennis">Table Tennis</option>
               <option value="Tennis">Tennis</option>
               <option value="Volleyball">Volleyball</option>
-              <option value="Other">Other</option>
             </select>
-            {/* {favoriteSport === "other" && (
-              <div>
-                <label htmlFor="other-sport">Other: </label>
-                <input
-                  id="other-sport"
-                  type="text"
-                  value={otherSport}
-                  onChange={handleOtherSportChange}
-                />
-              </div>
-            )} */}
           </div>
           <br />
           <br />
