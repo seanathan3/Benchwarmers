@@ -155,6 +155,7 @@
 #cg-submit {
   display: flex;
   justify-content: center;
+  padding-top: 20px;
 }
 
 #scroller {
@@ -163,6 +164,7 @@
 
 #gf-map {
   height: 300px !important;
+  padding: 30px;
 }
 
 /* .games-form-map{

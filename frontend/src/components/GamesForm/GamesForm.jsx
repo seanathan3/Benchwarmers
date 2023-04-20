@@ -175,7 +175,6 @@ const GamesForm = ({game, formCallback}) => {
       <form id="gf-master">
         <h1>{header}</h1>
         <div className="gf-item" v>
-          {/* <div>Sport</div> */}
           <select value={sport} onChange={changeSport} id="gf-sport">
             <option value="" disabled selected>
               Select Sport
@@ -201,7 +200,6 @@ const GamesForm = ({game, formCallback}) => {
         </div>
         {errors?.sport && <div className="errors">{errors?.sport}</div>}
         <div className="gf-item">
-          {/* <div>Skill Level</div> */}
           <select
             value={skillLevel}
             onChange={changeSkillLevel}
@@ -219,7 +217,6 @@ const GamesForm = ({game, formCallback}) => {
           <div className="errors">{errors?.skillLevel}</div>
         )}
         <div className="gf-item">
-          {/* <div>Title</div> */}
           <input
             value={title}
             placeholder="Title"
@@ -231,7 +228,6 @@ const GamesForm = ({game, formCallback}) => {
         </div>
         {errors?.title && <div className="errors">{errors?.title}</div>}
         <div className="gf-item">
-          {/* <div>Description</div> */}
           <input
             value={description}
             placeholder="Description"
@@ -245,7 +241,6 @@ const GamesForm = ({game, formCallback}) => {
           <div className="errors">{errors?.description}</div>
         )}
         <div className="gf-item">
-          {/* <div>Min Capacity</div> */}
           <input
             value={minCapacity}
             onChange={changeMinCapacity}
@@ -259,7 +254,6 @@ const GamesForm = ({game, formCallback}) => {
           <div className="errors">{errors?.minCapacity}</div>
         )}
         <div className="gf-item">
-          {/* <div>Max Capacity</div> */}
           <input
             value={maxCapacity}
             placeholder="Max Capacity"
@@ -273,7 +267,6 @@ const GamesForm = ({game, formCallback}) => {
           <div className="errors">{errors?.maxCapacity}</div>
         )}
         <div className="gf-item">
-          {/* <div id='dt'>Time</div> */}
           <input
             required
             value={time}
@@ -284,7 +277,6 @@ const GamesForm = ({game, formCallback}) => {
         </div>
         {errors?.time && <div className="errors">{errors?.time}</div>}
         <div className="gf-item">
-          {/* <div id='dt'>Date</div> */}
           <input
             value={gameDate}
             onChange={changeGameDate}
@@ -295,10 +287,6 @@ const GamesForm = ({game, formCallback}) => {
           />
         </div>
         {errors?.date && <div className="errors">{errors?.date}</div>}
-        {/* <div className="gf-item">
-          <input type="submit" onClick={handleSubmit} id="gf-submit" />
-        </div> */} 
-        <br />
 
         <div id='gf-map'>
         <GamesFormMap className="games-form-map" parentCallback={handleCallback}/>
