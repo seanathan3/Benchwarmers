@@ -59,6 +59,7 @@
     height: calc(100vh - 134px);
     box-sizing: border-box;
     background-color: rgb(225, 104, 69, 0.5);
+    border-right: 2px solid black;
 }
 
 
