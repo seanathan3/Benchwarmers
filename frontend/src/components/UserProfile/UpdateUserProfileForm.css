@@ -20,6 +20,7 @@
   border: 1px solid gray;
   line-height: 40px;
   font-size: 16px;
+  background-color:whitesmoke;
 }
 
 #bio {
@@ -28,6 +29,7 @@
   font-size: 16px;
   border-radius: 10px;
   border: 1px solid gray;
+  background-color:whitesmoke;
 }
 
 #dropdown {
@@ -36,6 +38,7 @@
   border: 1px solid gray;
   font-size: 16px;
   line-height: 20px;
+  background-color:whitesmoke;
 }
 
 #sport-dropdown {
@@ -43,6 +46,7 @@
   border-radius: 10px;
   border: 1px solid gray;
   font-size: 16px;
+  background-color:whitesmoke;
 }
 
 #up-information {
@@ -51,7 +55,8 @@
 }
 
 #sb-button #updateButton {
-  width: 50% ;
+  width: 100% ;
+  font-weight: 600;
 }
 
 option {

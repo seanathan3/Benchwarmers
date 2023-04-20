@@ -11,10 +11,11 @@
 
 #description-container {
   border-radius: 10px;
-  border: 1px solid grey;
   width: 75%;
   padding: 20px;
   background-color: rgb(225, 104, 69, 0.5);
+  box-shadow: 5px 5px 15px rgb(143, 199, 227, 0.5);
+
 }
 
 #description {
@@ -24,11 +25,11 @@
 
 #team-container {
   border-radius: 10px;
-  border: 1px solid grey;
   width: 75%;
   padding: 20px;
   font-family: Jost, sans-serif;
   background-color: rgb(225, 104, 69, 0.5);
+  box-shadow: 5px 5px 15px rgb(143, 199, 227, 0.5);
 }
 
 #about {
@@ -43,6 +44,7 @@
   align-items: center;
   padding-top: 25px;
   padding-bottom: 25px;
+  
 }
 
 #team-photo {
