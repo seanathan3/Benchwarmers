@@ -2,6 +2,8 @@ import { useState, useRef, useEffect } from 'react'
 import './map.css';
 import { useSelector } from 'react-redux';
 import { formatTime } from '../../utils/utils';
+import GamesShow from '../GamesShow/GamesShow';
+import { Modal } from '../../context/Modal'
 
 const Map = () => {
 
@@ -10,6 +12,7 @@ const Map = () => {
     const markers = useRef({});
     // const averageLatLng = {lat: 0, lng: 0};
     const games = useSelector(state => Object.values(state.games));
+    const [showModal, setShowModal] = useState(false)
 
 
     useEffect(() => {        
@@ -42,6 +45,12 @@ const Map = () => {
 
             markers.current[game._id].addListener('click', () => {
                 const content = document.createElement("div");
+                content.setAttribute('id', 'pin-textbox');
+                content.addEventListener('click', () => {
+                    setShowModal(true)
+                })
+
+                debugger
                 
                 const nameElement = document.createElement("h2");
                 nameElement.textContent = game.sport;
@@ -71,6 +80,11 @@ const Map = () => {
     return(
         <>
             <div ref={mapRef} id='map'></div>
+            {showModal && (
+                <Modal onClose={() => setShowModal(false)}>
+                    <GamesShow />
+                </Modal>
+            )}
         </>
     )
 };

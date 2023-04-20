@@ -115,13 +115,14 @@ router.patch('/:id', requireUser, validateGameInput, async (req, res, next) => {
       game.sport = req.body.sport
       game.skillLevel = req.body.skillLevel
       game.description = req.body.description
-      game.host = req.user._id
+      // game.host = req.user._id
       game.maxCapacity = req.body.maxCapacity
       game.minCapacity = req.body.minCapacity
       game.photoUrl = req.body.photoUrl
       game.time = req.body.time
       game.date = req.body.date
       game.title = req.body.title
+      game.attendees = req.body.attendees
       
       game = await game.save()
       game = await game.populate("host", "_id username");
