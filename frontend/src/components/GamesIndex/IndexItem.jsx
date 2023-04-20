@@ -81,7 +81,6 @@ const IndexItem = ({game}) => {
     }
 
 
-    console.log(game)
     if (!game) {
         return (null)
     }

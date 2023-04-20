@@ -3,7 +3,7 @@ const IndexNav = () => {
 
     return(
         <>
-            <div id="in-master">Welcome to Index Nav!</div>
+            <div id="in-master"></div>
         </>
     )
 }

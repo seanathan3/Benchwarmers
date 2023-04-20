@@ -5,6 +5,7 @@ import { logout } from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
 import SignupFormModal from '../SessionForms/SignupFormModal';
 import LoginFormModal from '../SessionForms/LoginFormModal';
+import CreateGameModal from '../GamesForm/CreateGameModal';
 import { useEffect } from 'react';
 import { getCurrentUser } from '../../store/session';
 import { useHistory } from 'react-router-dom';
@@ -38,7 +39,7 @@ const NavBar = () => {
     if(userId){
         loggedInButtons = (
             <>
-                <div>Create Game</div>
+                <CreateGameModal />
                 <Link to={`/user-profile/${userId}`}>
                     <div>Profile</div>
                 </Link>
