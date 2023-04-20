@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import { fetchGames } from '../../store/games';
 import IndexItem from '../GamesIndex/IndexItem';
 import MiniForm from '../MiniForm/MiniForm';
+import Typewriter from 'typewriter-effect'
 
 const Splash = () => {
     const dispatch = useDispatch();
@@ -18,7 +19,15 @@ const Splash = () => {
         <>
             <div id="s-master">
                 <div id="s-heroSection">
-                    The ball is in your court
+                <Typewriter
+  onInit={(typewriter) => {
+    typewriter
+      .pauseFor(1000)
+      .typeString('The ball is in your court.')
+      .pauseFor(2000)
+      .start();
+  }}
+/>
                 </div>
                 <div id="s-content">
                     <div id="s-upcoming-games">

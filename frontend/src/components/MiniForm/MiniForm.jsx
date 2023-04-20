@@ -20,10 +20,10 @@ const MiniForm = () => {
                 <div className="mf-title">
                     Sport
                 </div>
-                <select value={sport} onChange={e => setSport(e.target.value)} >
+                <select id='drop' value={sport} onChange={e => setSport(e.target.value)} >
                     <option value='Badminton'>Badminton</option>
-                    <option value='Baseball'>Baseball</option>
                     <option value='Basketball'>Basketball</option>
+                    <option value='Baseball'>Baseball</option>
                     <option value='Cycling'>Cycling</option>
                     <option value='Darts'>Darts</option>
                     <option value='Fencing'>Fencing</option>
@@ -44,7 +44,7 @@ const MiniForm = () => {
                 <div className="mf-title">
                     Skill Level
                 </div>
-                <select value={skillLevel} onChange={e => setSkillLevel(e.target.value)}>
+                <select id='drop' value={skillLevel} onChange={e => setSkillLevel(e.target.value)}>
                     <option value='Beginner'>Beginner</option>
                     <option value='Intermediate'>Intermediate</option>
                     <option value='Advanced'>Advanced</option>

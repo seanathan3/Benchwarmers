@@ -39,12 +39,12 @@
 
 #nb-rightLinks div:hover {
     background-color: #ebebeb;
-    color: var(--white);
+    color: whitesmoke;
     background-color: var(--orange);
 }
 
 #nb-rightLinks a:hover {
     background-color: #ebebeb;
-    color: var(--white);
+    color: whitesmoke;
     background-color: var(--orange);
 }
