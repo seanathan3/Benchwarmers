@@ -28,7 +28,7 @@
 #s-content {
     display: flex;
     width: 100%;
-    height: calc(100vh - 384px);
+    height: calc(100vh - 184px);
     background-color: rgb(236, 59, 19, 0.3);
 }
 
