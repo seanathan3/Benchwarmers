@@ -11,6 +11,12 @@
     font-size: 20px;
 }
 
+#pin-title:hover {
+    color: var(--orange);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
 #pin-date, #pin-time{
     text-align: center;
 }

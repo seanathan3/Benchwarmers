@@ -4,6 +4,7 @@
     box-sizing: border-box;
     padding: 10px;
     font-size: 20px;
+    background-color: rgb(233, 153, 55, 0.3);
 }
 
 #gs-header {
@@ -22,8 +23,7 @@
     line-height: 30px;
     padding: 20px;
     display: flex;
-    flex-wrap: wrap;
-    justify-content:space-between;
+    justify-content: center;
 }
 
 #gs-left {
@@ -37,6 +37,7 @@
 }
 
 #gs-host {
+    padding-top: 6px;
     padding-left: 20px;
 }
 
@@ -53,15 +54,27 @@
 }
 
 #gs-description {
-    margin-top: 60px;
+    margin-top: 40px;
 }
 
 #gs-spots-left {
     margin-top: 60px;
     color: var(--peach);
+    font-weight: 500;
+    text-shadow: 1px solid #89250e;
 }
 
 #gs-right {
     min-width: 400px;
     max-width: 600px;
+}
+
+#jg-button {
+    position: relative;
+    left: 50px;
+    width: 250px;
+}
+
+#details {
+    font-weight: 600;
 }
