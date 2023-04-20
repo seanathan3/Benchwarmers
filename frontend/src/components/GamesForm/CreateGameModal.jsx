@@ -5,12 +5,16 @@ import GamesForm from './GamesForm';
 function CreateGameModal() {
     const [showModal, setShowModal] = useState(false);
 
+    function closeModal() {
+        setShowModal(false)
+    }
+
     return(
         <>
             <div onClick={() => setShowModal(true)}>Create Game</div>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>
-                    <GamesForm />
+                    <GamesForm formCallback={closeModal} />
                 </Modal>
             )}
         </>
