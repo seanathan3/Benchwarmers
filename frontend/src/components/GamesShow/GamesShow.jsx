@@ -15,7 +15,6 @@ const GamesShow = ({game}) => {
     
 
     const joinGame = () => {
-        debugger
         game.attendees.push(user.username)
         dispatch(updateGame(game))
     }
