@@ -4,12 +4,17 @@ import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import './GamesForm.css';
 import { fetchGame, updateGame, removeGame, createGame } from '../../store/games';
 import GamesFormMap from '../Map/GamesFormMap';
+import { formFormatTime } from '../../utils/utils';
+import { formFormatDate } from '../../utils/utils';
 
-const GamesForm = (props) => {
+const GamesForm = (game) => {
     const history = useHistory();
     const dispatch = useDispatch();
-    const errors = useSelector(state => state?.gameErrors)
-    console.log(errors)
+    const errors = useSelector(state => state?.gameErrors);
+    const [showModal, setShowModal] = useState(false);
+    const [editModal, setEditModal] = useState(false);
+
+    // console.log(errors)
 
     const today = new Date();
     let year = today.getFullYear();
@@ -44,7 +49,7 @@ const GamesForm = (props) => {
 
 
     let user = useSelector((state) => (state.session?.user))
-    let gameId = props.game?._id
+    let gameId = game?.game?._id
     let userId
 
     if(user){
@@ -55,14 +60,23 @@ const GamesForm = (props) => {
 
     useEffect(() => {
         if(gameId) {
-            dispatchEvent(fetchGame(gameId))
+            dispatch(fetchGame(gameId))
             setHeader('Edit Your Game')
-            setSport(props.game.sport)
-            setDescription(props.game.description)
-            setMaxCapacity(props.game.maxCapacity)
-            setMinCapacity(props.game.minCapacity)
-            setSkillLevel(props.game.skillLevel)
-            setTitle(props.game.title)
+            // setSport(props.game.sport)
+            // setDescription(props.game.description)
+            // setMaxCapacity(props.game.maxCapacity)
+            // setMinCapacity(props.game.minCapacity)
+            // setSkillLevel(props.game.skillLevel)
+            // setTitle(props.game.title)
+
+            setSport(game?.game.sport)
+            setDescription(game?.game.description)
+            setMaxCapacity(game?.game.maxCapacity)
+            setMinCapacity(game?.game.minCapacity)
+            setSkillLevel(game?.game.skillLevel)
+            setTitle(game?.game.title)
+            setGameDate(formFormatDate(game?.game.date))
+            setTime(formFormatTime(game?.game.time))
         }
     }, [dispatch, gameId])
 
@@ -120,7 +134,6 @@ const GamesForm = (props) => {
         }
 
         newGame.host = userId
-debugger
         if(gameId){
             newGame._id = gameId
             dispatch(updateGame(newGame))
@@ -132,6 +145,8 @@ debugger
 
     function handleCallback(coordinates) {
         setCoords(coordinates);
+        setShowModal(false);
+        setEditModal(false);
     }
 
     // console.log(coords);
