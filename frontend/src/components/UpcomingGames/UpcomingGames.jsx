@@ -9,8 +9,8 @@ const UpcomingGames = () => {
   const dispatch = useDispatch();
   const { userId } = useParams();
   const user = useSelector(getUser(userId));
-  const isCurrentUser = (userId === sessionUser?._id);
-  const filteredGames = useSelector(getFilteredGames(userId))
+  // const isCurrentUser = (userId === sessionUser?._id);
+  // const filteredGames = useSelector(getFilteredGames(userId))
 // debugger
   
   useEffect(() => {
