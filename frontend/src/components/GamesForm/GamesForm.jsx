@@ -4,12 +4,18 @@ import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import './GamesForm.css';
 import { fetchGame, updateGame, removeGame, createGame } from '../../store/games';
 import GamesFormMap from '../Map/GamesFormMap';
+import { formFormatTime } from '../../utils/utils';
+import { formFormatDate } from '../../utils/utils';
+import { removeErrors } from '../../store/games';
 
-const GamesForm = (props) => {
+const GamesForm = ({game, formCallback}) => {
     const history = useHistory();
     const dispatch = useDispatch();
-    const errors = useSelector(state => state?.gameErrors)
-    console.log(errors)
+    const errors = useSelector(state => state?.gameErrors);
+    const [showModal, setShowModal] = useState(false);
+    const [editModal, setEditModal] = useState(false);
+
+    // console.log(errors)
 
     const today = new Date();
     let year = today.getFullYear();
@@ -24,7 +30,7 @@ const GamesForm = (props) => {
     const [time, setTime] = useState("10:10")
     const [gameDate, setGameDate] = useState("2020-04-20")
     const [title, setTitle] = useState('');
-    const [coords, setCoords] = useState({});
+    const [coords, setCoords] = useState({"lat": -73.97, "lng": 40.77});
 
     function getZeroDay(date){
         return (date.getDate() < 10 ? '0' : '') + date.getDate();
@@ -44,7 +50,7 @@ const GamesForm = (props) => {
 
 
     let user = useSelector((state) => (state.session?.user))
-    let gameId = props.game?._id
+    let gameId = game?.game?._id
     let userId
 
     if(user){
@@ -55,14 +61,23 @@ const GamesForm = (props) => {
 
     useEffect(() => {
         if(gameId) {
-            dispatchEvent(fetchGame(gameId))
+            dispatch(fetchGame(gameId))
             setHeader('Edit Your Game')
-            setSport(props.game.sport)
-            setDescription(props.game.description)
-            setMaxCapacity(props.game.maxCapacity)
-            setMinCapacity(props.game.minCapacity)
-            setSkillLevel(props.game.skillLevel)
-            setTitle(props.game.title)
+            // setSport(props.game.sport)
+            // setDescription(props.game.description)
+            // setMaxCapacity(props.game.maxCapacity)
+            // setMinCapacity(props.game.minCapacity)
+            // setSkillLevel(props.game.skillLevel)
+            // setTitle(props.game.title)
+
+            setSport(game?.game.sport)
+            setDescription(game?.game.description)
+            setMaxCapacity(game?.game.maxCapacity)
+            setMinCapacity(game?.game.minCapacity)
+            setSkillLevel(game?.game.skillLevel)
+            setTitle(game?.game.title)
+            setGameDate(formFormatDate(game?.game.date))
+            setTime(formFormatTime(game?.game.time))
         }
     }, [dispatch, gameId])
 
@@ -120,28 +135,37 @@ const GamesForm = (props) => {
         }
 
         newGame.host = userId
-debugger
         if(gameId){
             newGame._id = gameId
             dispatch(updateGame(newGame))
         } else{
-            dispatch(createGame(newGame))
+            dispatch(createGame(newGame)).then(res => {
+                console.log(res)
+                if (res.type === "games/RECEIVE_GAME") {
+                    dispatch(removeErrors);
+                    formCallback();
+                }
+            })
         }
-        // routeChange()
     }
 
     function handleCallback(coordinates) {
         setCoords(coordinates);
+        debugger
+        setShowModal(false);
+        setEditModal(false);
     }
 
     // console.log(coords);
 
     return (
         <>
-        <form>
+        <form id="gf-master">
             <h1>{header}</h1>
-            { errors?.sport && <div className='errors'>{errors?.sport}</div>}
-            <label> Sport
+            <div className="gf-item"v> 
+                <div>
+                        Sport
+                </div>
                 <select value={sport} onChange={changeSport} id='gf-sport'>
                     <option value='Badminton'>Badminton</option>
                     <option value='Baseball'>Baseball</option>
@@ -161,42 +185,64 @@ debugger
                     <option value='Volleyball'>Volleyball</option>
                     <option value='Other'>Other</option>
                 </select>
-            </label>
-            { errors?.skillLevel && <div className='errors'>{errors?.skillLevel}</div>}
-            <label> Skill Level
+            </div>
+            { errors?.sport && <div className='errors'>{errors?.sport}</div>}
+            <div className="gf-item"> 
+                <div>
+                    Skill Level
+                </div>
                 <select value={skillLevel} onChange={changeSkillLevel} id='gf-skill-level'>
                     <option value='Beginner'>Beginner</option>
                     <option value='Intermediate'>Intermediate</option>
                     <option value='Advanced'>Advanced</option>
                 </select>
-            </label>
-            { errors?.description && <div className='errors'>{errors?.description}</div>}
-            <label> Description
+            </div>
+            { errors?.skillLevel && <div className='errors'>{errors?.skillLevel}</div>}
+            <div className="gf-item">
+                <div>
+                        Description
+                </div>
                 <input value={description} onChange={changeDescription} required type='textarea' id='gf-description' />
-            </label>
-            { errors?.minCapacity && <div className='errors'>{errors?.minCapacity}</div>}
-            <label> Min Capacity
+            </div>
+            { errors?.description && <div className='errors'>{errors?.description}</div>}
+            <div className="gf-item">
+                <div>
+                        Min Capacity
+                </div>
                 <input value={minCapacity} onChange={changeMinCapacity} required type='input' id='gf-min-capacity' />
-            </label>
-            { errors?.maxCapacity && <div className='errors'>{errors?.maxCapacity}</div>}
-            <label> Max Capacity
+            </div>
+            { errors?.minCapacity && <div className='errors'>{errors?.minCapacity}</div>}
+            <div className="gf-item">
+                <div>
+                        Max Capacity
+                </div>
                 <input value={maxCapacity} onChange={changeMaxCapacity} required type='input' id='gf-max-capacity' />
-            </label>
-            { errors?.time && <div className='errors'>{errors?.time}</div>}
-            <label> Time
+            </div>
+            { errors?.maxCapacity && <div className='errors'>{errors?.maxCapacity}</div>}
+            <div className="gf-item">
+                <div>
+                    Time
+                </div>
                 <input required value={time} onChange={changeTime} type='time' id='gf-time' />
-            </label>
-            { errors?.date && <div className='errors'>{errors?.date}</div>}
-            <label> Date
+            </div>
+            { errors?.time && <div className='errors'>{errors?.time}</div>}
+            <div className="gf-item">
+                <div>
+                        Date
+                </div> 
                 <input value={gameDate} onChange={changeGameDate} required type='date' id='gf-date' min={formattedToday} />
-            </label>
-            { errors?.title && <div className='errors'>{errors?.title}</div>}
-            <label>Title
+            </div>
+            { errors?.date && <div className='errors'>{errors?.date}</div>}
+            <div className="gf-item">
+                <div>
+                        Title
+                </div>
                 <input value={title} onChange={changeTitle} required type='input' id='gf-title' />
-            </label>
-            <label> Submit
+            </div>
+            { errors?.title && <div className='errors'>{errors?.title}</div>}
+            <div className="gf-item">
                 <input type='submit' onClick={handleSubmit} id='gf-submit' />
-            </label>
+            </div>
 
             <GamesFormMap parentCallback={handleCallback} />
         </form>

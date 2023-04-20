@@ -21,10 +21,14 @@ export const removeGame = gameId => ({
     gameId
 });
 
-const receiveErrors = (errors) => ({
+export const receiveErrors = (errors) => ({
 	type: RECEIVE_ERRORS,
 	errors,
 });
+
+export const removeErrors = () => ({
+    type: REMOVE_ERRORS
+})
 
 // export const getGame = (gameId) => state => {
 //     if(state.games){
@@ -47,6 +51,7 @@ export const fetchGames = () => async dispatch => {
 };
 
 export const fetchGame = gameId => async dispatch => {
+// debugger
     const res = await jwtFetch(`/api/games/${gameId}`)
     const data = await res.json();
     dispatch(receiveGame(data));
@@ -61,7 +66,8 @@ export const createGame = game => async dispatch => {
         })
     
         const data = await response.json();
-        dispatch(receiveGame(data));
+        console.log(data)
+        return dispatch(receiveGame(data));
     }
     catch(err) {
         const res = await err.json();
@@ -100,7 +106,7 @@ export const gameErrorsReducer = (state = null, action) => {
 		case RECEIVE_ERRORS:
 			return action.errors;
         case REMOVE_ERRORS:
-            return null;
+            return {};
 		default:
 			return state;
 	}

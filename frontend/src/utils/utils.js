@@ -44,3 +44,41 @@ export const formatMonth = month => {
     }
     return key[month];
 }
+
+export const formFormatTime = obj => {
+    let output = '';
+    if (obj.hours < 10) {
+        output += `0${obj.hours.toString()}`
+    } else {
+        output += obj.hours.toString();
+    }
+    output += ":"
+    if (obj.minutes < 10) {
+        output += `0${obj.minutes.toString()}`
+    } else {
+        output += obj.minutes.toString();
+    }
+    return output;
+}
+
+export const formFormatDate = obj => {
+    let output = '';
+    output += `${obj.year.toString()}`
+    output += '-'
+
+    if (obj.month < 10) {
+        output += `0${obj.month.toString()}`
+    }else{
+        output += `${obj.month.toString()}`
+    }
+
+    output += '-'
+
+    if (obj.day < 10) {
+        output += `0${obj.day.toString()}`
+    }else{
+        output += `${obj.day.toString()}`
+    }
+
+    return output
+}
