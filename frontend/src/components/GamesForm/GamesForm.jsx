@@ -62,13 +62,6 @@ const GamesForm = (game) => {
         if(gameId) {
             dispatch(fetchGame(gameId))
             setHeader('Edit Your Game')
-            // setSport(props.game.sport)
-            // setDescription(props.game.description)
-            // setMaxCapacity(props.game.maxCapacity)
-            // setMinCapacity(props.game.minCapacity)
-            // setSkillLevel(props.game.skillLevel)
-            // setTitle(props.game.title)
-
             setSport(game?.game.sport)
             setDescription(game?.game.description)
             setMaxCapacity(game?.game.maxCapacity)
@@ -145,11 +138,9 @@ const GamesForm = (game) => {
 
     function handleCallback(coordinates) {
         setCoords(coordinates);
-        setShowModal(false);
-        setEditModal(false);
+        // setShowModal(false);
+        // setEditModal(false);
     }
-
-    // console.log(coords);
 
     return (
         <>
