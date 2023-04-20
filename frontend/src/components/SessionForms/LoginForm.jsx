@@ -37,7 +37,7 @@ const LoginForm = () => {
             <form onSubmit={handleSubmit} id="sf-loginForm" className='sf-authForm'>
                 <h1>Welcome to Benchwarmers</h1>
                 <h2 className='modal-title'>Login</h2>
-                <div>{errors?.email}</div>
+                <div className='errors'>{errors?.email}</div>
                 <div id='sf-lg-email-container'>
                         <input 
                         className='sf-lg-email-container'
@@ -48,7 +48,7 @@ const LoginForm = () => {
                         />
                 </div>
                 <br />
-                <div>{errors?.password}</div>
+                <div className='errors'>{errors?.password}</div>
                <div id='sf-lg-password-container' >
                         <input 
                         className='sf-lg-password-container'
