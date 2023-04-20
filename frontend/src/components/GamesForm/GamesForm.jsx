@@ -8,6 +8,8 @@ import GamesFormMap from '../Map/GamesFormMap';
 const GamesForm = (props) => {
     const history = useHistory();
     const dispatch = useDispatch();
+    const errors = useSelector(state => state?.gameErrors)
+    console.log(errors)
 
     const today = new Date();
     let year = today.getFullYear();
@@ -19,8 +21,8 @@ const GamesForm = (props) => {
     // const [attendees, setAttendees] = useState([]);
     const [maxCapacity, setMaxCapacity] = useState(0);
     const [minCapacity, setMinCapacity] = useState(0);
-    const [time, setTime] = useState({hours: 10, minutes: 10})
-    const [gameDate, setGameDate] = useState({year: 2020, month: 1, day: 1})
+    const [time, setTime] = useState("10:10")
+    const [gameDate, setGameDate] = useState("2020-04-20")
     const [title, setTitle] = useState('');
     const [coords, setCoords] = useState({});
 
@@ -112,8 +114,8 @@ const GamesForm = (props) => {
             minCapacity,
             skillLevel,
             title,
-            date: {year: parseInt(gameDate.slice(0,4)), month: parseInt(gameDate.slice(5,7)), day: parseInt(gameDate.slice(8,10))},
-            time: {hours: parseInt(time.slice(0,2)), minutes: parseInt(time.slice(-2))},
+            date: { year: parseInt(gameDate.split("-")[0]), month: parseInt(gameDate.split("-")[1]), day: parseInt(gameDate.split("-")[2]) },
+            time: { hours: parseInt(time.split(":")[0]), minutes: parseInt(time.split(":")[1]) },
             coordinates: { lat: coords?.lat, lng: coords?.lng }
         }
 
@@ -138,17 +140,18 @@ debugger
         <>
         <form>
             <h1>{header}</h1>
+            <div>{errors?.sport}</div>
             <label> Sport
                 <select value={sport} onChange={changeSport} id='gf-sport'>
                     <option value='Badminton'>Badminton</option>
                     <option value='Baseball'>Baseball</option>
-                    <option value='Basketball'>Basketbal</option>
+                    <option value='Basketball'>Basketball</option>
                     <option value='Cycling'>Cycling</option>
                     <option value='Darts'>Darts</option>
                     <option value='Fencing'>Fencing</option>
                     <option value='Football'>Football</option>
                     <option value='Golf'>Golf</option>
-                    <option value='Handball'>Hand Ball</option>
+                    <option value='Handball'>Handball</option>
                     <option value='Hockey'>Hockey</option>
                     <option value='Martial arts'>Martial Arts</option>
                     <option value='Soccer'>Soccer</option>
@@ -159,6 +162,7 @@ debugger
                     <option value='Other'>Other</option>
                 </select>
             </label>
+            <div>{errors?.skillLevel}</div>
             <label> Skill Level
                 <select value={skillLevel} onChange={changeSkillLevel} id='gf-skill-level'>
                     <option value='Beginner'>Beginner</option>
@@ -166,21 +170,27 @@ debugger
                     <option value='Advanced'>Advanced</option>
                 </select>
             </label>
+            <div>{errors?.description}</div>
             <label> Description
                 <input value={description} onChange={changeDescription} required type='textarea' id='gf-description' />
             </label>
+            <div>{errors?.minCapacity}</div>
             <label> Min Capacity
                 <input value={minCapacity} onChange={changeMinCapacity} required type='input' id='gf-min-capacity' />
             </label>
+            <div>{errors?.maxCapacity}</div>
             <label> Max Capacity
                 <input value={maxCapacity} onChange={changeMaxCapacity} required type='input' id='gf-max-capacity' />
             </label>
+            <div>{errors?.time}</div>
             <label> Time
                 <input required value={time} onChange={changeTime} type='time' id='gf-time' />
             </label>
+            <div>{errors?.date}</div>
             <label> Date
                 <input value={gameDate} onChange={changeGameDate} required type='date' id='gf-date' min={formattedToday} />
             </label>
+            <div>{errors?.title}</div>
             <label>Title
                 <input value={title} onChange={changeTitle} required type='input' id='gf-title' />
             </label>

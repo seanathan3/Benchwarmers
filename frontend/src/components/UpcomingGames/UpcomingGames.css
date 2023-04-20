@@ -1,5 +1,6 @@
 #upcoming {
   display: flex;
+  flex-wrap: wrap;
   width: 47%;
   height: 400px;
   margin-right: 10px;
@@ -10,4 +11,15 @@
   justify-content: center;
   background-color: rgb(225, 104, 69, 0.5);
   box-shadow: 5px 5px 15px rgb(143, 199, 227, 0.5);
+  overflow: scroll;
+}
+
+#ug-title{
+  width: 80%;
+  height: 50px;
+  text-align: center;
+}
+
+#ug-card-container{
+  width: 80%;
 }

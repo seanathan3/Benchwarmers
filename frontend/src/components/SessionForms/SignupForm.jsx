@@ -1,6 +1,6 @@
 import "./sessionForm.css";
 import { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { signup, removeSessionErrors } from "../../store/session";
 import SubmitButton from "../Button/SubmitButton";
 
@@ -13,7 +13,7 @@ const SignupForm = ({ onClose }) => {
   const [borough, setBorough] = useState("");
   const [favoriteSport, setFavoriteSport] = useState();
   const [showSignupFormModal, setSignupFormModal] = useState(false);
-  // const errors = useSelecotr(state => state.errors.session)
+  const errors = useSelector(state => state?.sessionErrors)
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -61,7 +61,7 @@ const SignupForm = ({ onClose }) => {
           <br />
           
           <h2>Sign Up</h2>
-          {/* <div>{errors?.email}</div> */}
+          <div>{errors?.email}</div>
       
           <label >
             <input
@@ -81,7 +81,7 @@ const SignupForm = ({ onClose }) => {
               onChange={(e) => setEmail(e.target.value)}
             />
           </label>
-          {/* <label>{errors?.username}</label> */}
+          <div>{errors?.username}</div>
           <label>
             <input
              className="sf-username-container"
@@ -91,7 +91,7 @@ const SignupForm = ({ onClose }) => {
               onChange={(e) => setUsername(e.target.value)}
             />
           </label>
-          {/* <label>{errors?.password}</label> */}
+          <label>{errors?.password}</label>
           <label>
             <input
              className="sf-password-container"
