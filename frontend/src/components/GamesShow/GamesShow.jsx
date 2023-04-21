@@ -49,9 +49,11 @@ const GamesShow = ({game}) => {
                         <div>
                         <span id='details'>Attendees: </span>
                         </div>
-                        {game.attendees.map(attendee => {
-                            return <div key={attendee._id}>{attendee}</div>
-                        })}
+                        <ul id="gs-ul">
+                            {game.attendees.map(attendee => {
+                                return <li key={attendee._id}>{attendee}</li>
+                            })}
+                        </ul>
                         <div id="gs-spots-left">
                             Spots left: {game.maxCapacity - game.attendees.length}
                         </div>
