@@ -106,7 +106,11 @@ const IndexItem = ({game}) => {
 
     return(
         <>
-            <div id="ii-master" onClick={() => setShowModal(true)}>
+            <div id="ii-master" onClick={(e) => {
+                if(e.target.id !== "ii-edit-button") {
+                    setShowModal(true)
+                }
+                }}>
                 <img id="ii-image" src={image} alt="sports ball" />
                 <div id="ii-desc">
                     <p id="ii-sport">{game.sport[0].toUpperCase() + game.sport.slice(1)}</p>
