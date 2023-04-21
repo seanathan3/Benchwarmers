@@ -23,10 +23,10 @@ const Splash = () => {
   onInit={(typewriter) => {
     typewriter
       .pauseFor(1000)
-      .typeString('The ball is in your court.')
+      .typeString('The ball is in their court.')
       .pauseFor(500)
-      .deleteChars(11)
-      .typeString('MY court :)')
+      .deleteChars(12)
+      .typeString('YOUR court :)')
       .pauseFor(2000)
       .start();
   }}
