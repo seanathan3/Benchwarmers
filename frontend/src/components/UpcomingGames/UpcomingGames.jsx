@@ -27,8 +27,8 @@ const upcomingGames = useSelector(getUpcomingGames);
 
   return (
     <div id='scroll-wrapper'>
+      <label id='ug-title'>Upcoming Games:</label>
     <div id='upcoming'>
-      <h2 id='ug-title'>Upcoming Games:</h2>
       <div id='ug-card-container'>
         {
           upcomingGames.map((game) => {

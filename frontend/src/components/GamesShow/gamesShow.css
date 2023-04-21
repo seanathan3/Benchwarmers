@@ -24,6 +24,7 @@
     padding: 20px;
     display: flex;
     justify-content: center;
+    overflow: scroll;
 }
 
 #gs-left {
