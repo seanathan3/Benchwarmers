@@ -85,14 +85,22 @@ export const createGame = game => async dispatch => {
 
 
 export const updateGame = (game) => async dispatch => {
-    const response = await jwtFetch(`/api/games/${game._id}`, {
+    try { const response = await jwtFetch(`/api/games/${game._id}`, {
         method: "PATCH",
         body: JSON.stringify(game),
         headers: {'Content-Type': 'application/json'}
     })
 
     const data = await response.json()
-    dispatch(receiveGame(data))
+    return dispatch(receiveGame(data))
+    }
+    catch(err) {
+        const res = await err.json();
+
+		if (res.statusCode === 400) {
+			return dispatch(receiveErrors(res.errors));
+		}
+    }
 }
 
 
