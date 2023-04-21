@@ -126,7 +126,17 @@ router.patch('/:userId', requireUser, validateUpdateUserInput, async (req, res, 
 })
 
 router.delete('/:userId', requireUser, async(req,res,next) => {
+  // console.log("THIS IS REQ.PARAMS")
+  // console.log(req.params)
   let hostedGames = await Game.find({ host: req.params.userId });
+  // console.log("THIS IS HOSTED GAMES")
+  // console.log(hostedGames)
+  let user = await User.findById(req.params.userId)
+  // console.log("THIS IS USER")
+  // console.log(user)
+  let attendingGames = user.attendingGames
+  console.log("THIS IS ATTENDING GAMES")
+  console.log(attendingGames)
   try {
     const currentDate = new Date();
     const currentDay = currentDate.getDate();
@@ -134,7 +144,10 @@ router.delete('/:userId', requireUser, async(req,res,next) => {
     const currentYear = currentDate.getFullYear();
     const futureGames = hostedGames.filter(game => (game.date.year > currentYear)
     || (game.date.year === currentYear && game.date.month > currentMonth) || (game.date.year === currentYear && game.date.month === currentMonth && game.date.day > currentDay))
-    
+    attendingGames.forEach(async game => {
+      let deleteIdx = game.attendees.indexOf(user.username)
+      game.attendees.splice(deleteIdx, 1)
+    })
     futureGames.forEach(async game => {
       try {
         await Game.findByIdAndDelete(game._id);
