@@ -63,7 +63,9 @@ const MiniForm = () => {
                     </select>
                 </div>
                 <div id="mf-button-container">
-                    <SubmitButton clickFunction={openModal} textContext="Create Game" />
+                    {user ? <SubmitButton clickFunction={openModal} textContext="Create Game" /> : <span id="mf-message">
+                        *Log in to create game*
+                    </span>}
                 </div>
             </form>
             {showModal && (
