@@ -14,7 +14,7 @@ import { formFormatDate } from "../../utils/utils";
 import { removeErrors } from "../../store/games";
 import SubmitButton from "../Button/SubmitButton";
 
-const GamesForm = ({game, formCallback}) => {
+const GamesForm = ({game, formCallback, mfSport, mfSkillLevel}) => {
     const history = useHistory();
     const dispatch = useDispatch();
     const errors = useSelector(state => state?.gameErrors);
@@ -27,8 +27,8 @@ const GamesForm = ({game, formCallback}) => {
   let year = today.getFullYear();
 
   const [header, setHeader] = useState("Create a Game");
-  const [sport, setSport] = useState("");
-  const [skillLevel, setSkillLevel] = useState("");
+  const [sport, setSport] = useState(mfSport ? mfSport : "");
+  const [skillLevel, setSkillLevel] = useState(mfSkillLevel ? mfSkillLevel : "");
   const [description, setDescription] = useState("");
   const [attendees, setAttendees] = useState([]);
   const [maxCapacity, setMaxCapacity] = useState("");
