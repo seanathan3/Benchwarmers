@@ -92,9 +92,9 @@ router.post('/', requireUser, validateGameInput, async(req, res, next) => {
 router.delete('/:id', requireUser, async (req, res, next) => {
   try {
     const user = await User.findById(req.user._id)
-    hostedGameIdx = user.hostedGames.indexOf(req.params.id)
+    hostedGameIdx = user.hostedGames.findIndex(game => game._id == req.params.id)
     user.hostedGames.splice(hostedGameIdx,1)
-    attendingGameIdx = user.attendingGames.indexOf(req.params.id)
+    attendingGameIdx = user.attendingGames.findIndex(game => game._id == req.params.id)
     user.attendingGames.splice(attendingGameIdx, 1)
     user.save()
     await Game.findOneAndDelete({ _id: req.params.id })
