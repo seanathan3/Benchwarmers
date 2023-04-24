@@ -34,7 +34,7 @@
     display: flex;
     flex-direction: column;
     /* Set the height of #gi-master to 100% minus the height of the navbar */
-    height: calc(100% - 50px);
+    flex: 1;
 }
 
 #gi-content {
