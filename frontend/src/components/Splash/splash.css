@@ -37,7 +37,7 @@
 
 #s-upcoming-games {
     box-sizing: border-box;
-    margin: 20px 20px 0 20px;
+    margin: 0 20px;
     padding: 10px;
     font-size: 24px;
     flex: 1;
@@ -53,7 +53,7 @@
 
 #s-create-game {
     box-sizing: border-box;
-    margin: 20px 20px 0 20px;
+    margin: 0 20px;
     padding: 10px;
     font-size: 24px;
     border-left: 1px dotted black;
@@ -64,6 +64,7 @@
 }
 
 .sc-header {
+    margin-top: 20px;
     text-align: center;
     font-size: 28px;
     padding-bottom: 10px;

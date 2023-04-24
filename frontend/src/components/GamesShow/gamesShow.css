@@ -1,11 +1,14 @@
 #gs-master {
-    width: 65vw;
+    width: 925px;
     height: 100vh;
     box-sizing: border-box;
     padding: 10px;
     font-size: 20px;
     background-color: rgb(233, 153, 55, 0.3);
+    display: flex;
+    flex-direction: column;
 }
+
 
 #gs-header {
     width: 100%;
@@ -24,12 +27,12 @@
     padding: 20px;
     display: flex;
     justify-content: center;
-    overflow: scroll;
+    overflow-y: auto;
+    flex: 1;
 }
 
 #gs-left {
-    max-width: 600px;
-    min-width: 400px;
+    width: 590px;
 }
 
 #gs-title {
