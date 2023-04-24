@@ -3,8 +3,10 @@
     height: 80px;
     display: flex;
     align-items: center;
-    background-color: rgb(233, 153, 55, 0.3);
+    background-color: #f9e0c6;
     flex-shrink: 0;
+    z-index: 1;
+    border-bottom: 2px solid black;
 
 }
 

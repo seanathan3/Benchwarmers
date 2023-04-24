@@ -36,7 +36,7 @@ const GamesForm = ({game, formCallback, mfSport, mfSkillLevel}) => {
   const [time, setTime] = useState("10:10");
   const [gameDate, setGameDate] = useState("2023-04-28");
   const [title, setTitle] = useState("");
-  const [coords, setCoords] = useState({ lat: -73.97, lng: 40.77 });
+  const [coords, setCoords] = useState({ lng: -73.97, lat: 40.77 });
 
   function getZeroDay(date) {
     return (date.getDate() < 10 ? "0" : "") + date.getDate();
@@ -178,7 +178,7 @@ const GamesForm = ({game, formCallback, mfSport, mfSkillLevel}) => {
         <h1>{header}</h1>
         <div className="gf-item" v>
           <select value={sport} onChange={changeSport} id="gf-sport">
-            <option value="" disabled selected>
+            <option defaultValue="Select Sport" disabled selected>
               Select Sport
             </option>
             <option value="Badminton">Badminton</option>
