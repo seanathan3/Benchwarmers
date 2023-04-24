@@ -32,7 +32,7 @@ const Map = () => {
         }
     }, [dispatch, currentGameId]);
 
-debugger
+// debugger
     useEffect(() => {
 
         games.forEach((game) => {

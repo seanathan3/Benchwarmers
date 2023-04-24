@@ -141,9 +141,12 @@ const GamesForm = ({game, formCallback, mfSport, mfSkillLevel}) => {
       },
       coordinates: { lat: coords?.lat, lng: coords?.lng },
     };
-debugger
+
+
 
     newGame.host = userId;
+
+debugger
     if (gameId) {
       newGame._id = gameId;
       dispatch(updateGame(newGame)).then((res) => {
