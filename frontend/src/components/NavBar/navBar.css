@@ -4,6 +4,7 @@
     display: flex;
     align-items: center;
     background-color: rgb(233, 153, 55, 0.3);
+    flex-shrink: 0;
 
 }
 
