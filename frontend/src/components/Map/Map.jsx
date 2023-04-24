@@ -36,7 +36,7 @@ const Map = () => {
     useEffect(() => {
 
         games.forEach((game) => {
-
+// debugger
             const infoWindow = new window.google.maps.InfoWindow();
 
             markers.current[game._id] = new window.google.maps.Marker(
@@ -48,10 +48,12 @@ const Map = () => {
                 }
             )
 
+            
             markers.current[game._id].addListener('click', () => {
                 const content = document.createElement("div");
                 content.setAttribute('id', 'pin-textbox');
                 
+debugger
                 
                 const nameElement = document.createElement("h2");
                 nameElement.addEventListener('click', () => {

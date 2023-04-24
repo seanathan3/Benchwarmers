@@ -139,6 +139,7 @@ const GamesForm = ({game, formCallback}) => {
       },
       coordinates: { lat: coords?.lat, lng: coords?.lng },
     };
+debugger
 
     newGame.host = userId;
     if (gameId) {
@@ -157,7 +158,7 @@ const GamesForm = ({game, formCallback}) => {
 
     function handleCallback(coordinates) {
         setCoords(coordinates);
-        debugger
+        // debugger
         setShowModal(false);
         setEditModal(false);
     }

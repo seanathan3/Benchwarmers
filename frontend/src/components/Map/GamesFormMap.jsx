@@ -100,6 +100,7 @@ const GamesFormMap = ({parentCallback}) => {
             marker.setPosition(results[0].geometry.location);
             marker.setMap(map);
             parentCallback({"lat": results[0].geometry.viewport.Ha.lo, "lng": results[0].geometry.viewport.Va.lo})
+// debugger
             return results;
         })
         .catch((e) => {
