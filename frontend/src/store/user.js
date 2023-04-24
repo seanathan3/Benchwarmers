@@ -32,7 +32,7 @@ export const updateUser = (user) => async dispatch => {
       headers: {"Content-Type": "application/json"}
     })
     const data = await res.json();
-    dispatch(receiveUser(data))
+    return dispatch(receiveUser(data))
   }
   catch(err) {
     const res = await err.json();

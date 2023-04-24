@@ -23,10 +23,10 @@ const Splash = () => {
   onInit={(typewriter) => {
     typewriter
       .pauseFor(1000)
-      .typeString('The ball is in your court.')
+      .typeString('The ball is in their court.')
       .pauseFor(500)
-      .deleteChars(11)
-      .typeString('MY court :)')
+      .deleteChars(12)
+      .typeString('YOUR court :)')
       .pauseFor(2000)
       .start();
   }}
@@ -35,7 +35,7 @@ const Splash = () => {
                 <div id="s-content">
                     <div id="s-upcoming-games">
                         <div className="sc-header">Featured Games:</div>
-                        {games.slice(0, 3).map(game => {
+                        {games.slice(2, 5).map(game => {
                             return <IndexItem game={game} />
                         })}
                     </div>

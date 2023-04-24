@@ -79,3 +79,8 @@
 #details {
     font-weight: 600;
 }
+
+#gs-ul {
+    list-style-type: circle;
+    list-style-position: inside;
+}

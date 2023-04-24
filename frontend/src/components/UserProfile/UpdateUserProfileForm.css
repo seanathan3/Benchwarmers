@@ -3,11 +3,6 @@
   margin-top: 20px;
 }
 
-.closeButton {
-  display: flex;
-  justify-content: right;
-}
-
 #up-email, #up-username, #up-name {
   width: 100%;
   font-family: Jost, sans-serif;
@@ -71,5 +66,5 @@ option {
  }
 
  #sb-button .updateButton {
-  width: 100%;
+  width: 100% !important;
  }

@@ -14,7 +14,7 @@ import { formFormatDate } from "../../utils/utils";
 import { removeErrors } from "../../store/games";
 import SubmitButton from "../Button/SubmitButton";
 
-const GamesForm = ({game, formCallback}) => {
+const GamesForm = ({game, formCallback, mfSport, mfSkillLevel}) => {
     const history = useHistory();
     const dispatch = useDispatch();
     const errors = useSelector(state => state?.gameErrors);
@@ -27,14 +27,14 @@ const GamesForm = ({game, formCallback}) => {
   let year = today.getFullYear();
 
   const [header, setHeader] = useState("Create a Game");
-  const [sport, setSport] = useState("");
-  const [skillLevel, setSkillLevel] = useState("");
+  const [sport, setSport] = useState(mfSport ? mfSport : "");
+  const [skillLevel, setSkillLevel] = useState(mfSkillLevel ? mfSkillLevel : "");
   const [description, setDescription] = useState("");
   const [attendees, setAttendees] = useState([]);
   const [maxCapacity, setMaxCapacity] = useState("");
   const [minCapacity, setMinCapacity] = useState("");
   const [time, setTime] = useState("10:10");
-  const [gameDate, setGameDate] = useState("2020-04-20");
+  const [gameDate, setGameDate] = useState("2023-04-28");
   const [title, setTitle] = useState("");
   const [coords, setCoords] = useState({ lat: -73.97, lng: 40.77 });
 
@@ -78,6 +78,8 @@ const GamesForm = ({game, formCallback}) => {
       setTitle(game?.title);
       setGameDate(formFormatDate(game?.date));
       setTime(formFormatTime(game?.time));
+
+      return () => dispatch(removeErrors());
     }
   }, [dispatch, gameId]);
 
@@ -144,7 +146,12 @@ debugger
     newGame.host = userId;
     if (gameId) {
       newGame._id = gameId;
-      dispatch(updateGame(newGame));
+      dispatch(updateGame(newGame)).then((res) => {
+        if (res.type === 'games/RECEIVE_GAME') {
+          dispatch(removeErrors);
+          formCallback();
+        }
+      })
     } else {
       dispatch(createGame(newGame)).then((res) => {
         console.log(res);

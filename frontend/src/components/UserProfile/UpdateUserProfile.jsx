@@ -66,7 +66,6 @@ const UpdateUserProfile = ({ onClose, userData }) => {
         <br />
         <form className="updateUserProfile" onSubmit={handleSubmit}>
           <div id="up-name">
-            {errors?.name && <div className="errors">{errors?.name}</div>}
             <label>Name: 
             <br />
             <input
@@ -74,13 +73,13 @@ const UpdateUserProfile = ({ onClose, userData }) => {
               name="name"
               value={name}
               onChange={(e) => setName(e.target.value)}
-            ></input>
+              ></input>
             </label>
+              {errors?.name && <div className="errors">{errors?.name}</div>}
           </div>
         <br />
 
           <div id="up-email">
-          {errors?.email && <div className="errors">{errors?.email}</div>}
             <label>
             Email:
             <br></br>
@@ -89,13 +88,13 @@ const UpdateUserProfile = ({ onClose, userData }) => {
               name="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-            ></input>
+              ></input>
             </label>
+              {errors?.email && <div className="errors">{errors?.email}</div>}
           </div>
         <br />
 
           <div id="up-username">
-          {errors?.username && <div className="errors">{errors?.username}</div>}
             <label>
             Username:
             <br></br>
@@ -104,8 +103,9 @@ const UpdateUserProfile = ({ onClose, userData }) => {
               name="username"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-            ></input>
+              ></input>
             </label>
+              {errors?.username && <div className="errors">{errors?.username}</div>}
           </div>
         <br />
 
@@ -123,14 +123,13 @@ const UpdateUserProfile = ({ onClose, userData }) => {
           </div>
           <br />
           <div id="up-borough">
-          {errors?.borough && <div className="errors">{errors?.borough}</div>}
             <label htmlFor="dropdown">Select your borough: </label>
             <br />
             <select
               id="dropdown"
               value={borough}
               onChange={handleBoroughChange}
-            >
+              >
               <option value="" disabled defaultValue>
                 Select
               </option>
@@ -140,18 +139,18 @@ const UpdateUserProfile = ({ onClose, userData }) => {
               <option value="Queens">Queens</option>
               <option value="Staten-Island">Staten Island</option>
             </select>
+              {errors?.borough && <div className="errors">{errors?.borough}</div>}
           </div>
           <br />
 
           <div id="up-fave-sport">
-          {errors?.favoriteSport && <div className="errors">{errors?.favoriteSport}</div>}
             <label htmlFor="sport-dropdown">Favorite Sport: </label>
             <br />
             <select
               id="sport-dropdown"
               value={favoriteSport}
               onChange={handleFavoriteSportChange}
-            >
+              >
               <option value="" disabled defaultValue>
                 Select
               </option>
@@ -172,6 +171,7 @@ const UpdateUserProfile = ({ onClose, userData }) => {
               <option value="Tennis">Tennis</option>
               <option value="Volleyball">Volleyball</option>
             </select>
+              {errors?.favoriteSport && <div className="errors">{errors?.favoriteSport}</div>}
           </div>
           <br />
           <br />
