@@ -32,11 +32,11 @@ const Map = () => {
         }
     }, [dispatch, currentGameId]);
 
-
+debugger
     useEffect(() => {
 
         games.forEach((game) => {
-// debugger
+debugger
             const infoWindow = new window.google.maps.InfoWindow();
 
             markers.current[game._id] = new window.google.maps.Marker(
