@@ -6,7 +6,7 @@
   background-color:  #ea3b13 ;
 	background-size: 100%;
   width: 87.5% !important;
-	height: 100%;
+	/* height: 100%; */
 	font-size: 16px;
 	font-weight: 500;
 	height: 48px !important;
@@ -24,10 +24,12 @@
 	justify-content: center;
 	align-items: center;
 	background-position: top 0 left 300;
-  background-image: radial-gradient( circle at center, #ea3b13, #ea3b14, #ea3b10, #e99937, #e99930, #e99925, #e16845, #e16840, #e16820 );
+  background-image: radial-gradient( circle at center, #ea3b13, #e16845, #e99937 );
   background-size: 150%;
+	background-color: #ea3b13; 
+	background-blend-mode: normal;
 	width: 87.5% !important;
-	height: 100%;
+	/* height: 100%; */
 	font-weight: 500;
 	font-size: 16px;
 	height: 48px;
@@ -36,4 +38,14 @@
 	color: whitesmoke;
 	line-height: 20px;
 	border: none;
+}
+
+
+@media (max-width: 768px) {
+  #sb-button,
+  #sb-button_hover {
+    width: 90%;
+    height: 40px;
+    font-size: 14px;
+  }
 }
