@@ -2,7 +2,7 @@ import './gamesShow.css';
 import { formatTime, formatMonth } from '../../utils/utils';
 import { useDispatch, useSelector } from 'react-redux';
 import SubmitButton from '../Button/SubmitButton';
-import { updateGame } from '../../store/games';
+import { deleteGame, updateGame } from '../../store/games';
 
 
 const GamesShow = ({game}) => {
@@ -66,6 +66,9 @@ const GamesShow = ({game}) => {
                         <div onClick={joinGame}>Join Game</div>
 
                     </div> */}
+                    {user._id === game.host._id && (<div id="dg-button">
+                        <SubmitButton clickFunction={() => dispatch(deleteGame(game._id))} textContext="Delete Game"/>
+                        </div>)}
                 </div>
             </div>
         </>
