@@ -9,7 +9,7 @@ const IndexList = () => {
 
     useEffect(() => {
         dispatch(fetchGames());
-    }, [])
+    }, [dispatch])
     
 
     return(
