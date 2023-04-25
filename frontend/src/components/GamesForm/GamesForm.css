@@ -29,12 +29,14 @@
   background-color: whitesmoke;
   /* padding-bottom: 50px; */
   overflow-y: auto;
+  color: black;
 }
 
 .gf-item {
   margin: 5px 0;
   background-color: whitesmoke;
   padding-left: 100px;
+  color: black;
 }
 
 #gf-skill-level{
@@ -60,6 +62,7 @@
   padding-left: 5px;
   font-family: Jost, sans-serif;
   background-color: whitesmoke;
+  color: black;
 }
 
 #gf-min-capacity {
@@ -133,8 +136,8 @@
 #gf-sport {
   display: flex;
   justify-content: center;
-  height: 35px;
-  width: 349px;
+  height: 39px;
+  width: 358px;
   border: 1px solid gray;
   border-radius: 10px;
   padding-left: 5px;
@@ -167,7 +170,181 @@
   padding: 30px;
 }
 
-/* .games-form-map{
-  height: 50%;
-  width: 100%;
-} */
+/* body {
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Ubuntu, Cantarell,
+      'Noto Sans', sans-serif, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial,
+      sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    background-color: whitesmoke;
+  }
+  
+  .dialog-sheet {
+    background: whitesmoke;
+    border-radius: 4px;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.04), 0px 4px 5px rgba(0, 0, 0, 0.06),
+      0px 2px 4px -1px rgba(0, 0, 0, 0.09);
+  }
+   */
+
+   #gf-master {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 600px;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: whitesmoke;
+    /* padding-bottom: 50px; */
+    overflow-y: auto;
+  }
+  
+  .gf-item {
+    margin: 5px 0;
+    background-color: whitesmoke;
+    padding-left: 100px;
+  }
+  
+  #gf-skill-level{
+    display: flex;
+    justify-content: center;
+    height: 39px;
+    width: 358px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding-left: 5px;
+    font-family: Jost, sans-serif;
+    background-color: whitesmoke;
+  }
+  
+  #gf-description {
+    display: flex;
+    justify-content: center;
+    height: 35px;
+    width: 349px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding-left: 5px;
+    font-family: Jost, sans-serif;
+    background-color: whitesmoke;
+  }
+  
+  #gf-min-capacity {
+    display: flex;
+    justify-content: center;
+    height: 35px;
+    width: 349px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding-left: 5px;
+    font-family: Jost, sans-serif;
+    background-color: whitesmoke;
+  }
+  
+  #gf-max-capacity {
+    display: flex;
+    justify-content: center;
+    height: 35px;
+    width: 349px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding-left: 5px;
+    font-family: Jost, sans-serif;
+    background-color: whitesmoke;
+  }
+  
+  #gf-master .errors {
+    padding-left: 100px;
+  }
+  
+  #gf-time {
+    display: flex;
+    justify-content: center;
+    height: 35px;
+    width: 349px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding-left: 5px;
+    font-family: Jost, sans-serif;
+    background-color: whitesmoke;
+    color: black;
+  }
+  #gf-date {
+    display: flex;
+    justify-content: center;
+    height: 35px;
+    width: 349px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding-left: 5px;
+    font-family: Jost, sans-serif;
+    background-color: whitesmoke;
+    color: black;
+  }
+  #gf-title {
+    display: flex;
+    justify-content: center;
+    height: 35px;
+    width: 349px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding-left: 5px;
+    font-family: Jost, sans-serif;
+    background-color: whitesmoke;
+  }
+  
+  #gf-master h1 {
+    border: none;
+  }
+/*   
+  #gf-sport {
+    display: flex;
+    justify-content: center;
+    height: 35px;
+    width: 349px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding-left: 5px;
+    font-family: Jost, sans-serif;
+    background-color: whitesmoke;
+  }
+  
+  #gf-sport option {
+    width: 100% 
+  } */
+  
+  #dt {
+    position: relative;
+    left: 150px
+  }
+  
+  #cg-submit {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+  }
+  
+  #scroller {
+    overflow: hidden;
+  }
+  
+  #gf-map {
+    height: 300px !important;
+    padding: 30px;
+  }
+  
+  .grey-font {
+    color: grey;
+  }
+
+  .black-font {
+    color: black;
+  }
+
+  #gf-master ::placeholder {
+    color: black;
+  }
