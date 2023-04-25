@@ -28,6 +28,10 @@ const IndexItem = ({game}) => {
     const [editModal, setEditModal] = useState(false);
     let user = useSelector((state) => (state.session?.user))
 
+    function closeEditModal() {
+        setEditModal(false);
+    }
+
     const checkUser = () => {
         if(!user) return false
         if (user._id == game?.host._id){
@@ -128,7 +132,7 @@ const IndexItem = ({game}) => {
             )}
             {editModal && (
                 <Modal onClose={() => setEditModal(false)}>
-                    <GamesForm game={game}/>
+                    <GamesForm formCallback={closeEditModal} game={game}/>
                 </Modal>
             )}
         </>

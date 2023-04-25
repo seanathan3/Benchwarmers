@@ -141,7 +141,7 @@ const GamesForm = ({game, formCallback, mfSport, mfSkillLevel}) => {
       newGame._id = gameId;
       dispatch(updateGame(newGame)).then((res) => {
         if (res.type === 'games/RECEIVE_GAME') {
-          dispatch(removeErrors);
+          dispatch(removeErrors());
           formCallback();
         }
       })
@@ -149,12 +149,14 @@ const GamesForm = ({game, formCallback, mfSport, mfSkillLevel}) => {
       dispatch(createGame(newGame)).then((res) => {
         console.log(res);
         if (res.type === "games/RECEIVE_GAME") {
-          dispatch(removeErrors);
+          dispatch(removeErrors());
           formCallback();
         }
       });
     }
+    // formCallback()
   }
+
 
     function handleCallback(coordinates) {
         setCoords(coordinates);
@@ -168,10 +170,12 @@ const GamesForm = ({game, formCallback, mfSport, mfSkillLevel}) => {
   return (
     <>
     <div id='scroller'>
-      <form id="gf-master">
+      <form id="gf-master" onSubmit={handleSubmit}>
         <h1>{header}</h1>
         <div className="gf-item" v>
-          <select value={sport} onChange={(e) => {setSport(e.target.nodeValue)}} id="gf-sport">
+          <select value={sport} 
+          onChange={(e) => {setSport(e.target.value)}} 
+          id="gf-sport">
             <option value="" disabled selected>
               Select Sport
             </option>

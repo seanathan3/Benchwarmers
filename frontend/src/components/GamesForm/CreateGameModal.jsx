@@ -6,14 +6,18 @@ function CreateGameModal() {
     const [showModal, setShowModal] = useState(false);
 
     function closeModal() {
-        setShowModal(false)
-    }
+        setShowModal(false);
+      }
+    
+      function openModal() {
+        setShowModal(true);
+      }
 
     return(
         <>
-            <div onClick={() => setShowModal(true)}>Create Game</div>
+            <div onClick={openModal}>Create Game</div>
             {showModal && (
-                <Modal onClose={() => setShowModal(false)}>
+                <Modal onClose={closeModal}>
                     <GamesForm formCallback={closeModal} />
                 </Modal>
             )}

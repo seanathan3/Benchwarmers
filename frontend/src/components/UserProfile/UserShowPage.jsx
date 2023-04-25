@@ -73,7 +73,7 @@ const UserShowPage = () => {
         <br />
         <br />
         <div className="up-button">
-        {user?.username !== 'kingamin' && (
+        {user && user?.username !== 'kingamin' && (
           <SubmitButton id="updateProfile" clickFunction={handleClick} textContext='Update Profile' />
         )}
         {showUpdateUserProfileModal && user?.username !== 'kingamin' && (
@@ -83,7 +83,7 @@ const UserShowPage = () => {
         )}
         </div>
         <br />
-        {user?.username !== 'kingamin' && (
+        {user && user?.username !== 'kingamin' && (
         <SubmitButton id='delete-user' clickFunction={deleteAccount} textContext='Delete Account' />
         )}
       </div>
