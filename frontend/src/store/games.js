@@ -129,7 +129,10 @@ const gamesReducer = (state= {}, action) => {
     let nextState = { ...state }
     switch (action.type) {
         case RECEIVE_GAMES:
-            return { ...state, ...action.games }
+            action.games.forEach(game => {
+                nextState[game._id] = game
+            })
+            return nextState;
         case RECEIVE_GAME:
             nextState[action.game._id] = action.game;
             return nextState;
