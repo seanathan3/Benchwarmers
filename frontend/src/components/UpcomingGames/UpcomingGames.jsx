@@ -26,9 +26,14 @@ const upcomingGames = useSelector(getUpcomingGames);
   }, [dispatch])
 
   return (
-    <div id='scroll-wrapper'>
+    
+    <>
+
+    <div id='scroll-wrapper'>Upcoming Games:
+    <br />
+    <br />
+      {/* <label id='ug-title'>Upcoming Games:</label> */}
     <div id='upcoming'>
-      <label id='ug-title'>Upcoming Games:</label>
       <div id='ug-card-container'>
         {
           upcomingGames.map((game) => {
@@ -39,6 +44,7 @@ const upcomingGames = useSelector(getUpcomingGames);
       </div>
       </div>
     </div>
+    </>
   )
 
 };
