@@ -30,12 +30,6 @@ const upcomingGames = useSelector(getUpcomingGames);
     <div id='upcoming'>
       <label id='ug-title'>Upcoming Games:</label>
       <div id='ug-card-container'>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
         {
           upcomingGames.map((game) => {
             // return <IndexItem key={game._id} game={game} />
