@@ -8,6 +8,7 @@ import { useEffect } from "react";
 import GamesIndex from "./components/GamesIndex/GamesIndex";
 import GamesForm from "./components/GamesForm/GamesForm";
 import About from "./components/About/About";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   const dispatch = useDispatch();
@@ -40,6 +41,7 @@ function App() {
       </Route> 
     
     </Switch>
+    <Footer />
     </>
   );
 }

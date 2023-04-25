@@ -24,6 +24,8 @@
   display: flex;
   font-family: Jost, sans-serif;
   justify-content: center;
+  flex-direction: row;
+  align-items: flex-start;
 }
 
 #welcome {

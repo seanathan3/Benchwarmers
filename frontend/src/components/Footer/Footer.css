@@ -1,0 +1,15 @@
+
+#footer {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  cursor: pointer;
+  background-color: #f9e0c6;
+  text-decoration: none !important;
+}
+
+#footer-links {
+  text-decoration: none;
+  color: black;
+}
