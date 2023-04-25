@@ -141,20 +141,20 @@ const GamesForm = ({game, formCallback, mfSport, mfSkillLevel}) => {
       newGame._id = gameId;
       dispatch(updateGame(newGame)).then((res) => {
         if (res.type === 'games/RECEIVE_GAME') {
-          dispatch(removeErrors);
-          // formCallback();
+          dispatch(removeErrors());
+          formCallback();
         }
       })
     } else {
       dispatch(createGame(newGame)).then((res) => {
         console.log(res);
         if (res.type === "games/RECEIVE_GAME") {
-          dispatch(removeErrors);
-          // formCallback();
+          dispatch(removeErrors());
+          formCallback();
         }
       });
     }
-    formCallback()
+    // formCallback()
   }
 
 
