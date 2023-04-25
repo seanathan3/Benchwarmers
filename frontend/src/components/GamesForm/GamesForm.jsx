@@ -36,7 +36,9 @@ const GamesForm = ({game, formCallback, mfSport, mfSkillLevel}) => {
   const [time, setTime] = useState("10:10");
   const [gameDate, setGameDate] = useState("2023-04-28");
   const [title, setTitle] = useState("");
-  const [coords, setCoords] = useState({ lng: -73.97, lat: 40.77 });
+  const [coords, setCoords] = useState({ lat: -73.97, lng: 40.77 });
+  const [selectedSport, setSelectedSport] = useState(false);
+  const [selectedSkillLevel, setSelectedSkillLevel] = useState(false);
 
   function getZeroDay(date) {
     return (date.getDate() < 10 ? "0" : "") + date.getDate();
@@ -88,10 +90,6 @@ const GamesForm = ({game, formCallback, mfSport, mfSkillLevel}) => {
   //     history.push(path)
   // }
 
-  function changeSport(e) {
-    setSport(e.target.value);
-  }
-
   function changeDescription(e) {
     setDescription(e.target.value);
   }
@@ -102,10 +100,6 @@ const GamesForm = ({game, formCallback, mfSport, mfSkillLevel}) => {
 
   function changeMinCapacity(e) {
     setMinCapacity(e.target.value);
-  }
-
-  function changeSkillLevel(e) {
-    setSkillLevel(e.target.value);
   }
 
   function changeTime(e) {
@@ -178,7 +172,7 @@ const GamesForm = ({game, formCallback, mfSport, mfSkillLevel}) => {
         <h1>{header}</h1>
         <div className="gf-item" v>
           <select value={sport} onChange={changeSport} id="gf-sport">
-            <option defaultValue="Select Sport" disabled selected>
+            <option value="" disabled selected>
               Select Sport
             </option>
             <option value="Badminton">Badminton</option>
@@ -203,10 +197,14 @@ const GamesForm = ({game, formCallback, mfSport, mfSkillLevel}) => {
         {errors?.sport && <div className="errors">{errors?.sport}</div>}
         <div className="gf-item">
           <select
-            value={skillLevel}
-            onChange={changeSkillLevel}
-            id="gf-skill-level"
-          >
+              value={skillLevel}
+              id='gf-skill-level'
+              onChange={(e) => {
+                setSkillLevel(e.target.value);
+                setSelectedSkillLevel(true);
+              }}
+              className={selectedSkillLevel ? "black-font" : "grey-font"}
+            >
              <option value="" disabled selected>
               Skill Level
             </option>
