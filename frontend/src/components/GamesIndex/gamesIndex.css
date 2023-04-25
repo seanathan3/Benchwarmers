@@ -86,4 +86,7 @@
 #ii-delete-button:hover{
     text-decoration: underline;
     color: var(--orange)
+.in-sport-filter {
+    width: 20%;
+    height: 100%;
 }
