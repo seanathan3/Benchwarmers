@@ -20,10 +20,12 @@ import softballImg from '../../assets/sports-logos/softball.png';
 import tableTennisImg from '../../assets/sports-logos/table_tennis.png';
 import tennisImg from '../../assets/sports-logos/tennis.png';
 import volleyballImg from '../../assets/sports-logos/volleyball.png';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { deleteGame } from '../../store/games';
 
 
 const IndexItem = ({game}) => {
+    const dispatch = useDispatch();
     const [showModal, setShowModal] = useState(false);
     const [editModal, setEditModal] = useState(false);
     let user = useSelector((state) => (state.session?.user))
@@ -40,6 +42,11 @@ const IndexItem = ({game}) => {
             return false
         }
     }
+
+    function handleDelete() {
+        dispatch(deleteGame(game._id))
+    }
+
 
     
 
@@ -111,7 +118,7 @@ const IndexItem = ({game}) => {
     return(
         <>
             <div id="ii-master" onClick={(e) => {
-                if(e.target.id !== "ii-edit-button") {
+                if(e.target.id !== "ii-edit-button" && e.target.id !== "ii-delete-button") {
                     setShowModal(true)
                 }
                 }}>
@@ -121,7 +128,12 @@ const IndexItem = ({game}) => {
                     <p>Host: {game.host?.username}</p>
                     <p>{game.date.month}/{game.date.day}/{game.date.year} @ {formatTime(game.time.hours, game.time.minutes)}</p>
                     {checkUser() && (
-                        <span id='ii-edit-button' onClick={() => setEditModal(true)}>Edit</span>
+                        <>
+                            <div id="ii-buttons">
+                                <span id='ii-edit-button' onClick={() => setEditModal(true)}>Edit</span>
+                                <span id='ii-delete-button' onClick={handleDelete}>Delete</span>
+                            </div>
+                        </>
                     )}
                 </div>
             </div>

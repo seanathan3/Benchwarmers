@@ -66,9 +66,6 @@ const GamesShow = ({game}) => {
                         <div onClick={joinGame}>Join Game</div>
 
                     </div> */}
-                    {user._id === game.host._id && (<div id="dg-button">
-                        <SubmitButton clickFunction={() => dispatch(deleteGame(game._id))} textContext="Delete Game"/>
-                        </div>)}
                 </div>
             </div>
         </>
