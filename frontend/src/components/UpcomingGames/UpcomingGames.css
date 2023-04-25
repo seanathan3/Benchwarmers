@@ -10,14 +10,15 @@
 }
 
 #ug-title {
-  display: flex;
-  justify-content: center;
+  position: sticky;
+  top: 0;
   font-size: 25px;
   font-family: Jost, sans-serif;
   width: 100%;
-  height: 50px;
+  height: 50px !important;
   padding-top: 15px;
   padding-bottom: 15px;
+    background-color: rgb(225, 104, 69, 0.5);
 }
 
 #ug-card-container {
@@ -28,11 +29,15 @@
   overflow: hidden;
   border-radius: 10px;
   width: 47%;
-  height: 500px;
-  padding-bottom: 15px;
+  height: 100%;
+  text-align: center;
+  padding-top: 25px;
+  padding-bottom: 10px;
   margin-right: 10px;
   margin-bottom: 10px;
   margin-left: 10px;
   background-color: rgb(225, 104, 69, 0.5);
   box-shadow: 5px 5px 15px rgb(143, 199, 227, 0.5);
+    font-size: 25px;
+  font-family: Jost, sans-serif;
 }
