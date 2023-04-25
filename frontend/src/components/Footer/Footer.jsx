@@ -1,18 +1,20 @@
 import { Link } from "react-router-dom";
-import LoginFormModal from "../SessionForms/LoginFormModal";
-import SignupFormModal from "../SessionForms/SignupFormModal";
+import fullLogo from "../../assets/logo-full.png";
 import "./Footer.css";
 
 const Footer = () => {
   return (
     <>
-    <div id='footer'>
-      <Link id='footer-links'  to="/about">
-        <div>About</div>
-      </Link>
-      <div>New York, NY</div>
-      <LoginFormModal />
-      <SignupFormModal />
+      <div id="footer">
+        <div id="footer-logo">
+          <Link to="/">
+            <img id="footer-logoPic" src={fullLogo} alt="full-logo" />
+          </Link>
+        </div>
+        <div>
+          Benchwarmers was developed in 4 days using the MERN stack
+        </div>
+        <div>New York, NY</div>
       </div>
     </>
   );
