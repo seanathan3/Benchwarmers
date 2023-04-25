@@ -6,7 +6,7 @@ const bcrypt = require('bcryptjs');
 
 // Create Users
 const users = [
-  new User({
+    new User({
     username: "kingamin",
     email: "ababar@gmail.com",
     bio: "They see me rollin' they hating.",
@@ -82,7 +82,7 @@ const games = [
     sport: "Badminton",
     skillLevel: "Advanced",
     description: "Let's have a friendly but competitive game of badminton. No sore losers allowed.",
-    host: users[1]._id,
+    host: users[1],
     attendees: [users[1].username],
     maxCapacity: 4,
     minCapacity: 4,
@@ -106,7 +106,7 @@ const games = [
     skillLevel: "Intermediate",
     attendees: [users[0].username],
     description: "Need 10 people for a full-court game.",
-    host: users[0]._id,
+    host: users[0],
     maxCapacity: 10,
     minCapacity: 10,
     time: {
@@ -128,7 +128,7 @@ const games = [
     sport: "Cycling",
     skillLevel: "Beginner",
     description: "Meetup at Meltzer Park for a nice bike ride around the LES.",
-    host: users[2]._id,
+    host: users[2],
     attendees: [users[2].username],
     maxCapacity: 10,
     minCapacity: 2,
@@ -151,7 +151,7 @@ const games = [
     sport: "Football",
     skillLevel: "Beginner",
     description: "Need a couple of people to toss around the pigskin with.",
-    host: users[3]._id,
+    host: users[3],
     attendees: [users[3].username],
     maxCapacity: 4,
     minCapacity: 2,
@@ -174,7 +174,7 @@ const games = [
     sport: "Table Tennis",
     skillLevel: "Intermediate",
     description: "Let's have some drinks and play table tennis at SPIN.",
-    host: users[4]._id,
+    host: users[4],
     attendees: [users[4].username],
     maxCapacity: 4,
     minCapacity: 2,
@@ -189,170 +189,175 @@ const games = [
     },
     title: "Socialize and table tennis at SPIN"
   }),
-  new Game({
-    coordinates: {
-      lat: 40.7503,
-      lng: -73.9983
-    },
-    sport: "Darts",
-    skillLevel: "Advanced",
-    description: "Come for the darts, stay for the drinks. Let's have some fun.",
-    host: users[5]._id,
-    attendees: [users[5].username],
-    maxCapacity: 8,
-    minCapacity: 2,
-    time: {
-      hours: 20,
-      minutes: 30
-    },
-    date: {
-      month: 8,
-      day: 10,
-      year: 2023
-    },
-    title: "Darts at Billymark's West"
-  }),
-  new Game({
-    coordinates: {
-      lat: 40.7455,
-      lng: -74.0087
-    },
-    sport: "Golf",
-    skillLevel: "Beginner",
-    description: "Looking to play some golf for the first time. Everyone is welcome.",
-    host: users[6]._id,
-    attendees: [users[6].username],
-    maxCapacity: 10,
-    minCapacity: 2,
-    time: {
-      hours: 12,
-      minutes: 00
-    },
-    date: {
-      month: 7,
-      day: 23,
-      year: 2023
-    },
-    title: "First Time Golfing at Chelsea Piers Golf Club"
-  }),
-  new Game({
-    coordinates: {
-      lat: 40.76986,
-      lng: -73.97611
-    },
-    sport: "Baseball",
-    skillLevel: "Beginner",
-    description: "Want to get a friendly group together to play a game of baseball. Please have your own glove.",
-    host: users[0]._id,
-    attendees: [users[0].username],
-    maxCapacity: 26,
-    minCapacity: 10,
-    time: {
-      hours: 15,
-      minutes: 30
-    },
-    date: {
-      month: 9,
-      day: 10,
-      year: 2024
-    },
-    title: "Baseball at Heckscher Ballfields 1"
-  }),
-  new Game({
-    coordinates: {
-      lat: 40.7501,
-      lng: -74.0012
-    },
-    sport: "Soccer",
-    skillLevel: "Intermediate",
-    description: "Looking to meet a group of people who are willing to regularly meetup to play soccer.",
-    host: users[1]._id,
-    attendees: [users[1].username],
-    maxCapacity: 26,
-    minCapacity: 6,
-    time: {
-      hours: 16,
-      minutes: 00
-    },
-    date: {
-      month: 8,
-      day: 19,
-      year: 2023
-    },
-    title: "Soccer at Chelsea Park"
-  }),
-  new Game({
-    coordinates: {
-      lat: 40.82459332205943,
-      lng: -73.93492674438043
-    },
-    sport: "Tennis",
-    skillLevel: "Advanced",
-    description: "Trying to brush up on my tennis skills. Need a partner or three more for a game of doubles. Fair warning, I'm a beast.",
-    host: users[2]._id,
-    attendees: [users[2].username],
-    maxCapacity: 4,
-    minCapacity: 2,
-    time: {
-      hours: 11,
-      minutes: 30
-    },
-    date: {
-      month: 4,
-      day: 26,
-      year: 2023
-    },
-    title: "Competitive Tennis at Frederick Johnson Playground"
-  }),
-  new Game({
-    coordinates: {
-      lat: 40.7140,
-      lng: -73.9814
-    },
-    sport: "Handball",
-    skillLevel: "Beginner",
-    description: "Recently got into handball. Want some people to play and practice with.",
-    host: users[3]._id,
-    attendees: [users[3].username],
-    maxCapacity: 4,
-    minCapacity: 2,
-    time: {
-      hours: 16,
-      minutes: 00
-    },
-    date: {
-      month: 7,
-      day: 13,
-      year: 2023
-    },
-    title: "Handball at Henry M. Jackson Playground"
-  }),
-  new Game({
-    coordinates: {
-      lat: 40.7140,
-      lng: -73.9814
-    },
-    sport: "Handball",
-    skillLevel: "Advanced",
-    description: "I am the handball master. Want some butts to kick.",
-    host: users[4]._id,
-    attendees: [users[4].username],
-    maxCapacity: 4,
-    minCapacity: 2,
-    time: {
-      hours: 12,
-      minutes: 00
-    },
-    date: {
-      month: 3,
-      day: 23,
-      year: 2023
-    },
-    title: "Handball at Henry M. Jackson Playground"
-  })
+  // new Game({
+  //   coordinates: {
+  //     lat: 40.7503,
+  //     lng: -73.9983
+  //   },
+  //   sport: "Darts",
+  //   skillLevel: "Advanced",
+  //   description: "Come for the darts, stay for the drinks. Let's have some fun.",
+  //   host: users[5],
+  //   attendees: [users[5].username],
+  //   maxCapacity: 8,
+  //   minCapacity: 2,
+  //   time: {
+  //     hours: 20,
+  //     minutes: 30
+  //   },
+  //   date: {
+  //     month: 8,
+  //     day: 10,
+  //     year: 2023
+  //   },
+  //   title: "Darts at Billymark's West"
+  // }),
+  // new Game({
+  //   coordinates: {
+  //     lat: 40.7455,
+  //     lng: -74.0087
+  //   },
+  //   sport: "Golf",
+  //   skillLevel: "Beginner",
+  //   description: "Looking to play some golf for the first time. Everyone is welcome.",
+  //   host: users[6],
+  //   attendees: [users[6].username],
+  //   maxCapacity: 10,
+  //   minCapacity: 2,
+  //   time: {
+  //     hours: 12,
+  //     minutes: 00
+  //   },
+  //   date: {
+  //     month: 7,
+  //     day: 23,
+  //     year: 2023
+  //   },
+  //   title: "First Time Golfing at Chelsea Piers Golf Club"
+  // }),
+  // new Game({
+  //   coordinates: {
+  //     lat: 40.76986,
+  //     lng: -73.97611
+  //   },
+  //   sport: "Baseball",
+  //   skillLevel: "Beginner",
+  //   description: "Want to get a friendly group together to play a game of baseball. Please have your own glove.",
+  //   host: users[0],
+  //   attendees: [users[0].username],
+  //   maxCapacity: 26,
+  //   minCapacity: 10,
+  //   time: {
+  //     hours: 15,
+  //     minutes: 30
+  //   },
+  //   date: {
+  //     month: 9,
+  //     day: 10,
+  //     year: 2024
+  //   },
+  //   title: "Baseball at Heckscher Ballfields 1"
+  // }),
+  // new Game({
+  //   coordinates: {
+  //     lat: 40.7501,
+  //     lng: -74.0012
+  //   },
+  //   sport: "Soccer",
+  //   skillLevel: "Intermediate",
+  //   description: "Looking to meet a group of people who are willing to regularly meetup to play soccer.",
+  //   host: users[1],
+  //   attendees: [users[1].username],
+  //   maxCapacity: 26,
+  //   minCapacity: 6,
+  //   time: {
+  //     hours: 16,
+  //     minutes: 00
+  //   },
+  //   date: {
+  //     month: 8,
+  //     day: 19,
+  //     year: 2023
+  //   },
+  //   title: "Soccer at Chelsea Park"
+  // }),
+  // new Game({
+  //   coordinates: {
+  //     lat: 40.82459332205943,
+  //     lng: -73.93492674438043
+  //   },
+  //   sport: "Tennis",
+  //   skillLevel: "Advanced",
+  //   description: "Trying to brush up on my tennis skills. Need a partner or three more for a game of doubles. Fair warning, I'm a beast.",
+  //   host: users[2],
+  //   attendees: [users[2].username],
+  //   maxCapacity: 4,
+  //   minCapacity: 2,
+  //   time: {
+  //     hours: 11,
+  //     minutes: 30
+  //   },
+  //   date: {
+  //     month: 4,
+  //     day: 26,
+  //     year: 2023
+  //   },
+  //   title: "Competitive Tennis at Frederick Johnson Playground"
+  // }),
+  // new Game({
+  //   coordinates: {
+  //     lat: 40.7140,
+  //     lng: -73.9814
+  //   },
+  //   sport: "Handball",
+  //   skillLevel: "Beginner",
+  //   description: "Recently got into handball. Want some people to play and practice with.",
+  //   host: users[3],
+  //   attendees: [users[3].username],
+  //   maxCapacity: 4,
+  //   minCapacity: 2,
+  //   time: {
+  //     hours: 16,
+  //     minutes: 00
+  //   },
+  //   date: {
+  //     month: 7,
+  //     day: 13,
+  //     year: 2023
+  //   },
+  //   title: "Handball at Henry M. Jackson Playground"
+  // }),
+  // new Game({
+  //   coordinates: {
+  //     lat: 40.7140,
+  //     lng: -73.9814
+  //   },
+  //   sport: "Handball",
+  //   skillLevel: "Advanced",
+  //   description: "I am the handball master. Want some butts to kick.",
+  //   host: users[4],
+  //   attendees: [users[4].username],
+  //   maxCapacity: 4,
+  //   minCapacity: 2,
+  //   time: {
+  //     hours: 12,
+  //     minutes: 00
+  //   },
+  //   date: {
+  //     month: 3,
+  //     day: 23,
+  //     year: 2023
+  //   },
+  //   title: "Handball at Henry M. Jackson Playground"
+  // })
 ]
 
-mongoose
+games.forEach(game => {
+  game.host.attendingGames.push(game)
+  game.host.hostedGames.push(game)
+})
+
+  mongoose
   .connect(db, { useNewUrlParser: true })
   .then(() => {
     console.log('Connected to MongoDB successfully');
@@ -362,20 +367,20 @@ mongoose
     console.error(err.stack);
     process.exit(1);
   });
-
+  
   const insertSeeds = () => {
     console.log("Resetting db and seeding users and games...");
-  
+    
     User.collection.drop()
-                   .then(() => Game.collection.drop())
-                   .then(() => User.insertMany(users))
-                   .then(() => Game.insertMany(games))
-                   .then(() => {
-                     console.log("Done!")
-                     mongoose.disconnect();
-                   })
-                   .catch(err => {
-                     console.error(err.stack);
-                     process.exit(1);
-                   });
+    .then(() => Game.collection.drop())
+    .then(() => User.insertMany(users))
+    .then(() => Game.insertMany(games))
+    .then(() => {
+      console.log("Done!")
+      mongoose.disconnect();
+    })
+    .catch(err => {
+      console.error(err.stack);
+      process.exit(1);
+    });
   }

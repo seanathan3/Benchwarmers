@@ -171,15 +171,7 @@ const GamesForm = ({game, formCallback, mfSport, mfSkillLevel}) => {
       <form id="gf-master">
         <h1>{header}</h1>
         <div className="gf-item" v>
-          <select
-              value={sport}
-              id='gf-sport'
-              onChange={(e) => {
-                setSport(e.target.value);
-                setSelectedSport(true);
-              }}
-              className={selectedSport ? "black-font" : "grey-font"}
-            >
+          <select value={sport} onChange={changeSport} id="gf-sport">
             <option value="" disabled selected>
               Select Sport
             </option>
