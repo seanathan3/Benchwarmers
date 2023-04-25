@@ -46,7 +46,6 @@
 #in-master {
     height: 50px;
     width: 100%;
-    border-top: 2px solid black;
     border-bottom: 2px solid black;
     box-sizing: border-box;
     background-color: var(--peach);

@@ -4,8 +4,13 @@ import basketball from '../../assets/videos/basketball.mp4';
 import running from '../../assets/videos/running.mp4';
 import cycling from '../../assets/videos/cycling.mp4';
 import soccer from '../../assets/videos/soccer.mp4';
+import { useState } from 'react';
 
 const HeroSection = () => {
+    const [video, setVideo] = useState(0);
+
+    
+
     
     return(
         <>
