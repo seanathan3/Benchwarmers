@@ -13,8 +13,8 @@ const IndexSportFilter = ({parentCallback}) =>  {
   return (
     <div className="in-sport-filter">
 
-      <select onChange={changeSelectedSport} name="cf-sport">
-        <option selected disabled> Select A Sport</option>
+      <select className="in-sport-drop" onChange={changeSelectedSport} name="cf-sport">
+        <option selected disabled> Sport</option>
         <option value="Badminton">Badminton</option>
         <option value="Baseball">Baseball</option>
         <option value="Basketball">Basketball</option>

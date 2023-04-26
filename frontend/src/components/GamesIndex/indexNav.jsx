@@ -13,6 +13,7 @@ const IndexNav = ({parentCallback}) => {
     return(
         <>
             <div id="in-master">
+                <span>Search By: </span>
                 <IndexSportFilter parentCallback={myCallback}/>
             </div>
         </>
