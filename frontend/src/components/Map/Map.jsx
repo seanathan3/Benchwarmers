@@ -38,7 +38,7 @@ const Map = () => {
 
 // debugger
     useEffect(() => {
-
+        // clear()
         games.forEach((game) => {
 // debugger
             // clear();
