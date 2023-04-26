@@ -1,11 +1,19 @@
-import IndexCategoryFilter from "./indexCategoryFilter";
+import IndexSportFilter from "./indexSportFilter";
+import { useState } from "react";
 
-const IndexNav = () => {
+const IndexNav = ({parentCallback}) => {
+    const [selectedSport, setSelectedSport] = useState(null);
+
+    function myCallback (sport) {
+        setSelectedSport(sport);
+        // console.log(sport)
+        parentCallback(sport);
+    };
 
     return(
         <>
             <div id="in-master">
-                <IndexCategoryFilter/>
+                <IndexSportFilter parentCallback={myCallback}/>
             </div>
         </>
     )
