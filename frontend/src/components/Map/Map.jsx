@@ -5,6 +5,9 @@ import { formatTime } from '../../utils/utils';
 import GamesShow from '../GamesShow/GamesShow';
 import { Modal } from '../../context/Modal'
 import { fetchGame } from '../../store/games';
+import baseballImg from '../../assets/sports-logos/baseball.png';
+import mapsPin from '../../assets/maps-pins/maps-pin.png'
+
 
 const Map = () => {
     const dispatch = useDispatch();
@@ -36,7 +39,7 @@ const Map = () => {
     useEffect(() => {
 
         games.forEach((game) => {
-debugger
+// debugger
             const infoWindow = new window.google.maps.InfoWindow();
 
             markers.current[game._id] = new window.google.maps.Marker(
@@ -44,7 +47,16 @@ debugger
                     position: {lat: game.coordinates.lat, lng: game.coordinates.lng},
                     map: map,
                     // title: `${game.sport}`,
-                    // label: `${game.skillLevel}`
+                    label: {text: `${game.sport}`,
+                            color: '#C70E20',
+                            fontWeight: 'bold',
+                            textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000',
+                    },
+                    icon: {
+                        url: mapsPin,
+                        labelOrigin: new window.google.maps.Point(80, 23),
+                        // size: (50,50)
+                    },
                 }
             )
 
@@ -53,7 +65,7 @@ debugger
                 const content = document.createElement("div");
                 content.setAttribute('id', 'pin-textbox');
                 
-debugger
+// debugger
                 
                 const nameElement = document.createElement("h2");
                 nameElement.addEventListener('click', () => {
