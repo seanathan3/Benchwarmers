@@ -36,7 +36,7 @@ const MiniForm = () => {
         <div>
           <div className="mf-title">Sport</div>
           <select
-            id="drop"
+            className="drop"
             value={sport}
             onChange={(e) => setSport(e.target.value)}
             disabled={!isLoggedIn}
@@ -66,7 +66,7 @@ const MiniForm = () => {
         <div>
           <div className="mf-title">Skill Level</div>
           <select
-            id="drop"
+            className="drop"
             value={skillLevel}
             onChange={(e) => setSkillLevel(e.target.value)}
             disabled={!isLoggedIn}

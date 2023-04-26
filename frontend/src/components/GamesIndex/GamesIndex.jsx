@@ -2,17 +2,22 @@ import IndexList from "./IndexList";
 import IndexNav from "./indexNav";
 import Map from "../Map/Map";
 import './gamesIndex.css';
-
+import { useState } from "react";
 
 const GamesIndex = () => {
+    const [sport, setSport] = useState(null);
+
+    function handleSportChange(sport) {
+        setSport(sport);
+    };
 
     return(
         <>
             <div id="gi-master">
-                <IndexNav />
+                <IndexNav parentCallback={handleSportChange}/>
                 <div id="gi-content">
-                    <IndexList />
-                    <Map />
+                    <IndexList sport={sport} />
+                    <Map sport={sport} />
                 </div>
             </div>
         </>

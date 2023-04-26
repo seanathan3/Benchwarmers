@@ -52,8 +52,16 @@ export const getFilteredGames = (userId) => state => {
 export const fetchGames = () => async dispatch => {
     const res = await jwtFetch('/api/games');
     const data = await res.json();
+    console.log(data)
     dispatch(receiveGames(data));
 };
+
+export const fetchSportFilteredGames = (sport) => async dispatch => {
+    const res = await jwtFetch('/api/games');
+    const data = await res.json();
+    const sportFilteredGames = data.filter(game => game.sport === sport)
+    dispatch(receiveGames(sportFilteredGames))
+}
 
 export const fetchGame = gameId => async dispatch => {
 // debugger
