@@ -66,10 +66,8 @@ const GamesForm = ({game, formCallback, mfSport, mfSkillLevel}) => {
     userId = null;
   }
 
-// debugger
   useEffect(() => {
     if (gameId) {
-// debugger
       dispatch(fetchGame(gameId));
       setHeader("Edit Your Game");
       setSport(game?.sport);
@@ -143,7 +141,6 @@ const GamesForm = ({game, formCallback, mfSport, mfSkillLevel}) => {
 
     newGame.host = userId;
 
-// debugger
     if (gameId) {
       newGame._id = gameId;
       dispatch(updateGame(newGame)).then((res) => {
@@ -167,7 +164,6 @@ const GamesForm = ({game, formCallback, mfSport, mfSkillLevel}) => {
 
     function handleCallback(coordinates) {
         setCoords(coordinates);
-        // debugger
         setShowModal(false);
         setEditModal(false);
     }
