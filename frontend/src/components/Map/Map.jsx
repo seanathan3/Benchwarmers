@@ -20,7 +20,8 @@ const Map = () => {
     const [currentGameId, setCurrentGameId] = useState();
 
 
-    useEffect(() => {        
+    useEffect(() => {       
+        // clear(); 
         setMap(
             new window.google.maps.Map(    
                 mapRef.current, {
@@ -40,6 +41,7 @@ const Map = () => {
 
         games.forEach((game) => {
 // debugger
+            // clear();
             const infoWindow = new window.google.maps.InfoWindow();
 
             markers.current[game._id] = new window.google.maps.Marker(
@@ -47,7 +49,8 @@ const Map = () => {
                     position: {lat: game.coordinates.lat, lng: game.coordinates.lng},
                     map: map,
                     // title: `${game.sport}`,
-                    label: {text: `${game.sport}`,
+                    label: {
+                            // text: `${game.sport}`,
                             color: '#C70E20',
                             fontWeight: 'bold',
                             textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000',
@@ -95,6 +98,11 @@ const Map = () => {
         })
     }, [games, map])
 
+
+    function clear() {
+        setMap(null);
+    //   responseDiv.style.display = "none";
+    }
 
     return(
         <>
