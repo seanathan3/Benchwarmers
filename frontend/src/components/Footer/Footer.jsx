@@ -11,10 +11,10 @@ const Footer = () => {
             <img id="footer-logoPic" src={fullLogo} alt="full-logo" />
           </Link>
         </div>
-        <div>
+        <div id='footer-middle'>
           Benchwarmers was developed in 4 days using the MERN stack
         </div>
-        <div>New York, NY</div>
+        <div id='footer-end'>New York, NY</div>
       </div>
     </>
   );
