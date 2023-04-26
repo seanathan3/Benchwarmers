@@ -19,7 +19,6 @@ const UpcomingGames = () => {
 }
 
 const upcomingGames = useSelector(getUpcomingGames);
-// debugger
   
   useEffect(() => {
     dispatch(fetchGames())

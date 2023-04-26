@@ -7,10 +7,11 @@ const IndexList = ({sport, skillLevel}) => {
     const dispatch = useDispatch();
     const games = useSelector(state => state.games ? Object.values(state.games) : []);
     console.log(skillLevel)
-    
+
     useEffect(() => {
-        dispatch(resetGames())
-        if(sport) {
+        console.log(sport)
+        if(sport && sport !== "All") {
+            dispatch(resetGames())
             dispatch(fetchSportFilteredGames(sport))
         }
         else {

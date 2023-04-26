@@ -28,7 +28,7 @@ const IndexSportFilter = ({parentCallback}) =>  {
         <option value="Table Tennis">Table Tennis</option>
         <option value="Tennis">Tennis</option>
         <option value="Volleyball">Volleyball</option>
-        <option value="Other">Other</option>
+        <option value="All">All Sports</option>
       </select>
     </div>
   )
