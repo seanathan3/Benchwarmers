@@ -136,7 +136,11 @@ const GamesForm = ({game, formCallback, mfSport, mfSkillLevel}) => {
       coordinates: { lat: coords?.lat, lng: coords?.lng },
     };
 
+
+
     newGame.host = userId;
+
+// debugger
     if (gameId) {
       newGame._id = gameId;
       dispatch(updateGame(newGame)).then((res) => {
@@ -160,7 +164,7 @@ const GamesForm = ({game, formCallback, mfSport, mfSkillLevel}) => {
 
     function handleCallback(coordinates) {
         setCoords(coordinates);
-        debugger
+        // debugger
         setShowModal(false);
         setEditModal(false);
     }
@@ -293,6 +297,7 @@ const GamesForm = ({game, formCallback, mfSport, mfSkillLevel}) => {
         {errors?.date && <div className="errors">{errors?.date}</div>}
 
         <div id='gf-map'>
+          <div>Please enter a location into the search bar then click submit.</div>
         <GamesFormMap className="games-form-map" parentCallback={handleCallback}/>
         </div>
             <br />
