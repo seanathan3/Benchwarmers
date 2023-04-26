@@ -6,17 +6,22 @@ import { useState } from "react";
 
 const GamesIndex = () => {
     const [sport, setSport] = useState(null);
+    const [skillLevel, setSkillLevel] = useState(null);
 
     function handleSportChange(sport) {
         setSport(sport);
     };
 
+    function handleSkillLevelChange(skillLevel) {
+        setSkillLevel(skillLevel);
+    }
+
     return(
         <>
             <div id="gi-master">
-                <IndexNav parentCallback={handleSportChange}/>
+                <IndexNav parentSportCallback={handleSportChange} parentSkillLevelCallback={handleSkillLevelChange}/>
                 <div id="gi-content">
-                    <IndexList sport={sport} />
+                    <IndexList skillLevel={skillLevel} sport={sport} />
                     <Map sport={sport} />
                 </div>
             </div>
