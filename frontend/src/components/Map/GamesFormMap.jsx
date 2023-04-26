@@ -103,7 +103,7 @@ const GamesFormMap = ({parentCallback}) => {
         .geocode(request)
         .then((result) => {
             const { results } = result;
-debugger
+// debugger
             map.setCenter(results[0].geometry.location);
             marker.setPosition(results[0].geometry.location);
             marker.setMap(map);

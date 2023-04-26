@@ -18,7 +18,12 @@ const Map = ({sport}) => {
     const games = useSelector(state => Object.values(state.games));
     const [showModal, setShowModal] = useState(false);
     const [currentGameId, setCurrentGameId] = useState();
+    const [ranNum, setRanNum] = useState(null);
 
+    // function ranNumGenerator() {
+    //     setRanNum(Math.random())
+    //     debugger
+    // }
 
     useEffect(() => {       
         // clear(); 
@@ -34,7 +39,7 @@ const Map = ({sport}) => {
         if (currentGameId) {
             dispatch(fetchGame())
         }
-    }, [dispatch, currentGameId, sport]);
+    }, [dispatch, currentGameId, sport, ranNum]);
 
 // debugger
     useEffect(() => {
@@ -42,6 +47,7 @@ const Map = ({sport}) => {
         games.forEach((game) => {
 // debugger
             // clear();
+            // ranNumGenerator();
             const infoWindow = new window.google.maps.InfoWindow();
 
             markers.current[game._id] = new window.google.maps.Marker(
@@ -62,7 +68,7 @@ const Map = ({sport}) => {
                     },
                 }
             )
-
+// debugger
             
             markers.current[game._id].addListener('click', () => {
                 const content = document.createElement("div");

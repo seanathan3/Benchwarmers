@@ -7,8 +7,10 @@ import { useState } from "react";
 const GamesIndex = () => {
     const [sport, setSport] = useState(null);
 
+
     function handleSportChange(sport) {
         setSport(sport);
+debugger
     };
 
     return(
@@ -17,7 +19,7 @@ const GamesIndex = () => {
                 <IndexNav parentCallback={handleSportChange}/>
                 <div id="gi-content">
                     <IndexList sport={sport} />
-                    <Map sport={sport} />
+                    <Map sport={sport}/>
                 </div>
             </div>
         </>

@@ -10,6 +10,7 @@ const IndexList = ({sport}) => {
     useEffect(() => {
         console.log(sport)
         if(sport) {
+// debugger
             dispatch(resetGames())
             dispatch(fetchSportFilteredGames(sport))
         }
