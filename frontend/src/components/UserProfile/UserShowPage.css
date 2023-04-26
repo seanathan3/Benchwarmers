@@ -1,6 +1,7 @@
 #user-page {
   background-color:  rgb(236, 59, 19, 0.3);
   flex: 1;
+  padding-bottom: 100px;
 }
 
 #welcome {
