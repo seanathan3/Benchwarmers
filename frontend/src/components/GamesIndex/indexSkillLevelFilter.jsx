@@ -8,8 +8,8 @@ const IndexSkillLevelFilter = ({parentCallback}) => {
   }
 
   return (
-    <div className="in-skill-filter">
-      <select onChange={changeSelectedSkillLevel} id="skill-drop">
+    <div className="in-filter">
+      <select className="in-drop"  onChange={changeSelectedSkillLevel} id="skill-drop">
         <option disabled selected>Skill Level</option>
           <option value="Beginner">Beginner</option>
           <option value="Intermediate">Intermediate</option>
