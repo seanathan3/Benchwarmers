@@ -80,6 +80,7 @@ const GamesForm = ({game, formCallback, mfSport, mfSkillLevel}) => {
       setTitle(game?.title);
       setGameDate(formFormatDate(game?.date));
       setTime(formFormatTime(game?.time));
+      setAttendees(game?.attendees);
 
       return () => dispatch(removeErrors());
     }
@@ -124,6 +125,7 @@ const GamesForm = ({game, formCallback, mfSport, mfSkillLevel}) => {
       minCapacity,
       skillLevel,
       title,
+      attendees,
       date: {
         year: parseInt(gameDate.split("-")[0]),
         month: parseInt(gameDate.split("-")[1]),
