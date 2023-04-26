@@ -22,7 +22,7 @@
     text-align: center;
 }
 
-input[type=text] {
+#gf-map input[type=text] {
     background-color: #fff;
     border: 0;
     border-radius: 2px;
@@ -36,7 +36,7 @@ input[type=text] {
     min-width: 25%;
 }
 
-input[type=button] {
+#gf-map input[type=button] {
     background-color: #fff;
     border: 0;
     border-radius: 2px;
