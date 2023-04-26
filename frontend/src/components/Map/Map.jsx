@@ -9,7 +9,7 @@ import baseballImg from '../../assets/sports-logos/baseball.png';
 import mapsPin from '../../assets/maps-pins/maps-pin.png'
 
 
-const Map = () => {
+const Map = ({sport}) => {
     const dispatch = useDispatch();
     const [map, setMap] = useState();
     const mapRef = useRef();
@@ -32,9 +32,9 @@ const Map = () => {
             )
         )
         if (currentGameId) {
-            dispatch(fetchGame)
+            dispatch(fetchGame())
         }
-    }, [dispatch, currentGameId]);
+    }, [dispatch, currentGameId, sport]);
 
 // debugger
     useEffect(() => {
