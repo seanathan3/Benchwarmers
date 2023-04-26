@@ -16,9 +16,11 @@ const HostedGames = () => {
   }, [userId, dispatch])
 
   return (
-     <div id='hg-scroll-wrapper'>
+     <div id='hg-scroll-wrapper'>Your Games:
+     <br />
+     <br />
     <div id='hosted'>
-      <h2 id='hg-title'>Your Games:</h2>
+      {/* <h2 id='hg-title'>Your Games:</h2> */}
       <div id='hg-card-container'>
         {
           filteredGames.map((game) => {

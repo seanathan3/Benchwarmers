@@ -1,0 +1,22 @@
+
+#footer {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+  cursor: pointer;
+  background-color: #f9e0c6;
+  text-decoration: none !important;
+  align-items: center;
+}
+
+#footer-links {
+  text-decoration: none;
+  color: black;
+}
+
+#footer-logoPic {
+  max-height: 25px;
+}

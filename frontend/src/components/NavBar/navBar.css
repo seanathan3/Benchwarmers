@@ -3,8 +3,10 @@
     height: 80px;
     display: flex;
     align-items: center;
-    background-color: rgb(233, 153, 55, 0.3);
+    background-color: #f9e0c6;
     flex-shrink: 0;
+    z-index: 1;
+    border-bottom: 2px solid black;
 
 }
 
@@ -21,7 +23,8 @@
 }
 
 #nb-rightLinks div {
-    width: 125px;
+    width: auto;
+    padding: 0 20px;
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -31,7 +34,6 @@
 #nb-rightLinks a {
     text-decoration: none;
     color: inherit;
-    width: 125px;
     cursor: pointer;
     display: flex;
     justify-content: center;

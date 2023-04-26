@@ -1,5 +1,6 @@
 #user-page {
   background-color:  rgb(236, 59, 19, 0.3);
+  flex: 1;
 }
 
 #welcome {
@@ -24,6 +25,8 @@
   display: flex;
   font-family: Jost, sans-serif;
   justify-content: center;
+  flex-direction: row;
+  align-items: flex-start;
 }
 
 #welcome {

@@ -2,7 +2,7 @@ import './gamesShow.css';
 import { formatTime, formatMonth } from '../../utils/utils';
 import { useDispatch, useSelector } from 'react-redux';
 import SubmitButton from '../Button/SubmitButton';
-import { updateGame } from '../../store/games';
+import { deleteGame, updateGame } from '../../store/games';
 
 
 const GamesShow = ({game}) => {

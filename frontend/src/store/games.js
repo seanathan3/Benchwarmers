@@ -125,16 +125,21 @@ export const gameErrorsReducer = (state = null, action) => {
 	}
 };
 
-const gamesReducer = (state={}, action) => {
+const gamesReducer = (state= {}, action) => {
     let nextState = { ...state }
     switch (action.type) {
         case RECEIVE_GAMES:
-            return { ...state, ...action.games }
+            action.games.forEach(game => {
+                nextState[game._id] = game
+            })
+            return nextState;
         case RECEIVE_GAME:
             nextState[action.game._id] = action.game;
             return nextState;
         case REMOVE_GAME:
-            delete  nextState[action.gameId];
+            // console.log(nextState)
+            // console.log(action.gameId)
+            delete nextState[action.gameId];
             return nextState;
         case RESET_GAMES:
             return {};

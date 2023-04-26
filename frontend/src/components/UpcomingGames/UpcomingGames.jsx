@@ -26,16 +26,15 @@ const upcomingGames = useSelector(getUpcomingGames);
   }, [dispatch])
 
   return (
-    <div id='scroll-wrapper'>
+    
+    <>
+
+    <div id='scroll-wrapper'>Upcoming Games:
+    <br />
+    <br />
+      {/* <label id='ug-title'>Upcoming Games:</label> */}
     <div id='upcoming'>
-      <label id='ug-title'>Upcoming Games:</label>
       <div id='ug-card-container'>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
         {
           upcomingGames.map((game) => {
             // return <IndexItem key={game._id} game={game} />
@@ -45,6 +44,7 @@ const upcomingGames = useSelector(getUpcomingGames);
       </div>
       </div>
     </div>
+    </>
   )
 
 };

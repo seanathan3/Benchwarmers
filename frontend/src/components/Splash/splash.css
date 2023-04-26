@@ -34,6 +34,14 @@
     height: 100%;
     background-color: rgb(236, 59, 19, 0.3);
 }
+#s-content-container {
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    box-sizing:border-box;
+    border-top: 2px solid black;
+    z-index: 1;
+}
 
 #s-upcoming-games {
     box-sizing: border-box;
@@ -68,4 +76,19 @@
     text-align: center;
     font-size: 28px;
     padding-bottom: 10px;
+}
+
+#s-hs-cover {
+    position: absolute;
+    height: 306px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 5;
+    top: 80px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 60px;
+    color: rgba(250, 250, 250, 0.9);
 }
