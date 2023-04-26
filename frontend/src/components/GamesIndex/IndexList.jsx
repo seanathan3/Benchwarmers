@@ -1,15 +1,22 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react';
-import { fetchGames } from '../../store/games';
+import { fetchGames, fetchSportFilteredGames, resetGames } from '../../store/games';
 import IndexItem from './IndexItem';
 
-const IndexList = () => {
+const IndexList = ({sport}) => {
     const dispatch = useDispatch();
     const games = useSelector(state => state.games ? Object.values(state.games) : []);
-
+    
     useEffect(() => {
-        dispatch(fetchGames());
-    }, [dispatch])
+        console.log(sport)
+        if(sport && sport !== "All") {
+            dispatch(resetGames())
+            dispatch(fetchSportFilteredGames(sport))
+        }
+        else {
+            dispatch(fetchGames());
+        }   
+    }, [dispatch, sport])
     
 
     return(

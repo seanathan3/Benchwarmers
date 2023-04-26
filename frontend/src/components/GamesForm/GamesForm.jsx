@@ -81,6 +81,7 @@ const GamesForm = ({game, formCallback, mfSport, mfSkillLevel}) => {
       setGameDate(formFormatDate(game?.date));
       setTime(formFormatTime(game?.time));
       setAttendees(game?.attendees);
+      setCoords({lat: game?.coords?.lat, lng: game?.coords?.lng})
 
       return () => dispatch(removeErrors());
     }
@@ -299,7 +300,7 @@ const GamesForm = ({game, formCallback, mfSport, mfSkillLevel}) => {
         {errors?.date && <div className="errors">{errors?.date}</div>}
 
         <div id='gf-map'>
-          <div>Please enter a location into the search bar then click submit.</div>
+          <div>Please enter a location into the search bar then click the search button.</div>
         <GamesFormMap className="games-form-map" parentCallback={handleCallback}/>
         </div>
             <br />
