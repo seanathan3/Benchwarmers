@@ -9,7 +9,7 @@ const IndexList = ({sport}) => {
     
     useEffect(() => {
         console.log(sport)
-        if(sport) {
+        if(sport && sport !== "All") {
             dispatch(resetGames())
             dispatch(fetchSportFilteredGames(sport))
         }
