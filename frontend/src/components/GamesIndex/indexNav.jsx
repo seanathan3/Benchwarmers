@@ -19,6 +19,7 @@ const IndexNav = ({parentSportCallback, parentSkillLevelCallback}) => {
     return(
         <>
             <div id="in-master">
+                <span>Search By: </span>
                 <IndexSportFilter parentCallback={sportCallback}/>
                 <IndexSkillLevelFilter parentCallback={skillLevelCallback}/>
             </div>
