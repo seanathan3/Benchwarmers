@@ -1,8 +1,5 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "../GamesIndex/gamesIndex.css"
-import { useDispatch, useSelector } from "react-redux";
-import { useState } from "react"
-import { fetchSportFilteredGames } from "../../store/games";
 
 const IndexSportFilter = ({parentCallback}) =>  {
 

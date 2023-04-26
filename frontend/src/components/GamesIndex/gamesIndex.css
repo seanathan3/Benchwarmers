@@ -50,6 +50,7 @@
     border-bottom: 2px solid black;
     box-sizing: border-box;
     background-color: var(--peach);
+    display: flex;
 }
 
 #il-master {
@@ -90,6 +91,11 @@
 }
 
 .in-sport-filter {
+    width: 20%;
+    height: 100%;
+}
+
+.in-skill-filter {
     width: 20%;
     height: 100%;
 }
