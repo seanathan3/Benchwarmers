@@ -45,11 +45,15 @@
 }
 
 #in-master {
+    display: flex;
+    align-items: center;
     height: 50px;
     width: 100%;
     border-bottom: 2px solid black;
     box-sizing: border-box;
     background-color: var(--peach);
+    padding-left: 20px;
+    display: flex;
 }
 
 #il-master {
@@ -90,6 +94,21 @@
 }
 
 .in-sport-filter {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    padding-left: 10px;
+}
+
+.in-sport-drop {
+    font-family: Jost, sans-serif;
+    border-radius: 5px;
+    height: 30px;
+    padding: 0 5px;
+}
+
+.in-skill-filter {
     width: 20%;
     height: 100%;
 }

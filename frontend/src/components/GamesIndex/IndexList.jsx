@@ -3,10 +3,11 @@ import { useEffect } from 'react';
 import { fetchGames, fetchSportFilteredGames, resetGames } from '../../store/games';
 import IndexItem from './IndexItem';
 
-const IndexList = ({sport}) => {
+const IndexList = ({sport, skillLevel}) => {
     const dispatch = useDispatch();
     const games = useSelector(state => state.games ? Object.values(state.games) : []);
-    
+    console.log(skillLevel)
+
     useEffect(() => {
         console.log(sport)
 <<<<<<< HEAD
