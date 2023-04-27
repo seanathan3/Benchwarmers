@@ -1,117 +1,121 @@
 #ii-master {
-    padding: 10px;
-    border: 1px solid gray;
-    border-radius: 25px;
-    margin: 10px 0;
-    box-shadow: 5px 5px 15px rgb(143, 199, 227, 0.5);
-    display: flex;
-    align-items: center;
-    background-color: whitesmoke;
-    font-size: 16px;
-    text-align: left;
+  padding: 10px;
+  border: 1px solid gray;
+  border-radius: 25px;
+  margin: 10px 0;
+  box-shadow: 5px 5px 15px rgb(143, 199, 227, 0.5);
+  display: flex;
+  align-items: center;
+  background-color: whitesmoke;
+  font-size: 16px;
+  text-align: left;
 }
 
 #ii-master:hover {
-    background-color: rgb(202, 235, 252);
-    cursor: pointer;
+  background-color: rgb(202, 235, 252);
+  cursor: pointer;
 }
 
 #ii-image {
-    max-width: 48px;
-    max-height: 48px;
+  max-width: 48px;
+  max-height: 48px;
 }
 
 #ii-desc {
-    margin-left: 10px;
-    line-height: 24px;
+  margin-left: 10px;
+  line-height: 24px;
 }
 
 #ii-sport {
-    color: var(--orange);
+  color: var(--orange);
 }
 
 #gi-master {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    /* Set the height of #gi-master to 100% minus the height of the navbar */
-    flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  /* Set the height of #gi-master to 100% minus the height of the navbar */
+  flex: 1;
 }
 
 #gi-content {
-    flex: 1;
-    display: flex;
-    flex-direction: row; /* Added */
+  flex: 1;
+  display: flex;
+  flex-direction: row; /* Added */
 }
 
 #in-master {
-    display: flex;
-    align-items: center;
-    height: 50px;
-    width: 100%;
-    border-bottom: 2px solid black;
-    box-sizing: border-box;
-    background-color: var(--peach);
-    padding-left: 20px;
+  display: flex;
+  align-items: center;
+  height: 50px;
+  width: 100%;
+  border-bottom: 2px solid black;
+  box-sizing: border-box;
+  background-color: var(--peach);
+  padding-left: 20px;
 }
 
 #il-master {
-    width: 500px;
-    padding: 20px;
-    overflow-y: auto;
-    height: calc(100vh - 130px);
-    box-sizing: border-box;
-    background-color: rgb(225, 104, 69, 0.5);
-    border-right: 2px solid black;
+  width: 500px;
+  padding: 20px;
+  overflow-y: auto;
+  height: calc(100vh - 130px);
+  box-sizing: border-box;
+  background-color: rgb(225, 104, 69, 0.5);
+  border-right: 2px solid black;
 }
-
 
 .ii-fixed-width {
-    width: 400px;
+  width: 400px;
 }
 
-#ii-edit-button:hover{
-    text-decoration: underline;
-    color: var(--orange)
+#ii-edit-button:hover {
+  text-decoration: underline;
+  color: var(--orange);
 }
 
 #il-title {
-    display: flex;
-    justify-content: center;
-    font-size: 26px;
+  display: flex;
+  justify-content: center;
+  font-size: 26px;
 }
 
 #ii-buttons {
-    display: flex;
-    justify-content: flex-start;
-    width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
 }
 
-#ii-delete-button:hover{
-    text-decoration: underline;
-    color: var(--orange)
+#ii-delete-button:hover {
+  text-decoration: underline;
+  color: var(--orange);
 }
 
 #ii-delete-button {
-    padding-left: 50px;
+  padding-left: 50px;
 }
 
 .in-filter {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    height: 100%;
-    padding-left: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+  padding-left: 10px;
 }
 
 .in-drop {
-    font-family: Jost, sans-serif;
-    border-radius: 5px;
-    height: 30px;
-    padding: 0 5px;
+  font-family: Jost, sans-serif;
+  border-radius: 5px;
+  height: 30px;
+  padding: 0 5px;
 }
 
 .in-skill-filter {
-    width: 20%;
-    height: 100%;
+  width: 20%;
+  height: 100%;
+}
+
+#il-no-results {
+  margin-top: 10px;
+    text-align: center;
 }

@@ -28,7 +28,7 @@ const IndexList = ({sport, skillLevel}) => {
         <>
             <div id="il-master">
                 <div id='il-title'>Upcoming Games:</div>
-                {games.length === 0 && <p>"No Results Found"</p>}
+                {games.length === 0 && <p id="il-no-results"> <em> No Results Found</em></p>}
                 {games.map(game => {
                     return <IndexItem key={game._id} game={game} />
                 })}
