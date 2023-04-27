@@ -8,8 +8,10 @@ const GamesIndex = () => {
     const [sport, setSport] = useState(null);
     const [skillLevel, setSkillLevel] = useState(null);
 
+
     function handleSportChange(sport) {
         setSport(sport);
+debugger
     };
 
     function handleSkillLevelChange(skillLevel) {
