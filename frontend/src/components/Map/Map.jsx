@@ -41,11 +41,9 @@ const Map = ({sport}) => {
         }
     }, [dispatch, currentGameId, sport, ranNum]);
 
-// debugger
     useEffect(() => {
         // clear()
         games.forEach((game) => {
-// debugger
             // clear();
             // ranNumGenerator();
             const infoWindow = new window.google.maps.InfoWindow();
@@ -74,7 +72,6 @@ const Map = ({sport}) => {
                 const content = document.createElement("div");
                 content.setAttribute('id', 'pin-textbox');
                 
-// debugger
                 
                 const nameElement = document.createElement("h2");
                 nameElement.addEventListener('click', () => {

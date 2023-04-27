@@ -9,8 +9,12 @@ const IndexList = ({sport}) => {
     
     useEffect(() => {
         console.log(sport)
+<<<<<<< HEAD
         if(sport) {
 // debugger
+=======
+        if(sport && sport !== "All") {
+>>>>>>> e4b070d1c02b00893dc2c7227f2cc2e7776e93a8
             dispatch(resetGames())
             dispatch(fetchSportFilteredGames(sport))
         }
