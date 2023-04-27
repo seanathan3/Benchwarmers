@@ -65,18 +65,6 @@
   color: black;
 }
 
-#gf-min-capacity {
-  display: flex;
-  justify-content: center;
-  height: 35px;
-  width: 349px;
-  border: 1px solid gray;
-  border-radius: 10px;
-  padding-left: 5px;
-  font-family: Jost, sans-serif;
-  background-color: whitesmoke;
-}
-
 #gf-max-capacity {
   display: flex;
   justify-content: center;
@@ -222,18 +210,6 @@
   }
   
   #gf-description {
-    display: flex;
-    justify-content: center;
-    height: 35px;
-    width: 349px;
-    border: 1px solid gray;
-    border-radius: 10px;
-    padding-left: 5px;
-    font-family: Jost, sans-serif;
-    background-color: whitesmoke;
-  }
-  
-  #gf-min-capacity {
     display: flex;
     justify-content: center;
     height: 35px;

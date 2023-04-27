@@ -32,7 +32,6 @@ const GamesForm = ({game, formCallback, mfSport, mfSkillLevel}) => {
   const [description, setDescription] = useState("");
   const [attendees, setAttendees] = useState([]);
   const [maxCapacity, setMaxCapacity] = useState("");
-  const [minCapacity, setMinCapacity] = useState("");
   const [time, setTime] = useState("10:10");
   const [gameDate, setGameDate] = useState("2023-04-28");
   const [title, setTitle] = useState("");
@@ -73,7 +72,6 @@ const GamesForm = ({game, formCallback, mfSport, mfSkillLevel}) => {
       setSport(game?.sport);
       setDescription(game?.description);
       setMaxCapacity(game?.maxCapacity);
-      setMinCapacity(game?.minCapacity);
       setSkillLevel(game?.skillLevel);
       setTitle(game?.title);
       setGameDate(formFormatDate(game?.date));
@@ -98,10 +96,6 @@ const GamesForm = ({game, formCallback, mfSport, mfSkillLevel}) => {
     setMaxCapacity(e.target.value);
   }
 
-  function changeMinCapacity(e) {
-    setMinCapacity(e.target.value);
-  }
-
   function changeTime(e) {
     setTime(e.target.value);
   }
@@ -121,7 +115,6 @@ const GamesForm = ({game, formCallback, mfSport, mfSkillLevel}) => {
       sport,
       description,
       maxCapacity,
-      minCapacity,
       skillLevel,
       title,
       attendees,
@@ -246,19 +239,6 @@ const GamesForm = ({game, formCallback, mfSport, mfSkillLevel}) => {
         </div>
         {errors?.description && (
           <div className="errors">{errors?.description}</div>
-        )}
-        <div className="gf-item">
-          <input
-            value={minCapacity}
-            onChange={changeMinCapacity}
-            required
-            type="input"
-            id="gf-min-capacity"
-            placeholder="Min Capacity"
-          />
-        </div>
-        {errors?.minCapacity && (
-          <div className="errors">{errors?.minCapacity}</div>
         )}
         <div className="gf-item">
           <input

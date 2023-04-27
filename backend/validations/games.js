@@ -22,11 +22,6 @@ const validateGameInput = [
     .withMessage('Please enter the max number of participants')
     .isInt({min: 2})
     .withMessage('Game must have at least 2 participants'),
-  check('minCapacity')
-    .exists({checkFalsy: true})
-    .withMessage('Please enter the minimum number of participants')
-    .isInt({min: 2})
-    .withMessage('Game must have at least 2 participants'),
   check('time')
     .exists({checkFalsy: true})
     .withMessage('Please enter the start time of your game'),
