@@ -76,7 +76,7 @@ const GamesForm = ({game, formCallback, mfSport, mfSkillLevel}) => {
       setGameDate(formFormatDate(game?.date));
       setTime(formFormatTime(game?.time));
       setAttendees(game?.attendees);
-      setCoords({lat: game?.coords?.lat, lng: game?.coords?.lng})
+      setCoords({lat: game?.coordinates?.lat, lng: game?.coordinates?.lng})
 
       return () => dispatch(removeErrors());
     }
@@ -134,6 +134,7 @@ const GamesForm = ({game, formCallback, mfSport, mfSkillLevel}) => {
 
     if (gameId) {
       newGame._id = gameId;
+      debugger
       dispatch(updateGame(newGame)).then((res) => {
         if (res.type === 'games/RECEIVE_GAME') {
           dispatch(removeErrors());
@@ -272,7 +273,7 @@ const GamesForm = ({game, formCallback, mfSport, mfSkillLevel}) => {
 
         <div id='gf-map'>
           <div>Please enter a location into the search bar then click the search button.</div>
-          {errors?.coordinates?.lat && <div id="mapError" className="errors">{errors?.coordinates?.lat}</div>}
+          {(errors ? Object.keys(errors).some(ele => ele.includes('.')) : null) && <div id="mapError" className="errors">Please enter a location</div>}
         <GamesFormMap className="games-form-map" parentCallback={handleCallback}/>
         </div>
             <br />
