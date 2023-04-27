@@ -53,7 +53,6 @@
     box-sizing: border-box;
     background-color: var(--peach);
     padding-left: 20px;
-    display: flex;
 }
 
 #il-master {
@@ -84,7 +83,7 @@
 
 #ii-buttons {
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
     width: 100%;
 }
 
@@ -93,7 +92,11 @@
     color: var(--orange)
 }
 
-.in-sport-filter {
+#ii-delete-button {
+    padding-left: 50px;
+}
+
+.in-filter {
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -101,7 +104,7 @@
     padding-left: 10px;
 }
 
-.in-sport-drop {
+.in-drop {
     font-family: Jost, sans-serif;
     border-radius: 5px;
     height: 30px;

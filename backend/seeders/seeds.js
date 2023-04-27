@@ -85,7 +85,6 @@ const games = [
     host: users[1],
     attendees: [users[1].username],
     maxCapacity: 4,
-    minCapacity: 4,
     time: {
       hours: 11,
       minutes: 00
@@ -108,7 +107,6 @@ const games = [
     description: "Need 10 people for a full-court game.",
     host: users[0],
     maxCapacity: 10,
-    minCapacity: 10,
     time: {
       hours: 16,
       minutes: 15
@@ -131,7 +129,6 @@ const games = [
     host: users[2],
     attendees: [users[2].username],
     maxCapacity: 10,
-    minCapacity: 2,
     time: {
       hours: 9,
       minutes: 30
@@ -154,7 +151,6 @@ const games = [
     host: users[3],
     attendees: [users[3].username],
     maxCapacity: 4,
-    minCapacity: 2,
     time: {
       hours: 11,
       minutes: 15
@@ -177,7 +173,6 @@ const games = [
     host: users[4],
     attendees: [users[4].username],
     maxCapacity: 4,
-    minCapacity: 2,
     time: {
       hours: 19,
       minutes: 00
@@ -200,7 +195,6 @@ const games = [
   //   host: users[5],
   //   attendees: [users[5].username],
   //   maxCapacity: 8,
-  //   minCapacity: 2,
   //   time: {
   //     hours: 20,
   //     minutes: 30
@@ -223,7 +217,6 @@ const games = [
   //   host: users[6],
   //   attendees: [users[6].username],
   //   maxCapacity: 10,
-  //   minCapacity: 2,
   //   time: {
   //     hours: 12,
   //     minutes: 00
@@ -246,7 +239,6 @@ const games = [
   //   host: users[0],
   //   attendees: [users[0].username],
   //   maxCapacity: 26,
-  //   minCapacity: 10,
   //   time: {
   //     hours: 15,
   //     minutes: 30
@@ -269,7 +261,6 @@ const games = [
   //   host: users[1],
   //   attendees: [users[1].username],
   //   maxCapacity: 26,
-  //   minCapacity: 6,
   //   time: {
   //     hours: 16,
   //     minutes: 00
@@ -292,7 +283,6 @@ const games = [
   //   host: users[2],
   //   attendees: [users[2].username],
   //   maxCapacity: 4,
-  //   minCapacity: 2,
   //   time: {
   //     hours: 11,
   //     minutes: 30
@@ -315,7 +305,6 @@ const games = [
   //   host: users[3],
   //   attendees: [users[3].username],
   //   maxCapacity: 4,
-  //   minCapacity: 2,
   //   time: {
   //     hours: 16,
   //     minutes: 00
@@ -338,7 +327,6 @@ const games = [
   //   host: users[4],
   //   attendees: [users[4].username],
   //   maxCapacity: 4,
-  //   minCapacity: 2,
   //   time: {
   //     hours: 12,
   //     minutes: 00
