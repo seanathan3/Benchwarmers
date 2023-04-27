@@ -111,9 +111,9 @@ const GamesFormMap = ({parentCallback}) => {
             inputText.value = `${results[0].formatted_address}`
             return results;
         })
-        .catch((e) => {
-            alert("Geocode was not successful for the following reason: " + e);
-        });
+        // .catch((e) => {
+        //     // alert("Geocode was not successful for the following reason: " + e);
+        // });
     }
 
 
