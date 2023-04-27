@@ -143,7 +143,6 @@ const Map = ({sport, skillLevel}) => {
             games.forEach((game) => {
               const infoWindow = new window.google.maps.InfoWindow();
     
-              console.log(markers.current)
           
               if (markers.current[game._id]) {
                 // Marker already exists, update its position
@@ -156,12 +155,12 @@ const Map = ({sport, skillLevel}) => {
                 markers.current[game._id] = new window.google.maps.Marker({
                   position: { lat: game.coordinates.lat, lng: game.coordinates.lng },
                   map: map,
-                  label: {
-                    color: "#C70E20",
-                    fontWeight: "bold",
-                    textShadow:
-                      "-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000",
-                  },
+                //   label: {
+                //     color: "#C70E20",
+                //     fontWeight: "bold",
+                //     textShadow:
+                //       "-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000",
+                //   },
                   icon: {
                     url: mapsPin,
                     labelOrigin: new window.google.maps.Point(80, 23),
