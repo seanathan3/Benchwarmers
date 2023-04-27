@@ -56,11 +56,22 @@ export const fetchGames = () => async dispatch => {
     dispatch(receiveGames(data));
 };
 
-export const fetchSportFilteredGames = (sport) => async dispatch => {
+export const fetchSportFilteredGames = (sport, skillLevel) => async dispatch => {
     const res = await jwtFetch('/api/games');
     const data = await res.json();
-    const sportFilteredGames = data.filter(game => game.sport === sport)
-    dispatch(receiveGames(sportFilteredGames))
+    let sportFilteredGames;
+    let skillFilteredGames;
+    if (sport) {
+        sportFilteredGames = data.filter(game => game.sport === sport)
+    } else {
+        sportFilteredGames = data
+    }
+    if (skillLevel) {
+        skillFilteredGames = sportFilteredGames.filter(game => game.skillLevel === skillLevel)
+    } else {
+        skillFilteredGames = sportFilteredGames
+    }
+    dispatch(receiveGames(skillFilteredGames))
 }
 
 export const fetchGame = gameId => async dispatch => {

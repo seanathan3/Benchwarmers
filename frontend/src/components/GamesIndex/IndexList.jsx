@@ -9,21 +9,26 @@ const IndexList = ({sport, skillLevel}) => {
     console.log(skillLevel)
 
     useEffect(() => {
-        console.log(sport)
-        if(sport && sport !== "All") {
+        if(sport && (!skillLevel || skillLevel === 'All') && sport !== "All") {
             dispatch(resetGames())
             dispatch(fetchSportFilteredGames(sport))
-        }
-        else {
+        } else if (skillLevel && (!sport || sport === 'All') && skillLevel !== "All") {
+            dispatch(resetGames())
+            dispatch(fetchSportFilteredGames(null, skillLevel))
+        } else if (sport && skillLevel && sport !== 'All' && skillLevel !== 'All') {
+            dispatch(resetGames())
+            dispatch(fetchSportFilteredGames(sport, skillLevel))
+        } else {
             dispatch(fetchGames());
         }   
-    }, [dispatch, sport])
+    }, [dispatch, sport, skillLevel])
     
 
     return(
         <>
             <div id="il-master">
                 <div id='il-title'>Upcoming Games:</div>
+                {games.length === 0 && <p>"No Results Found"</p>}
                 {games.map(game => {
                     return <IndexItem key={game._id} game={game} />
                 })}

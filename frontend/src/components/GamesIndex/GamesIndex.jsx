@@ -22,7 +22,7 @@ const GamesIndex = () => {
                 <IndexNav parentSportCallback={handleSportChange} parentSkillLevelCallback={handleSkillLevelChange}/>
                 <div id="gi-content">
                     <IndexList skillLevel={skillLevel} sport={sport} />
-                    <Map sport={sport} />
+                    <Map sport={sport} skillLevel={skillLevel} />
                 </div>
             </div>
         </>

@@ -9,7 +9,7 @@ import baseballImg from '../../assets/sports-logos/baseball.png';
 import mapsPin from '../../assets/maps-pins/maps-pin.png'
 
 
-const Map = ({sport}) => {
+const Map = ({sport, skillLevel}) => {
     const dispatch = useDispatch();
     const [map, setMap] = useState();
     const mapRef = useRef();
@@ -34,7 +34,7 @@ const Map = ({sport}) => {
         if (currentGameId) {
             dispatch(fetchGame())
         }
-    }, [dispatch, currentGameId, sport]);
+    }, [dispatch, currentGameId, sport, skillLevel]);
 
     useEffect(() => {
 
