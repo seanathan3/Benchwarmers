@@ -35,10 +35,6 @@ const gameSchema = new Schema({
     type: Number,
     required: true
   },
-  minCapacity: {
-    type: Number,
-    required: true
-  },
   photoUrl: {
     type: String
   },

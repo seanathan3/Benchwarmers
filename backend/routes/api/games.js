@@ -68,7 +68,6 @@ router.post('/', requireUser, validateGameInput, async(req, res, next) => {
       description: req.body.description,
       host: req.user._id,
       maxCapacity: req.body.maxCapacity,
-      minCapacity: req.body.minCapacity,
       photoUrl: req.body.photoUrl,
       time: req.body.time,
       date: req.body.date,
@@ -117,7 +116,6 @@ router.patch('/:id', requireUser, validateGameInput, async (req, res, next) => {
       game.description = req.body.description
       // game.host = req.user._id
       game.maxCapacity = req.body.maxCapacity
-      game.minCapacity = req.body.minCapacity
       game.photoUrl = req.body.photoUrl
       game.time = req.body.time
       game.date = req.body.date
