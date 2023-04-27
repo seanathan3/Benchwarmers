@@ -83,13 +83,17 @@
 
 #ii-buttons {
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
     width: 100%;
 }
 
 #ii-delete-button:hover{
     text-decoration: underline;
     color: var(--orange)
+}
+
+#ii-delete-button {
+    padding-left: 50px;
 }
 
 .in-filter {
