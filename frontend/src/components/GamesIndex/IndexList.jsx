@@ -9,12 +9,16 @@ const IndexList = ({sport, skillLevel}) => {
     console.log(skillLevel)
 
     useEffect(() => {
-        console.log(sport)
-        if(sport && sport !== "All") {
+        if(sport && !skillLevel && sport !== "All") {
             dispatch(resetGames())
             dispatch(fetchSportFilteredGames(sport))
-        }
-        else {
+        } else if (skillLevel && !sport && skillLevel !== "All") {
+            dispatch(resetGames())
+            dispatch(fetchSportFilteredGames(null, skillLevel))
+        } else if (sport & skillLevel && sport !== 'All' && skillLevel !== 'All') {
+            dispatch(resetGames())
+            dispatch(fetchSportFilteredGames(sport, skillLevel))
+        } else {
             dispatch(fetchGames());
         }   
     }, [dispatch, sport])
