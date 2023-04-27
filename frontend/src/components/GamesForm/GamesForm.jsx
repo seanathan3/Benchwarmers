@@ -21,7 +21,6 @@ const GamesForm = ({game, formCallback, mfSport, mfSkillLevel}) => {
     const [showModal, setShowModal] = useState(false);
     const [editModal, setEditModal] = useState(false);
 
-    // console.log(errors)
 
   const today = new Date();
   let year = today.getFullYear();
@@ -35,7 +34,7 @@ const GamesForm = ({game, formCallback, mfSport, mfSkillLevel}) => {
   const [time, setTime] = useState("10:10");
   const [gameDate, setGameDate] = useState("2023-04-28");
   const [title, setTitle] = useState("");
-  const [coords, setCoords] = useState({ lat: -73.97, lng: 40.77 });
+  const [coords, setCoords] = useState({lat: null, lng: null});
   const [selectedSport, setSelectedSport] = useState(false);
   const [selectedSkillLevel, setSelectedSkillLevel] = useState(false);
 
@@ -77,7 +76,7 @@ const GamesForm = ({game, formCallback, mfSport, mfSkillLevel}) => {
       setGameDate(formFormatDate(game?.date));
       setTime(formFormatTime(game?.time));
       setAttendees(game?.attendees);
-      setCoords({lat: game?.coords?.lat, lng: game?.coords?.lng})
+      setCoords({lat: game?.coordinates?.lat, lng: game?.coordinates?.lng})
 
       return () => dispatch(removeErrors());
     }
@@ -131,11 +130,11 @@ const GamesForm = ({game, formCallback, mfSport, mfSkillLevel}) => {
     };
 
 
-
     newGame.host = userId;
 
     if (gameId) {
       newGame._id = gameId;
+      debugger
       dispatch(updateGame(newGame)).then((res) => {
         if (res.type === 'games/RECEIVE_GAME') {
           dispatch(removeErrors());
@@ -144,7 +143,6 @@ const GamesForm = ({game, formCallback, mfSport, mfSkillLevel}) => {
       })
     } else {
       dispatch(createGame(newGame)).then((res) => {
-        console.log(res);
         if (res.type === "games/RECEIVE_GAME") {
           dispatch(removeErrors());
           formCallback();
@@ -160,8 +158,6 @@ const GamesForm = ({game, formCallback, mfSport, mfSkillLevel}) => {
         setShowModal(false);
         setEditModal(false);
     }
-
-    // console.log(coords);
 
   return (
     <>
@@ -277,6 +273,7 @@ const GamesForm = ({game, formCallback, mfSport, mfSkillLevel}) => {
 
         <div id='gf-map'>
           <div>Please enter a location into the search bar then click the search button.</div>
+          {(errors ? Object.keys(errors).some(ele => ele.includes('.')) : null) && <div id="mapError" className="errors">Please enter a location</div>}
         <GamesFormMap className="games-form-map" parentCallback={handleCallback}/>
         </div>
             <br />

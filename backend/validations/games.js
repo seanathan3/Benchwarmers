@@ -8,9 +8,9 @@ const validateGameInput = [
   check('description')
     .exists({ checkFalsy: true })
     .withMessage('Please enter a description'),
-  // check('coordinates')
-  //   .exists({ checkFalsy: true })
-  //   .withMessage('Please enter a location'),
+  check('coordinates.lat')
+    .exists({ checkFalsy: true })
+    .withMessage('Please enter a location'),
   check('sport')
     .exists({checkFalsy: true})
     .withMessage('Please select a sport'),

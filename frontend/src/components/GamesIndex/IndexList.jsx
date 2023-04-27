@@ -6,7 +6,6 @@ import IndexItem from './IndexItem';
 const IndexList = ({sport, skillLevel}) => {
     const dispatch = useDispatch();
     const games = useSelector(state => state.games ? Object.values(state.games) : []);
-    console.log(skillLevel)
 
     useEffect(() => {
         if(sport && (!skillLevel || skillLevel === 'All') && sport !== "All") {

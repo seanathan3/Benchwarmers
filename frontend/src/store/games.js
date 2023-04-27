@@ -52,7 +52,6 @@ export const getFilteredGames = (userId) => state => {
 export const fetchGames = () => async dispatch => {
     const res = await jwtFetch('/api/games');
     const data = await res.json();
-    console.log(data)
     dispatch(receiveGames(data));
 };
 
@@ -89,7 +88,6 @@ export const createGame = game => async dispatch => {
         })
     
         const data = await response.json();
-        console.log(data)
         return dispatch(receiveGame(data));
     }
     catch(err) {
@@ -155,8 +153,6 @@ const gamesReducer = (state= {}, action) => {
             nextState[action.game._id] = action.game;
             return nextState;
         case REMOVE_GAME:
-            // console.log(nextState)
-            // console.log(action.gameId)
             delete nextState[action.gameId];
             return nextState;
         case RESET_GAMES:

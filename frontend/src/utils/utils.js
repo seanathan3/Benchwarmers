@@ -82,3 +82,11 @@ export const formFormatDate = obj => {
 
     return output
 }
+
+// export const searchForDots = obj => {
+//     for (let key in obj) {
+//         if (key.includes?('.')) {
+//             return key
+//         }
+//     }
+// }

@@ -126,17 +126,9 @@ router.patch('/:userId', requireUser, validateUpdateUserInput, async (req, res, 
 })
 
 router.delete('/:userId', requireUser, async(req,res,next) => {
-  // console.log("THIS IS REQ.PARAMS")
-  // console.log(req.params)
   let hostedGames = await Game.find({ host: req.params.userId });
-  // console.log("THIS IS HOSTED GAMES")
-  // console.log(hostedGames)
   let user = await User.findById(req.params.userId)
-  // console.log("THIS IS USER")
-  // console.log(user)
   let attendingGames = user.attendingGames
-  console.log("THIS IS ATTENDING GAMES")
-  console.log(attendingGames)
   try {
     const currentDate = new Date();
     const currentDay = currentDate.getDate();
@@ -151,7 +143,6 @@ router.delete('/:userId', requireUser, async(req,res,next) => {
     futureGames.forEach(async game => {
       try {
         await Game.findByIdAndDelete(game._id);
-        console.log(`Deleted game with ID ${game._id}`);
       } catch (error) {
         console.error(`Error deleting game with ID ${game._id}: ${error}`);
       }

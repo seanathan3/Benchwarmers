@@ -302,6 +302,7 @@
     display: flex;
     justify-content: center;
     padding-top: 20px;
+    margin-top: 30px;
   }
   
   #scroller {
@@ -323,4 +324,10 @@
 
   #gf-master ::placeholder {
     color: black;
+  }
+
+  #gf-master #mapError {
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
   }
