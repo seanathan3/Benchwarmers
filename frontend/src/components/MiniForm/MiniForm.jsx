@@ -26,6 +26,10 @@ const MiniForm = () => {
     }
   }
 
+  function closeModal() {
+    setShowModal(false);
+  }
+
   useEffect(() => {
     setIsLoggedIn(user !== undefined && user !== null);
   }, [user]);
@@ -89,7 +93,7 @@ const MiniForm = () => {
       </form>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
-          <GameForm mfSport={sport} mfSkillLevel={skillLevel} />
+          <GameForm formCallback={closeModal} mfSport={sport} mfSkillLevel={skillLevel} />
         </Modal>
       )}
 
