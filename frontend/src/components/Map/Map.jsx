@@ -21,6 +21,7 @@ const Map = ({sport, skillLevel}) => {
     const [showModal, setShowModal] = useState(false);
     const [currentGameId, setCurrentGameId] = useState();
     const [currentInfoWindow, setCurrentInfoWindow] = useState(null);
+    let openInfoWindows = [];
 
     // below is chat
     // const [markers, setMarkers] = useState({})
@@ -181,6 +182,23 @@ const Map = ({sport, skillLevel}) => {
                   },
                 });
           
+                // for(let i = 0; i < markers.length; i++) {
+                //   let marker = markers[i];         
+                markers.current[game._id].addListener("click", function(event) {
+                  //   if (currentInfoWindow) {
+                  //     // Check if clicked element is inside the info window
+                  //     if (!currentInfoWindow.getContent().contains(event.target)) {
+                  //       // Close info window if clicked element is outside of it
+                  //       currentInfoWindow.close();
+                  //       setCurrentInfoWindow(null);
+                  //     }
+                  // }
+                  for(let i = 0; i < openInfoWindows.length; i++) {
+                    openInfoWindows[i].close();
+                  }
+                })
+                // }
+
                 markers.current[game._id].addListener("click", () => {
                   const content = document.createElement("div");
                   content.setAttribute("id", "pin-textbox");
@@ -209,7 +227,9 @@ const Map = ({sport, skillLevel}) => {
           
                   infoWindow.setContent(content);
                   infoWindow.open(map, markers.current[game._id]);
+                  openInfoWindows.push(infoWindow)
                   setCurrentInfoWindow(infoWindow)
+                  debugger
 
                   // map.addListener("click", (event) => {
                   //   debugger
