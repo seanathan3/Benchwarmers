@@ -20,6 +20,7 @@ const Map = ({sport, skillLevel}) => {
     const games = useSelector(state => Object.values(state.games));
     const [showModal, setShowModal] = useState(false);
     const [currentGameId, setCurrentGameId] = useState();
+    const [currentInfoWindow, setCurrentInfoWindow] = useState(null);
 
     // below is chat
     // const [markers, setMarkers] = useState({})
@@ -140,9 +141,22 @@ const Map = ({sport, skillLevel}) => {
 
         if (map) {
 
+          const clickListener = map.addListener("click", (event) => {
+            // Check if info window is open
+            if (currentInfoWindow) {
+              // Check if clicked element is inside the info window
+              if (!currentInfoWindow.getContent().contains(event.target)) {
+                // Close info window if clicked element is outside of it
+                currentInfoWindow.close();
+                setCurrentInfoWindow(null);
+              }
+            }
+          })
+      
+
             games.forEach((game) => {
               const infoWindow = new window.google.maps.InfoWindow();
-    
+            
           
               if (markers.current[game._id]) {
                 // Marker already exists, update its position
@@ -195,6 +209,17 @@ const Map = ({sport, skillLevel}) => {
           
                   infoWindow.setContent(content);
                   infoWindow.open(map, markers.current[game._id]);
+                  setCurrentInfoWindow(infoWindow)
+
+                  // map.addListener("click", (event) => {
+                  //   debugger
+                  //   // Close the current info window if it exists and the click is not on a marker or the map itself
+                  //   if (currentInfoWindow && event.target !== currentInfoWindow) {
+                  //     currentInfoWindow.close();
+                  //     currentInfoWindow = null;
+                  //   }
+                  // });
+
                 });
               }
             });
