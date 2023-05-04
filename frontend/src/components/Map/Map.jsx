@@ -5,9 +5,7 @@ import { formatTime } from '../../utils/utils';
 import GamesShow from '../GamesShow/GamesShow';
 import { Modal } from '../../context/Modal'
 import { fetchGame } from '../../store/games';
-import baseballImg from '../../assets/sports-logos/baseball.png';
 import mapsPin from '../../assets/maps-pins/maps-pin.png'
-import { fetchGames } from '../../store/games';
 
 
 const Map = ({sport, skillLevel}) => {
