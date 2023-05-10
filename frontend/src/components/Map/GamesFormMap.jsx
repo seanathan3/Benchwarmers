@@ -106,8 +106,9 @@ const GamesFormMap = ({parentCallback}) => {
             map.setCenter(results[0].geometry.location);
             marker.setPosition(results[0].geometry.location);
             marker.setMap(map);
+            debugger
             // parentCallback({"lng": results[0].geometry.viewport.Ha.lo, "lat": results[0].geometry.viewport.Va.lo})
-            parentCallback({"lng": results[0].geometry.viewport.Ga.lo, "lat": results[0].geometry.viewport.Ua.lo})
+            parentCallback({"lng": results[0].geometry.viewport.Ha.lo, "lat": results[0].geometry.viewport.Ua.lo})
             inputText.value = `${results[0].formatted_address}`
             return results;
         })
