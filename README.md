@@ -1,27 +1,28 @@
 # Benchwarmers
 
-## Description
-Benchwarmers is an application designed for people who want to play pickup sports in groups but don't have know people to play with. Users can create and join 'games' on the application to play their favorite sports and make new friends in the process. Benchwarmers aims to be a simplistic and modern website that allows users to easily access any game and its information in just a couple of clicks.
+![hero-section-2](https://github.com/seanathan3/Benchwarmers/assets/111205278/b0dc514d-bff8-46d1-8bf0-f06d39f4c7b1)
+
+[Live Link!](https://benchwarmers.onrender.com)
+
+## Background and Overview
+Despite the world becoming more connected by the minute, why is it so hard to find people to play our favorite pickup sports with? Enter Benchwarmers. Benchwarmers is an application designed for people who want to play pickup sports in groups but don't have people to play with. Users can create and join 'games' on the application to play their favorite sports and make new friends in the process. Benchwarmers aims to be a simplistic and modern website that allows users to easily access any game and its information in just a couple of clicks.
 
 Upon logging in, users have access to games. Users can create games, fill in game details (date, location, sport, etc...), and interact with existing games. A Google Maps API will be used to display the location of games, which users can select to view details and join the game.
 
-## Live Link
-You can view our website by clicking the following link: https://benchwarmers.onrender.com/
 
 ## Technologies Used
-Benchwarmers is implemented with a MERN stack and uses a Google Maps API to find and place the location of games.
+Benchwarmers is implemented with the MERN stack, and utilizes the following technologies:
 
-### Database: MongoDB
-A non-relational database that stores data in a document data structure. Data is stored in JSON-like objects with key-value pairs.
-
-### Backend: Node
-A JavaScript based runtime environment. Using this environment in our backend allows us to process requests in an asynchronous manner.
-
-### Frontend: React
-Used to build user interface and allows for dynamic rendering of the DOM.
-
-### Express
-Used to define routes and uses middleware to process requests and formulate responses.
++ React
++ Redux
++ Express.js
++ Node.js
++ MongoDB
++ Mongoose
++ Google Maps API
++ JavaScript
++ HTML
++ CSS
 
 ## Features
 
