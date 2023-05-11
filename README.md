@@ -1,6 +1,6 @@
 # Benchwarmers
 
-![hero-section-2](https://github.com/seanathan3/Benchwarmers/assets/111205278/b0dc514d-bff8-46d1-8bf0-f06d39f4c7b1)
+![hero-section-3](https://github.com/seanathan3/Benchwarmers/assets/111205278/c4d7e6c3-3122-4af6-a6ef-d0fd037c7da5)
 
 [Live Link!](https://benchwarmers.onrender.com)
 
