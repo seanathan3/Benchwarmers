@@ -40,3 +40,41 @@ Users can sign up and create new accounts as well as update, and delete their ac
 
 
 ![ezgif com-video-to-gif (1)](https://github.com/seanathan3/Benchwarmers/assets/116519976/488554a8-0f90-40fe-80c0-bcdaa04babae)
+
+## Team Members
+* Sean Abbas - Team Lead
+* Sabrina Desmond - Frontend Lead
+* Ariel Baez - Backend Lead
+* Charles Cruse - Flex
+
+### Work Breakdown
+
+#### Sunday, April 16
+* Sean Abbas - Website Layout Design
+* Sabrina Desmond - Website Layout Design
+* Ariel Baez - User Authentication, Database Creation
+* Charles Cruse - Base Layout Creation
+
+#### Monday, April 17
+* Sean Abbas - Frontend Auth Functionality
+* Sabrina Desmond - Modal Design & Implementation
+* Ariel Baez - Backend functionality for User Profile
+* Charles Cruse - Styling for Login/Signup Modals
+
+#### Tuesday, April 18
+* Sean Abbas - Styling for User profile
+* Sabrina Desmond - Frontend User Profile functionality
+* Ariel Baez - Backend functionality for Games
+* Charles Cruse - Frontend Games Functionality
+
+#### Wednesday, April 19
+* Sean Abbas - Styling for Splash
+* Sabrina Desmond - Styling for Games show page 
+* Ariel Baez - Styling for Games index
+* Charles Cruse - Google Maps setup
+
+#### Thursday, April 20
+* Sean Abbas - Setting up search
+* Sabrina Desmond - Final application styling
+* Ariel Baez - Final application styling
+* Charles Cruse - Google maps functionality
